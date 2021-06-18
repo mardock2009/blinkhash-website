@@ -1,0 +1,9 @@
+{
+    "watch": [
+        "src/index.js",
+        "src/app.js",
+        "src/assets",
+        "src/components",
+        "src/containers"
+    ]
+}
