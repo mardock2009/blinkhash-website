@@ -1,21 +1,15 @@
-import React from "react";
-import { connect } from 'react-redux';
-import './index.css';
-
 import Footer from '../../components/Footer/index';
 import Header from '../../components/Header/index';
+import './index.css';
 
-const mapState = () => ({});
-const mapDispatch = {};
-
-const connector = connect(mapState, mapDispatch);
-function Index() {
+export default function Index(props) {
   return (
     <div className="index-main">
-      <Header />
+      <Header
+        theme={props.theme}
+        toggleTheme={props.toggleTheme}
+      />
       <Footer />
     </div>
-  )
+  );
 }
-
-export default connector(Index);
