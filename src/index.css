@@ -3,13 +3,6 @@ body {
   font-family: "Lato Regular", sans-serif;
 }
 
-.index__background {
-  display: flex;
-  justify-content: center;
-  background-color: #f4f4f4;
-  min-height: 100vh
-}
-
 @font-face {
     font-family: "Lato Black";
     font-weight: normal;

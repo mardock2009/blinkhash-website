@@ -38,8 +38,8 @@ export const Header3 = styled.section`
 export const Header4 = styled.section`
   font-family: "Lato Regular", sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   @media (max-width: 500px) {
-    font-size: 14px;
+    font-size: 13px;
   }
 `;

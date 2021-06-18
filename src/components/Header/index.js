@@ -1,4 +1,4 @@
-import { LinkInternal } from './modules';
+import { LinkInternal } from '../Links';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import blinkhash from '../../assets/images/blinkhash-logo.png';
@@ -12,14 +12,18 @@ export default function Header(props) {
     <Local.HeaderMain>
       <Local.HeaderInner>
         <Local.HeaderLogo>
-          <Local.HeaderImage width='30px' src={blinkhash} alt='' />
+          <Local.HeaderImage width='25px' src={blinkhash} alt='' />
           <Local.HeaderTitle>
             <Global.Header3>{'Blinkhash Mining'}</Global.Header3>
           </Local.HeaderTitle>
         </Local.HeaderLogo>
         <Local.HeaderLinks>
           <Local.HeaderPages>
-            <LinkInternal link={'/'} text={'Documentation'} />
+            <LinkInternal link={'/'}>
+              <Local.HeaderText>
+                <Global.Body>{'Documentation'}</Global.Body>
+              </Local.HeaderText>
+            </LinkInternal>
           </Local.HeaderPages>
           <Local.HeaderSocial>
             <Local.HeaderSocialIcon

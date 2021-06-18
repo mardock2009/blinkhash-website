@@ -46,12 +46,10 @@ export default function App() {
         <BrowserRouter>
           <ScrollToTop />
           <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-            <div className="index__background">
-              {renderRoutes(Routes, {
-                theme: theme,
-                toggleTheme: toggleTheme,
-              })}
-            </div>
+            {renderRoutes(Routes, {
+              theme: theme,
+              toggleTheme: toggleTheme,
+            })}
           </ThemeProvider>
         </BrowserRouter>
       </Provider>

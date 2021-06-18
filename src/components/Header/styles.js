@@ -1,6 +1,4 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-
 import discord from '../../assets/images/discord-logo.png';
 import medium from '../../assets/images/medium-logo.png';
 import github from '../../assets/images/github-logo.png';
@@ -56,45 +54,6 @@ export const HeaderLinks = styled.div`
   flex-grow: 1;
 `;
 
-export const HeaderLinkInternal = styled(Link)`
-  margin: 0px 10px;
-  color: ${(props) => props.theme.textHeader};
-  line-height: 16px;
-  text-decoration: none;
-  transition: 0.2s ease-in all;
-  &:hover {
-    color: ${(props) => props.theme.textHover};
-    cursor: pointer;
-    text-decoration: none;
-  }
-`;
-
-export const HeaderLinkExternal = styled.div`
-  margin: 0px 10px;
-  color: ${(props) => props.theme.textHeader};
-  line-height: 16px;
-  text-decoration: none;
-  transition: 0.2s ease-in all;
-  &:hover {
-    color: ${(props) => props.theme.textHover};
-    cursor: pointer;
-    text-decoration: none;
-  }
-`;
-
-export const HeaderLinkModal = styled.div`
-  margin: 0px 10px;
-  color: ${(props) => props.theme.textHeader};
-  line-height: 16px;
-  text-decoration: none;
-  transition: 0.2s ease-in all;
-  &:hover {
-    color: ${(props) => props.theme.textHover};
-    cursor: pointer;
-    text-decoration: none;
-  }
-`;
-
 export const HeaderPages = styled.div`
   display: flex;
   padding: 10px 20px;
@@ -102,6 +61,10 @@ export const HeaderPages = styled.div`
   @media (max-width: 700px) {
     display: none;
   }
+`;
+
+export const HeaderText = styled.div `
+  color: ${(props) => props.theme.textHeader};
 `;
 
 export const HeaderSocial = styled.div`

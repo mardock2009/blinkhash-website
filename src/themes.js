@@ -8,6 +8,12 @@ export const lightTheme = {
   backgroundHeader: '#021b3d',
   borderHeader: '#555555',
   textHeader: '#ffffff',
+
+  /* Banner Palette */
+  backgroundBanner: '#f5f6f7',
+  borderBanner: '#021b3d',
+  titleBanner: '#021b3d',
+  textBanner: '#425066',
 };
 
 // Main Dark Theme
@@ -22,4 +28,9 @@ export const darkTheme = {
   borderHeader: '#555555',
   textHeader: '#ffffff',
 
+  /* Banner Palette */
+  backgroundBanner: '#f5f6f7',
+  borderBanner: '#021b3d',
+  titleBanner: '#021b3d',
+  textBanner: '#425066',
 };
