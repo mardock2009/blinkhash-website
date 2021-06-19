@@ -12,8 +12,8 @@ export function LinkExternal(props) {
   return (
     <Local.LinkExternal
       href={props.link}
-      target="_blank"
-      rel="noreferrer noopener"
+      target='_blank'
+      rel='noreferrer noopener'
     >
       {props.children}
     </Local.LinkExternal>

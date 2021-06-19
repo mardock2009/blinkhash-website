@@ -6,7 +6,7 @@ import github from '../../assets/images/github-logo.png';
 export const HeaderMain = styled.div`
   width: 100%;
   height: 70px;
-  padding: 20px;
+  padding: 25px;
   top: 0px;
   left: 0px;
   z-index: 999;

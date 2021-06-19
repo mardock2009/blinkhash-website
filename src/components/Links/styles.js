@@ -10,7 +10,7 @@ export const LinkInternal = styled(Link)`
   }
 `;
 
-export const LinkExternal = styled.div`
+export const LinkExternal = styled.a`
   text-decoration: none;
   transition: 0.2s ease-in all;
   &:hover {

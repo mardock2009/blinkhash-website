@@ -14,6 +14,21 @@ export const lightTheme = {
   borderBanner: '#021b3d',
   titleBanner: '#021b3d',
   textBanner: '#425066',
+
+  /* Sidenav Palette */
+  backgroundSidenav: '#ffffff',
+  borderSidenav: '#cccccc',
+
+  /* Information Palette */
+  backgroundInformationSecondary: '#425066',
+  borderInformation: '#cccccc',
+  textInformation: '#000000',
+  textInformationSecondary: '#ebecef',
+  textInformationTertiary: '#5f6368',
+
+  /* Miscellaneous Palette */
+  backgroundButton: '#021b3d',
+  textButton: '#ebecef',
 };
 
 // Main Dark Theme
@@ -33,4 +48,19 @@ export const darkTheme = {
   borderBanner: '#021b3d',
   titleBanner: '#021b3d',
   textBanner: '#425066',
+
+  /* Sidenav Palette */
+  backgroundSidenav: '#ffffff',
+  borderSidenav: '#cccccc',
+
+  /* Information Palette */
+  backgroundInformationSecondary: '#425066',
+  borderInformation: '#cccccc',
+  textInformation: '#000000',
+  textInformationSecondary: '#ebecef',
+  textInformationTertiary: '#5f6368',
+
+  /* Miscellaneous Palette */
+  backgroundButton: '#021b3d',
+  textButton: '#ebecef',
 };
