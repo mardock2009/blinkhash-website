@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const SectionMain = styled.div`
   width: 100%;
+  transition: 0.2s ease-in all;
 `;
 
 export const SectionInner = styled.div`
@@ -30,7 +31,6 @@ export const SectionHeader = styled.div`
   width: calc(100% - 25px);
   padding: 3px 0px 3px 25px;
   border-radius: 0px 10px 10px 0px;
-  transition: 0.2s ease-in all;
   font-family: "Lato Regular", sans-serif;
   font-weight: 400;
   font-size: 13px;

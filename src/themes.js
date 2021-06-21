@@ -13,6 +13,7 @@ export const lightTheme = {
   /* Footer Palette */
   backgroundFooter: '#ffffff',
   borderFooter: '#cccccc',
+  textFooter: '#000000',
 
   /* Header Palette */
   backgroundHeader: '#021b3d',
@@ -60,6 +61,7 @@ export const darkTheme = {
   /* Footer Palette */
   backgroundFooter: '#202632',
   borderFooter: '#3e4559',
+  textFooter: '#ebecef',
 
   /* Header Palette */
   backgroundHeader: '#202632',

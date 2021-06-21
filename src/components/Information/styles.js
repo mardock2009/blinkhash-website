@@ -33,7 +33,6 @@ export const InformationSocial = styled.div`
   background-image: url(${background});
   background-position: center;
   border-radius: 10px 10px 0px 0px;
-  transition: 0.2s ease-in all;
   @media (max-width: 1000px) {
     flex-direction: column;
   }

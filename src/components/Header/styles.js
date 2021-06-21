@@ -84,7 +84,6 @@ export const HeaderSocialIcon = styled.a`
   border: 1px solid ${(props) => props.theme.borderHeader};
   color: ${(props) => props.theme.textHeader};
   font-size: 18px;
-  transition: 0.2s ease-in all;
   &:hover {
     color: ${(props) => props.theme.textHeader};
     background-color: ${(props) => props.theme.accessoryHover};
@@ -104,7 +103,6 @@ export const Discord = styled.div`
   height: 14px;
   background-size: contain;
   background-image: url(${discord});
-  transition: 0.2s ease-in all;
 `;
 
 export const Medium = styled.div`
@@ -112,7 +110,6 @@ export const Medium = styled.div`
   height: 14px;
   background-size: contain;
   background-image: url(${medium});
-  transition: 0.2s ease-in all;
 `;
 
 export const Github = styled.div`
@@ -120,7 +117,6 @@ export const Github = styled.div`
   height: 22px;
   background-size: contain;
   background-image: url(${github});
-  transition: 0.2s ease-in all;
 `;
 
 export const HeaderTheme = styled.div`
@@ -138,7 +134,6 @@ export const HeaderToggle = styled.div`
   border: 1px solid ${(props) => props.theme.borderHeader};
   color: ${(props) => props.theme.textHeader};
   font-size: 18px;
-  transition: 0.2s ease-in all;
   &:hover {
     color: ${(props) => props.theme.textHeader};
     background-color: ${(props) => props.theme.accessoryHover};

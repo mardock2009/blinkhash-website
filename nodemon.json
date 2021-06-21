@@ -3,7 +3,10 @@
         "src/index.js",
         "src/app.js",
         "src/assets",
+        "src/common",
         "src/components",
-        "src/containers"
+        "src/pages",
+        "src/services",
+        "src/text"
     ]
 }
