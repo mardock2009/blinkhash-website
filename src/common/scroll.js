@@ -4,9 +4,11 @@ import { withRouter } from 'react-router-dom';
 /* eslint-disable arrow-body-style */
 function ScrollToTop(props) {
   useEffect(() => {
-    return (() => {
-      props.history.listen(() => {
-        window.scrollTo(0, 0);
+    props.history.listen(() => {
+      window.scrollTo({
+        left: 0,
+        top: 0,
+        behavior: 'smooth'
       });
     });
   }, [props.history]);

@@ -8,6 +8,11 @@ export const ButtonMain = styled.div`
   justify-content: center;
   background-color: ${(props) => props.theme.backgroundButton};
   border-radius: 5px;
+  transition: 0.2s ease-in all;
+  &:hover {
+    cursor: pointer;
+    background-color: ${(props) => props.theme.accessoryHover};
+  }
 `;
 
 export const ButtonText = styled.div`

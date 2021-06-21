@@ -1,25 +1,17 @@
-import Banner from '../../components/Banner/index';
-import Header from '../../components/Header/index';
-import Information from '../../components/Information/index';
-import Sidenav from '../../components/Sidenav/index';
+import Section from '../../components/Section/index';
+import { headers, sections } from '../../text/questions';
 import * as Local from './styles';
 
 export default function Questions(props) {
   return (
     <Local.QuestionsMain>
-      <Header
+      <Section
+        location={'Questions'}
+        headers={headers}
+        sections={sections}
         theme={props.theme}
         toggleTheme={props.toggleTheme}
       />
-      <Local.QuestionsInner>
-        <Banner />
-        <Local.QuestionsInformation>
-          <Sidenav />
-          <Information
-            location={'FAQs'}
-          />
-        </Local.QuestionsInformation>
-      </Local.QuestionsInner>
     </Local.QuestionsMain>
   );
 }

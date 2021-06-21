@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Body = styled.section`
+export const Body = styled.div`
   font-family: "Lato Regular", sans-serif;
   font-weight: 400;
   font-size: 13px;
@@ -8,38 +8,26 @@ export const Body = styled.section`
   text-overflow: ellipsis;
 `;
 
-export const Header1 = styled.section`
+export const Header1 = styled.div`
   font-family: "Lato Bold", sans-serif;
   font-weight: 400;
   font-size: 28px;
-  @media (max-width: 500px) {
-    font-size: 25px;
-  }
 `;
 
-export const Header2 = styled.section`
+export const Header2 = styled.div`
   font-family: "Lato Regular", sans-serif;
   font-weight: 400;
   font-size: 22px;
-  @media (max-width: 500px) {
-    font-size: 20px;
-  }
 `;
 
-export const Header3 = styled.section`
+export const Header3 = styled.div`
   font-family: "Lato Regular", sans-serif;
   font-weight: 400;
   font-size: 18px;
-  @media (max-width: 500px) {
-    font-size: 17px;
-  }
 `;
 
-export const Header4 = styled.section`
+export const Header4 = styled.div`
   font-family: "Lato Regular", sans-serif;
   font-weight: 400;
   font-size: 14px;
-  @media (max-width: 500px) {
-    font-size: 13px;
-  }
 `;

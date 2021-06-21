@@ -2,8 +2,9 @@ import styled from 'styled-components';
 import background from '../../assets/images/banner-background.svg';
 
 export const InformationMain = styled.div`
-  width: calc(100% - 250px);
-  padding: 25px;
+  width: 100%;
+  padding: 20px 25px;
+  background-color: ${(props) => props.theme.backgroundInformation};
   @media (max-width: 800px) {
     width: 100%;
     padding: 0px;
@@ -50,8 +51,7 @@ export const InformationText = styled.div`
 
 export const InformationDocumentation = styled.div`
   width: 100%;
-  height: 1000px;
-  padding: 30px 40px;
+  padding: 20px 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,7 +59,8 @@ export const InformationDocumentation = styled.div`
   border-radius: 0px 0px 10px 10px;
   border-top: 0px;
   @media (max-width: 800px) {
-    padding: 20px 25px;
+    border: 0px;
+    border-radius: 0px;
   }
 `;
 
@@ -69,25 +70,23 @@ export const InformationLocation = styled.div`
   justify-content: space-between;
   color: ${(props) => props.theme.textInformationTertiary};
   margin-bottom: 20px;
-`;
-
-export const InformationDirectory = styled.div`
   @media (max-width: 500px) {
     display: none;
   }
+`;
+
+export const InformationDirectory = styled.div`
+  display: flex;
 `;
 
 export const InformationVersion = styled.div`
   display: flex;
   justify-content: flex-end;
-  @media (max-width: 500px) {
-    display: none;
-  }
 `;
 
 export const InformationTitle = styled.div`
-  width: calc(100% + 4px);
-  padding: 0px 1px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #cccccc;
+  width: calc(100%);
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid ${(props) => props.theme.borderInformation};
 `;

@@ -1,5 +1,7 @@
 import Button from '../Button/index';
 import { LinkExternal } from '../Links/index';
+
+// Main Styles
 import * as Global from '../../styles';
 import * as Local from './styles';
 

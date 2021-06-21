@@ -6,7 +6,7 @@ import github from '../../assets/images/github-logo.png';
 export const HeaderMain = styled.div`
   width: 100%;
   height: 70px;
-  padding: 25px;
+  padding: 20px 25px;
   top: 0px;
   left: 0px;
   z-index: 999;
@@ -99,7 +99,7 @@ export const HeaderSocialIcon = styled.a`
   }
 `;
 
-export const Discord = styled.section`
+export const Discord = styled.div`
   width: 19px;
   height: 14px;
   background-size: contain;
@@ -107,7 +107,7 @@ export const Discord = styled.section`
   transition: 0.2s ease-in all;
 `;
 
-export const Medium = styled.section`
+export const Medium = styled.div`
   width: 19px;
   height: 14px;
   background-size: contain;
@@ -115,7 +115,7 @@ export const Medium = styled.section`
   transition: 0.2s ease-in all;
 `;
 
-export const Github = styled.section`
+export const Github = styled.div`
   width: 22px;
   height: 22px;
   background-size: contain;
