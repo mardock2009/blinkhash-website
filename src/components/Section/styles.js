@@ -51,12 +51,12 @@ export const SectionInformation = styled.div`
 `;
 
 export const SectionBody = styled.div`
-  width: calc(100% + 80px);
-  padding: 0px 40px;
+  width: calc(100% + 50px);
+  padding: 0px 25px;
   margin-bottom: 15px;
   border-bottom: 2px solid ${(props) => props.theme.borderInformation};
   &:last-child {
-    margin-bottom: 0px;
+    margin-bottom: -1rem;
     border-bottom: 0px;
   }
 `;
@@ -65,7 +65,7 @@ export const SectionText = styled.div`
   margin-bottom: 15px;
   border-bottom: 1px solid ${(props) => props.theme.borderInformation};
   &:last-child {
-    margin-bottom: -1rem;
+    margin-bottom: 0px;
     border-bottom: 0px;
   }
 `;

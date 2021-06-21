@@ -19,11 +19,3 @@ export function LinkExternal(props) {
     </Local.LinkExternal>
   );
 }
-
-export function LinkModal(props) {
-  return (
-    <Local.LinkModal onClick={props.link}>
-      {props.children}
-    </Local.LinkModal>
-  );
-}

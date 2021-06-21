@@ -6,11 +6,13 @@ import Header from '../../components/Header/index';
 import Information from '../../components/Information/index';
 import License from '../../components/License/index';
 import Sidenav from '../../components/Sidenav/index';
-import { components } from '../../common/code';
 
 // Main Styles
 import * as Global from '../../styles';
 import * as Local from './styles';
+
+// Different Markdown Code Styles
+import { componentsDark, componentsLight } from '../../common/code';
 
 export default function Section(props) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -40,7 +42,7 @@ export default function Section(props) {
     const idx = props.headers.indexOf(header);
     const ref = headerRefs[idx];
     const distance = ref.current.getBoundingClientRect().bottom;
-    window.scrollBy({ left: 0, top: distance - 110, behavior: 'smooth' });
+    window.scrollBy({ left: 0, top: distance - 112, behavior: 'smooth' });
     setActiveIndex(idx);
   }
 
@@ -86,9 +88,15 @@ export default function Section(props) {
                             </Global.Header3>
                           </Local.SectionTitle>
                           <Global.Body>
-                            <ReactMarkdown components={components}>
-                              {section[header]}
-                            </ReactMarkdown>
+                            {(props.theme === 'light') ? (
+                              <ReactMarkdown components={componentsLight}>
+                                {section[header]}
+                              </ReactMarkdown>
+                            ) : (
+                              <ReactMarkdown components={componentsDark}>
+                                {section[header]}
+                              </ReactMarkdown>
+                            )}
                           </Global.Body>
                         </Local.SectionText>
                       );

@@ -18,12 +18,3 @@ export const LinkExternal = styled.a`
     text-decoration: none;
   }
 `;
-
-export const LinkModal = styled.div`
-  text-decoration: none;
-  transition: 0.2s ease-in all;
-  &:hover {
-    cursor: pointer;
-    text-decoration: none;
-  }
-`;

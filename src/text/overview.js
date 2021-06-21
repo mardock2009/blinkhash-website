@@ -5,7 +5,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent hendrerit ultr
 
 ~~~js
 function example() {
-  console.log("Example");
+  console.log(example);
 }
 ~~~
 
@@ -29,7 +29,15 @@ Donec vestibulum interdum scelerisque. Aliquam rutrum arcu eu justo facilisis, t
 // Text for Module Sections
 export const sections = [
   {
-    'Overview': overview
+    'Overview1': overview,
+    'Overview2': overview,
+    'Overview3': overview,
+    'Overview4': overview,
+    'Overview5': overview,
+  },
+  {
+    'Overview6': overview,
+    'Overview7': overview,
   }
 ];
 

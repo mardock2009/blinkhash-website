@@ -4,7 +4,9 @@ import background from '../../assets/images/banner-background.svg';
 export const InformationMain = styled.div`
   width: 100%;
   padding: 20px 25px;
+  color: ${(props) => props.theme.textInformation};
   background-color: ${(props) => props.theme.backgroundInformation};
+  transition: 0.2s ease-in all;
   @media (max-width: 800px) {
     width: 100%;
     padding: 0px;
@@ -31,6 +33,7 @@ export const InformationSocial = styled.div`
   background-image: url(${background});
   background-position: center;
   border-radius: 10px 10px 0px 0px;
+  transition: 0.2s ease-in all;
   @media (max-width: 1000px) {
     flex-direction: column;
   }

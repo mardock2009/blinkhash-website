@@ -9,6 +9,7 @@ export const SidenavMain = styled.div`
   position: sticky;
   position: -webkit-sticky;
   align-self: flex-start;
+  color: ${(props) => props.theme.textSidenav};
   border-right: 1px solid ${(props) => props.theme.borderSidenav};
   background-color: ${(props) => props.theme.backgroundSidenav};
   transition: 0.2s ease-in all;
