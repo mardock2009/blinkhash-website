@@ -42,7 +42,7 @@ export const SectionHeader = styled.div`
     background-color: ${(props) => props.theme.backgroundSidenavTertiary};
   }
   &:first-child {
-    font-family: 'Lato Black', sans-serif !important;
+    font-family: 'Lato Bold', sans-serif !important;
   }
 `;
 
