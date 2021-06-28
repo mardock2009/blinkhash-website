@@ -1,3 +1,5 @@
+/* eslint-disable-next-line no-unused-vars */
+import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import * as Global from '../../styles';
 import * as Local from './styles';
@@ -14,17 +16,17 @@ export default function License() {
   return (
     <Local.LicenseMain>
       <Local.LicenseSection>
-        <Global.Body>
+        <Global.Body2>
           <ReactMarkdown>
             {license}
           </ReactMarkdown>
-        </Global.Body>
+        </Global.Body2>
       </Local.LicenseSection>
-      <Local.LicenseSection>
-        <Global.Body>
+      <Local.LicenseUpdated>
+        <Global.Body2>
           {'Last updated 06/20/2021'}
-        </Global.Body>
-      </Local.LicenseSection>
+        </Global.Body2>
+      </Local.LicenseUpdated>
     </Local.LicenseMain>
   );
 }

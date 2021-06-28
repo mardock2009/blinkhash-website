@@ -44,6 +44,7 @@ export const BannerSelectItem = styled.div`
   margin-right: 30px;
   margin-bottom: -5px;
   border-bottom: 2px solid ${(props) => props.theme.backgroundBanner};
+  transition: 0.2s ease-in all;
   ${(props) => props.active && `
     border-bottom: 2px solid ${props.theme.borderBanner};
   `}

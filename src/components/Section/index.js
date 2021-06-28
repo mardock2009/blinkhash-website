@@ -1,3 +1,4 @@
+/* eslint-disable-next-line no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import Banner from '../../components/Banner/index';
@@ -75,37 +76,39 @@ export default function Section(props) {
             }))}
           </Sidenav>
           <Local.SectionInformation>
-            <Information location={props.location}>
-              {(props.sections.map((section, idx1) => {
-                return (
-                  <Local.SectionBody key={idx1}>
-                    {(Object.keys(section).map((header, idx2) => {
-                      return (
-                        <Local.SectionText id={'header-' + props.headers.indexOf(header)} key={idx2}>
-                          <Local.SectionTitle ref={headerRefs[props.headers.indexOf(header)]}>
-                            <Global.Header3>
-                              {header}
-                            </Global.Header3>
-                          </Local.SectionTitle>
-                          <Global.Body>
-                            {(props.theme === 'light') ? (
-                              <ReactMarkdown components={componentsLight}>
-                                {section[header]}
-                              </ReactMarkdown>
-                            ) : (
-                              <ReactMarkdown components={componentsDark}>
-                                {section[header]}
-                              </ReactMarkdown>
-                            )}
-                          </Global.Body>
-                        </Local.SectionText>
-                      );
-                    }))}
-                  </Local.SectionBody>
-                );
-              }))}
-            </Information>
-            <License />
+            <Local.SectionInformationInner>
+              <Information location={props.location}>
+                {(props.sections.map((section, idx1) => {
+                  return (
+                    <Local.SectionBody key={idx1}>
+                      {(Object.keys(section).map((header, idx2) => {
+                        return (
+                          <Local.SectionText id={'header-' + props.headers.indexOf(header)} key={idx2}>
+                            <Local.SectionTitle ref={headerRefs[props.headers.indexOf(header)]}>
+                              <Global.Header2>
+                                {header}
+                              </Global.Header2>
+                            </Local.SectionTitle>
+                            <Global.Body>
+                              {(props.theme === 'light') ? (
+                                <ReactMarkdown components={componentsLight}>
+                                  {section[header]}
+                                </ReactMarkdown>
+                              ) : (
+                                <ReactMarkdown components={componentsDark}>
+                                  {section[header]}
+                                </ReactMarkdown>
+                              )}
+                            </Global.Body>
+                          </Local.SectionText>
+                        );
+                      }))}
+                    </Local.SectionBody>
+                  );
+                }))}
+              </Information>
+              <License />
+            </Local.SectionInformationInner>
             <Footer />
           </Local.SectionInformation>
         </Local.SectionDisplay>

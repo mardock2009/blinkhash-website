@@ -1,7 +1,8 @@
+/* eslint-disable-next-line no-unused-vars */
+import React from 'react';
 import { LinkInternal } from '../Links';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
-import blinkhash from '../../assets/images/blinkhash-logo.png';
 
 // Main Styles
 import * as Global from '../../styles';
@@ -12,7 +13,11 @@ export default function Header(props) {
     <Local.HeaderMain>
       <Local.HeaderInner>
         <Local.HeaderLogo>
-          <Local.HeaderImage width='25px' src={blinkhash} alt='' />
+          <Local.HeaderImage
+            width='25px'
+            src={'/images/blinkhash-logo.png'}
+            alt=''
+          />
           <Local.HeaderTitle>
             <Global.Header3>{'Blinkhash Mining'}</Global.Header3>
           </Local.HeaderTitle>
@@ -50,7 +55,10 @@ export default function Header(props) {
           </Local.HeaderSocial>
           <Local.HeaderTheme>
             <Local.HeaderToggle onClick={props.toggleTheme}>
-              <FontAwesomeIcon icon={(props.theme === 'light') ? faSun : faMoon} />
+              <FontAwesomeIcon
+                icon={(props.theme === 'light') ? faSun : faMoon}
+                style={{ width: '20px' }}
+              />
             </Local.HeaderToggle>
           </Local.HeaderTheme>
         </Local.HeaderLinks>

@@ -1,17 +1,15 @@
-import { useState, useEffect } from 'react';
-import { withRouter } from 'react-router-dom';
+/* eslint-disable-next-line no-unused-vars */
+import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 import { LinkInternal } from '../Links';
 
 // Main Styles
 import * as Global from '../../styles';
 import * as Local from './styles';
 
-function Banner(props) {
-  const [page, updatePage] = useState('');
-
-  useEffect(() => {
-    updatePage(props.history.location.pathname);
-  }, [props.history]);
+export default function Banner() {
+  const router = useRouter();
+  const [page,] = useState(router.pathname);
 
   return (
     <Local.BannerMain>
@@ -25,14 +23,19 @@ function Banner(props) {
               <Global.Header4>{'Overview'}</Global.Header4>
             </Local.BannerSelectItem>
           </LinkInternal>
-          <LinkInternal link={'/tutorials'}>
-            <Local.BannerSelectItem active={['/tutorials'].includes(page)}>
-              <Global.Header4>{'Tutorials'}</Global.Header4>
+          <LinkInternal link={'/configurations'}>
+            <Local.BannerSelectItem active={['/configurations'].includes(page)}>
+              <Global.Header4>{'Configurations'}</Global.Header4>
             </Local.BannerSelectItem>
           </LinkInternal>
           <LinkInternal link={'/endpoints'}>
             <Local.BannerSelectItem active={['/endpoints'].includes(page)}>
               <Global.Header4>{'Endpoints'}</Global.Header4>
+            </Local.BannerSelectItem>
+          </LinkInternal>
+          <LinkInternal link={'/tutorials'}>
+            <Local.BannerSelectItem active={['/tutorials'].includes(page)}>
+              <Global.Header4>{'Tutorials'}</Global.Header4>
             </Local.BannerSelectItem>
           </LinkInternal>
           <LinkInternal link={'/questions'}>
@@ -45,5 +48,3 @@ function Banner(props) {
     </Local.BannerMain>
   );
 }
-
-export default withRouter(Banner);

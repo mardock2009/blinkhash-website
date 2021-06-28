@@ -15,7 +15,7 @@ export const componentsDark = {
           boxShadow: '',
           padding: '10px',
         }}
-        PreTag="div"
+        PreTag='div'
         wrapLines={true}
         showLineNumbers={true}
         children={String(children).replace(/\n$/, '')}
@@ -43,7 +43,7 @@ export const componentsLight = {
           boxShadow: '',
           padding: '10px',
         }}
-        PreTag="div"
+        PreTag='div'
         wrapLines={true}
         showLineNumbers={true}
         children={String(children).replace(/\n$/, '')}

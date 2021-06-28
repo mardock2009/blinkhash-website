@@ -18,7 +18,6 @@ module.exports = {
   'rules': {
     'no-var': 2,
     'semi': [2, 'always'],
-    'indent': ['error', 2],
     'no-multi-spaces': 2,
     'no-unused-vars': 2,
     'space-in-parens': 2,
@@ -41,5 +40,8 @@ module.exports = {
     'react/sort-comp': 0,
     'react-hooks/exhaustive-deps': 0,
     'react-hooks/rules-of-hooks': 'error',
+    'indent': ['error', 2, {
+      'ignoredNodes': ['TemplateLiteral']
+    }],
   }
 };

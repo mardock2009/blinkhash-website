@@ -1,3 +1,5 @@
+/* eslint-disable-next-line no-unused-vars */
+import React from 'react';
 import Button from '../Button/index';
 import { LinkExternal } from '../Links/index';
 
@@ -9,7 +11,9 @@ export default function Information(props) {
   return (
     <Local.InformationMain>
       <Local.InformationInner>
-        <Local.InformationSocial>
+        <Local.InformationSocial
+          style={{ backgroundImage: `url(${'/images/banner-background.svg'})` }}
+        >
           <Local.InformationText>
             <Global.Body>
               {'Have a question? Connect with the community in the Blinkhash Discord'}
@@ -22,14 +26,14 @@ export default function Information(props) {
         <Local.InformationDocumentation>
           <Local.InformationLocation>
             <Local.InformationDirectory>
-              <Global.Body>
+              <Global.Body2>
                 {'Blinkhash > Documentation > '}{props.location}
-              </Global.Body>
+              </Global.Body2>
             </Local.InformationDirectory>
             <Local.InformationVersion>
-              <Global.Body>
+              <Global.Body2>
                 {'Version > v1.0.0'}
-              </Global.Body>
+              </Global.Body2>
             </Local.InformationVersion>
           </Local.InformationLocation>
           <Local.InformationTitle>

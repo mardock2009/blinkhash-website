@@ -1,8 +1,10 @@
+/* eslint-disable-next-line no-unused-vars */
+import React from 'react';
 import * as Local from './styles';
 
 export function LinkInternal(props) {
   return (
-    <Local.LinkInternal to={props.link}>
+    <Local.LinkInternal href={props.link}>
       {props.children}
     </Local.LinkInternal>
   );

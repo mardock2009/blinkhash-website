@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import background from '../../assets/images/banner-background.svg';
 
 export const InformationMain = styled.div`
   width: 100%;
+  max-width: 900px;
   padding: 20px 25px;
   color: ${(props) => props.theme.textInformation};
   background-color: ${(props) => props.theme.backgroundInformation};
@@ -30,7 +30,6 @@ export const InformationSocial = styled.div`
   padding: 20px;
   border: 1px solid ${(props) => props.theme.backgroundInformationSecondary};
   background-color: ${(props) => props.theme.backgroundInformationSecondary};
-  background-image: url(${background});
   background-position: center;
   border-radius: 10px 10px 0px 0px;
   @media (max-width: 1000px) {
@@ -90,5 +89,5 @@ export const InformationTitle = styled.div`
   width: calc(100%);
   margin-bottom: 15px;
   padding-bottom: 15px;
-  border-bottom: 1px solid ${(props) => props.theme.borderInformation};
+  border-bottom: 3px solid ${(props) => props.theme.borderInformation};
 `;

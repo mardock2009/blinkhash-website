@@ -1,7 +1,4 @@
 import styled from 'styled-components';
-import discord from '../../assets/images/discord-logo.png';
-import medium from '../../assets/images/medium-logo.png';
-import github from '../../assets/images/github-logo.png';
 
 export const HeaderMain = styled.div`
   width: 100%;
@@ -65,6 +62,9 @@ export const HeaderPages = styled.div`
 
 export const HeaderText = styled.div `
   color: ${(props) => props.theme.textHeader};
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const HeaderSocial = styled.div`
@@ -84,6 +84,7 @@ export const HeaderSocialIcon = styled.a`
   border: 1px solid ${(props) => props.theme.borderHeader};
   color: ${(props) => props.theme.textHeader};
   font-size: 18px;
+  transition: 0.2s ease-in all;
   &:hover {
     color: ${(props) => props.theme.textHeader};
     background-color: ${(props) => props.theme.accessoryHover};
@@ -102,21 +103,21 @@ export const Discord = styled.div`
   width: 19px;
   height: 14px;
   background-size: contain;
-  background-image: url(${discord});
+  background-image: url('/images/discord-logo.png');
 `;
 
 export const Medium = styled.div`
   width: 19px;
   height: 14px;
   background-size: contain;
-  background-image: url(${medium});
+  background-image: url('/images/medium-logo.png');
 `;
 
 export const Github = styled.div`
   width: 22px;
   height: 22px;
   background-size: contain;
-  background-image: url(${github});
+  background-image: url('/images/github-logo.png');
 `;
 
 export const HeaderTheme = styled.div`
@@ -134,6 +135,7 @@ export const HeaderToggle = styled.div`
   border: 1px solid ${(props) => props.theme.borderHeader};
   color: ${(props) => props.theme.textHeader};
   font-size: 18px;
+  transition: 0.2s ease-in all;
   &:hover {
     color: ${(props) => props.theme.textHeader};
     background-color: ${(props) => props.theme.accessoryHover};

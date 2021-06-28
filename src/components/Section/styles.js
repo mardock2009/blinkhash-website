@@ -31,9 +31,9 @@ export const SectionHeader = styled.div`
   width: calc(100% - 25px);
   padding: 3px 0px 3px 25px;
   border-radius: 0px 10px 10px 0px;
-  font-family: "Lato Regular", sans-serif;
+  font-family: 'Lato Regular', sans-serif;
   font-weight: 400;
-  font-size: 13px;
+  font-size: 14px;
   ${(props) => props.active && `
     background-color: ${props.theme.backgroundSidenavSecondary};
   `}
@@ -50,11 +50,18 @@ export const SectionInformation = styled.div`
   width: 100%;
 `;
 
+export const SectionInformationInner = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 export const SectionBody = styled.div`
   width: calc(100% + 50px);
   padding: 0px 25px;
   margin-bottom: 15px;
-  border-bottom: 2px solid ${(props) => props.theme.borderInformation};
+  border-bottom: 3px solid ${(props) => props.theme.borderInformation};
   &:last-child {
     margin-bottom: -1rem;
     border-bottom: 0px;
@@ -63,7 +70,7 @@ export const SectionBody = styled.div`
 
 export const SectionText = styled.div`
   margin-bottom: 15px;
-  border-bottom: 1px solid ${(props) => props.theme.borderInformation};
+  border-bottom: 3px solid ${(props) => props.theme.borderInformation};
   &:last-child {
     margin-bottom: 0px;
     border-bottom: 0px;
