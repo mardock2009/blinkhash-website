@@ -8,14 +8,10 @@
   },
   "scripts": {
     "dev": "next dev",
+    "build": "next build && next export",
     "start": "next start",
-    "clean": "eslint . --ext .js --ignore-pattern node_modules/",
-    "clean:fix": "eslint . --ext .js --fix --ignore-pattern node_modules/",
-    "dev:start": "pm2 start npm --name next -- run dev",
-    "dev:stop": "pm2 stop next",
-    "prod:build": "next build",
-    "prod:start": "pm2 start npm --name next -- start",
-    "prod:stop": "pm2 stop next"
+    "clean": "eslint . --ext .js --ignore-pattern node_modules/ --ignore-pattern out/",
+    "clean:fix": "eslint . --ext .js --fix --ignore-pattern node_modules/ --ignore-pattern out/"
   },
   "contributors": [],
   "repository": {
@@ -55,7 +51,6 @@
     "isomorphic-style-loader": "5.1.0",
     "mini-css-extract-plugin": "0.9.0",
     "net": "^1.0.2",
-    "pm2": "4.4.0",
     "react-router-config": "^5.1.1",
     "speed-measure-webpack-plugin": "1.3.3",
     "svg-url-loader": "^7.1.1",

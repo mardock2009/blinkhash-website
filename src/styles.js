@@ -9,6 +9,20 @@ export const GlobalMain = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  // Font Styles
+  @font-face {
+    font-family: 'Lato Bold';
+    src: url('/fonts/Lato-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Lato Regular';
+    src: url('/fonts/Lato-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
   // Main Styles
   html {
     font-family: sans-serif;

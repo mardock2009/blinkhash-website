@@ -13,6 +13,7 @@
 /build
 /build-dev
 /build-prod
+/out
 
 # misc
 .DS_Store
