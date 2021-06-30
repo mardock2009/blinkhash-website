@@ -12,7 +12,17 @@ pipeline {
     stage('Install Dependencies') {
       steps {
         echo 'Installing Project Dependencies ...'
-        sh 'npm install --cache=".jenkinsnpm"'
+        sh 'npm install --cache=.jenkinsnpm'
+      }
+    }
+
+    // Build Docker Container
+    stage('Docker Build') {
+      steps {
+        echo 'Building Docker Container ...'
+        script {
+          def dockerImage = docker.build("blinkhash-documentation")
+        }
       }
     }
   }
