@@ -14,6 +14,15 @@ node {
   env.ecsDefinitionDev = 'file://aws/task-definition.dev.json'
   env.ecsServiceDev = 'blinkhash-dev-documentation-service'
 
+  // Infrastructure Variables (QA)
+  env.ecsFamilyQA = 'blinkhash-qa-documentation'
+  env.ecsClusterQA = 'blinkhash-qa-documentation'
+  env.ecsDefinitionQA = 'file://aws/task-definition.qa.json'
+  env.ecsServiceQA = 'blinkhash-qa-documentation-service'
+
+  // Check to Deploy [1]
+  input "Build Docker Image?"
+
   // Clone Current Repository
   stage('Clone Repository') {
     echo 'Cloning Current Repository State ...'
@@ -34,6 +43,9 @@ node {
       dockerImage.push('latest')
     }
   }
+
+  // Check to Deploy [2]
+  input "Deploy to Dev Environment?"
 
   // Register Task Definition (Dev)
   stage('Dev - Register Task Definition') {
@@ -60,6 +72,17 @@ node {
       --cluster ${ env.ecsClusterDev } \
       --service ${ env.ecsServiceDev } \
       --task-definition ${ env.ecsFamilyDev }:${ taskRevision } \
-      --desired-count 2")
+      --desired-count 1")
+  }
+
+  // Check to Deploy [3]
+  input "Deploy to QA Environment?"
+
+  // Register Task Definition (QA)
+  stage('QA - Register Task Definition') {
+    echo 'Handling Task Definition Registration ...'
+    sh("aws ecs register-task-definition \
+      --family ${ env.ecsFamilyQA } \
+      --cli-input-json ${ env.ecsDefinitionQA }")
   }
 }
