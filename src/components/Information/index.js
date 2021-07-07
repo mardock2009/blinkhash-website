@@ -12,7 +12,7 @@ export default function Information(props) {
     <Local.InformationMain>
       <Local.InformationInner>
         <Local.InformationSocial
-          style={{ backgroundImage: `url(${'/images/banner-background.svg'})` }}
+          style={{ backgroundImage: `url(${'/images/banner-background.png'})` }}
         >
           <Local.InformationText>
             <Global.Body>
