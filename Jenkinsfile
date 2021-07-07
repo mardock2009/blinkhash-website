@@ -1,8 +1,62 @@
+properties([
+  parameters([
+    booleanParam(name: 'overrideDefaults', defaultValue: false, description: 'Override defaults - if this is false, all of the following options will do nothing'),
+    booleanParam(name: 'uploadDevTaskDescription', defaultValue: false, description: 'Push the current task definition for the Dev environment to AWS'),
+    booleanParam(name: 'uploadQATaskDescription', defaultValue: false, description: 'Push the current task definition for the QA environment to AWS'),
+    booleanParam(name: 'uploadProdTaskDescription', defaultValue: false, description: 'Push the current task definition for the Prod environment to AWS'),
+    choice(name: 'deployEnvironment', choices: "none\ndev\nqa\ndev-qa\nprod\nall", defaultValue: "none", description: "The environment to deploy to - 'all' will deploy to all environments in order"),
+  ])
+])
+
 node {
 
   // Initialize Variables
   def dockerImage = null
   def taskRevision = null
+  def deployDev = false
+  def deployQA = false
+  def deployProd = false
+
+  if (params.overrideDefaults) {
+    if (params.deployEnvironment == 'none') {
+      deployDev = false
+      deployQA = false
+      deployProd = false
+    } else if (params.deployEnvironment == 'dev') {
+      deployDev = true
+      deployQA = false
+      deployProd = false
+    } else if (params.deployEnvironment == 'qa') {
+      deployDev = false
+      deployQA = true
+      deployProd = false
+    } else if (params.deployEnvironment == 'dev-qa') {
+      deployDev = true
+      deployQA = true
+      deployProd = false
+    } else if (params.deployEnvironment == 'prod') {
+      deployDev = false
+      deployQA = false
+      deployProd = true
+    } else if (params.deployEnvironment == 'all') {
+      deployDev = true
+      deployQA = true
+      deployProd = true
+    }
+
+  } else if (BRANCH_NAME.equals('master')) {
+    deployDev = true
+    deployQA = true
+    deployProd = false
+  } else if (BRANCH_NAME.equals('dev')) {
+    deployDev = true
+    deployQA = false
+    deployProd = false
+  } else {
+    deployDev = false
+    deployQA = false
+    deployProd = false
+  }
 
   // Environment Variables (Main)
   env.ecrRegistry = 'https://348473643547.dkr.ecr.us-east-1.amazonaws.com/blinkhash-documentation'
