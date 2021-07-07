@@ -20,9 +20,6 @@ node {
   env.ecsDefinitionQA = 'file://aws/task-definition.qa.json'
   env.ecsServiceQA = 'blinkhash-qa-documentation-service'
 
-  // Check to Deploy [1]
-  input "Build Docker Image?"
-
   // Clone Current Repository
   stage('Clone Repository') {
     echo 'Cloning Current Repository State ...'
@@ -44,7 +41,7 @@ node {
     }
   }
 
-  // Check to Deploy [2]
+  // Check to Deploy [1]
   input "Deploy to Dev Environment?"
 
   // Register Task Definition (Dev)
@@ -75,7 +72,7 @@ node {
       --desired-count 1")
   }
 
-  // Check to Deploy [3]
+  // Check to Deploy [2]
   input "Deploy to QA Environment?"
 
   // Register Task Definition (QA)
