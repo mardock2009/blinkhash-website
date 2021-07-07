@@ -1,7 +1,6 @@
 properties([
   parameters([
     booleanParam(name: 'overrideDefaults', defaultValue: false, description: 'Override defaults - if this is false, all of the following options will do nothing'),
-    choice(name: 'uploadEnvironment', choices: "none\ndev\nqa\ndev-qa\nprod\nall", description: "The environment to push task descriptions to - 'all' will deploy to all environments in order"),
     choice(name: 'deployEnvironment', choices: "none\ndev\nqa\ndev-qa\nprod\nall", description: "The environment to deploy to - 'all' will deploy to all environments in order"),
   ])
 ])
@@ -11,46 +10,12 @@ node {
   // Initialize Variables
   def dockerImage = null
   def taskRevision = null
-  def uploadDev = false
-  def uploadQA = false
-  def uploadProd = false
   def deployDev = false
   def deployQA = false
   def deployProd = false
 
   // Handle Overridden Behavior
   if (params.overrideDefaults) {
-
-    // Manage Upload Parameter
-    if (params.uploadEnvironment == 'none') {
-      uploadDev = false
-      uploadQA = false
-      uploadProd = false
-    } else if (params.uploadEnvironment == 'dev') {
-      uploadDev = true
-      uploadQA = false
-      uploadProd = false
-    } else if (params.uploadEnvironment == 'qa') {
-      uploadDev = false
-      uploadQA = true
-      uploadProd = false
-    } else if (params.uploadEnvironment == 'dev-qa') {
-      uploadDev = true
-      uploadQA = true
-      uploadProd = false
-    } else if (params.uploadEnvironment == 'prod') {
-      uploadDev = false
-      uploadQA = false
-      uploadProd = true
-    } else if (params.uploadEnvironment == 'all') {
-      uploadDev = true
-      uploadQA = true
-      uploadProd = true
-    } else {
-      uploadDev = false
-      uploadQA = false
-      uploadProd = false
-    }
 
     // Manage Environment Parameter
     if (params.deployEnvironment == 'none') {
@@ -85,23 +50,14 @@ node {
 
   // Handle Default Behavior
   } else if (BRANCH_NAME.equals('master')) {
-    uploadDev = false
-    uploadQA = false
-    uploadProd = false
     deployDev = true
     deployQA = true
     deployProd = false
   } else if (BRANCH_NAME.equals('dev')) {
-    uploadDev = false
-    uploadQA = false
-    uploadProd = false
     deployDev = true
     deployQA = false
     deployProd = false
   } else {
-    uploadDev = false
-    uploadQA = false
-    uploadProd = false
     deployDev = false
     deployQA = false
     deployProd = false
@@ -146,7 +102,7 @@ node {
 
   // Register Task Definition (Dev)
   stage('Dev - Register Task Definition') {
-    if (uploadDev) {
+    if (deployDev) {
       echo 'Handling Task Definition Registration ...'
       sh("aws ecs register-task-definition \
         --family ${ env.ecsFamilyDev } \
@@ -180,7 +136,7 @@ node {
 
   // Register Task Definition (QA)
   stage('QA - Register Task Definition') {
-    if (uploadQA) {
+    if (deployQA) {
       echo 'Handling Task Definition Registration ...'
       sh("aws ecs register-task-definition \
         --family ${ env.ecsFamilyQA } \
