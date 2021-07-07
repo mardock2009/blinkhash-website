@@ -60,6 +60,6 @@ node {
       --cluster ${ env.ecsClusterDev } \
       --service ${ env.ecsServiceDev } \
       --task-definition ${ env.ecsFamilyDev }:${ taskRevision } \
-      --desired-count 1")
+      --desired-count 2")
   }
 }
