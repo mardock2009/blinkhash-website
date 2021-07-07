@@ -57,14 +57,6 @@ node {
     }
 
   // Handle Default Behavior
-  } else if (BRANCH_NAME.equals('master')) {
-    deployDev = true
-    deployQA = true
-    deployProd = false
-  } else if (BRANCH_NAME.equals('dev')) {
-    deployDev = true
-    deployQA = false
-    deployProd = false
   } else {
     deployDev = false
     deployQA = false
