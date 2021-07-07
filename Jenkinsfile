@@ -1,7 +1,15 @@
 properties([
   parameters([
-    booleanParam(name: 'overrideDefaults', defaultValue: false, description: 'Override defaults - if this is false, all of the following options will do nothing'),
-    choice(name: 'deployEnvironment', choices: "none\ndev\nqa\ndev-qa\nprod\nall", description: "The environment to deploy to - 'all' will deploy to all environments in order"),
+    booleanParam(
+      name: 'overrideDefaults',
+      defaultValue: false,
+      description: 'Override defaults - if this is false, all of the following options will do nothing',
+    ),
+    choice(
+      name: 'deployEnvironment',
+      choices: "none\ndev\nqa\ndev-qa\nprod\nall",
+      description: "The environment to deploy to - 'all' will deploy to all environments in order",
+    ),
   ])
 ])
 
@@ -78,6 +86,12 @@ node {
   env.ecsClusterQA = 'blinkhash-qa-documentation'
   env.ecsDefinitionQA = 'file://aws/task-definition.qa.json'
   env.ecsServiceQA = 'blinkhash-qa-documentation-service'
+
+  // Infrastructure Variables (Prod)
+  env.ecsFamilyProd = 'blinkhash-prod-documentation'
+  env.ecsClusterProd = 'blinkhash-prod-documentation'
+  env.ecsDefinitionProd = 'file://aws/task-definition.prod.json'
+  env.ecsServiceProd = 'blinkhash-prod-documentation-service'
 
   // Clone Current Repository
   stage('Clone Repository') {
@@ -165,6 +179,16 @@ node {
         --service ${ env.ecsServiceQA } \
         --task-definition ${ env.ecsFamilyQA }:${ taskRevision } \
         --desired-count 1")
+    }
+  }
+
+  // Register Task Definition (Prod)
+  stage('Prod - Register Task Definition') {
+    if (deployProd) {
+      echo 'Handling Task Definition Registration ...'
+      sh("aws ecs register-task-definition \
+        --family ${ env.ecsFamilyProd } \
+        --cli-input-json ${ env.ecsDefinitionProd }")
     }
   }
 }
