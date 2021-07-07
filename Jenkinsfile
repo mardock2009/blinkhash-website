@@ -191,4 +191,28 @@ node {
         --cli-input-json ${ env.ecsDefinitionProd }")
     }
   }
+
+  // Get Last Task Revision (Prod)
+  stage('Prod - Load Last Task Revision') {
+    if (deployProd) {
+      echo 'Check Task Definition and Get Last Revision ...'
+      taskRevision = sh(returnStdout: true, script: "aws ecs describe-task-definition \
+        --task-definition ${ env.ecsFamilyProd } \
+        | egrep 'revision' \
+        | tr ',' ' ' \
+        | awk '{ print \$2 }'").trim()
+    }
+  }
+
+  // Deploy to Cluster Service (Prod)
+  stage('Prod - Deploy to Cluster Service') {
+    if (deployProd) {
+      echo 'Deploying to Quality Assurance Cluster ...'
+      sh("aws ecs update-service \
+        --cluster ${ env.ecsClusterProd } \
+        --service ${ env.ecsServiceProd } \
+        --task-definition ${ env.ecsFamilyProd }:${ taskRevision } \
+        --desired-count 3")
+    }
+  }
 }
