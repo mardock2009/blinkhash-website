@@ -4,16 +4,19 @@ node {
   def dockerImage = null
   def taskRevision = null
 
-  // Environment Variables
+  // Environment Variables (Main)
   env.ecrRegistry = 'https://348473643547.dkr.ecr.us-east-1.amazonaws.com/blinkhash-documentation'
   env.ecrCredentials = 'ecr:us-east-1:blinkhash-documentation-aws-key'
-  env.ecsFamily = 'blinkhash-documentation'
-  env.ecsDefinition = 'file://task-definition.json'
 
-  // Infrastructure Variables
-  env.ecsClusterDev = 'blinkhash-dev-documentation'
-  env.ecsClusterQA = 'blinkhash-qa-documentation'
-  env.ecsClusterProd = 'blinkhash-prod-documentation'
+  // Infrastructure Variables (Family/Cluster)
+  env.ecsFamilyDev = 'blinkhash-dev-documentation'
+  env.ecsFamilyQA = 'blinkhash-qa-documentation'
+  env.ecsFamilyProd = 'blinkhash-prod-documentation'
+
+  // Infrastructure Variables (Task Definitions)
+  env.ecsDefinitionDev = 'file://aws/task-definition.dev.json'
+  env.ecsDefinitionQA = 'file://aws/task-definition.qa.json'
+  env.ecsDefinitionProd = 'file://aws/task-definition.prod.json'
 
   // Clone Current Repository
   stage('Clone Repository') {
@@ -36,31 +39,31 @@ node {
     }
   }
 
-  // Register Task Definition
-  stage('Register Task Definition') {
+  // Register Task Definition (Dev)
+  stage('Register Task Definition (Dev)') {
     echo 'Handling Task Definition Registration ...'
     sh("aws ecs register-task-definition \
-      --family ${ env.ecsFamily } \
-      --cli-input-json ${ env.ecsDefinition }")
+      --family ${ env.ecsFamilyDev } \
+      --cli-input-json ${ env.ecsDefinitionDev }")
   }
 
-  // Get Last Task Revision
-  stage('Load Last Task Revision') {
+  // Get Last Task Revision (Dev)
+  stage('Load Last Task Revision (Dev)') {
     echo 'Check Task Definition and Get Last Revision ...'
     taskRevision = sh(returnStdout: true, script: "aws ecs describe-task-definition \
-      --task-definition ${ env.ecsFamily } \
+      --task-definition ${ env.ecsFamilyDev } \
       | egrep 'revision' \
       | tr ',' ' ' \
       | awk '{ print \$2 }'").trim()
   }
 
-  // Deploy to Development Cluster
-  stage('Deploy to Development Cluster') {
+  // Deploy to Cluster Service (Dev)
+  stage('Deploy to Cluster Service (Dev)') {
     echo 'Deploying to Development Cluster ...'
     sh("aws ecs update-service \
-      --cluster ${ env.ecsClusterDev } \
-      --service ${ env.ecsFamily } \
-      --task-definition ${ env.ecsFamily }:${ taskRevision } \
+      --cluster ${ env.ecsFamilyDev } \
+      --service ${ env.ecsFamilyDev } \
+      --task-definition ${ env.ecsFamilyDev }:${ taskRevision } \
       --desired-count 1")
   }
 }

@@ -1,9 +1,9 @@
 {
-  "family": "blinkhash-documentation",
+  "family": "blinkhash-dev-documentation",
   "executionRoleArn": "arn:aws:iam::348473643547:role/Blinkhash-ECS",
   "containerDefinitions": [
     {
-      "name": "blinkhash-documentation",
+      "name": "blinkhash-dev-documentation",
       "image": "348473643547.dkr.ecr.us-east-1.amazonaws.com/blinkhash-documentation:latest",
       "portMappings": [
         {
@@ -28,9 +28,9 @@
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "/ecs/blinkhash-documentation",
+          "awslogs-group": "blinkhash-dev-documentation",
           "awslogs-region": "us-east-1",
-          "awslogs-stream-prefix": "ecs"
+          "awslogs-stream-prefix": "ecs-dev"
         }
       }
     }
