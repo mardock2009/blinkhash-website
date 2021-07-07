@@ -82,4 +82,24 @@ node {
       --family ${ env.ecsFamilyQA } \
       --cli-input-json ${ env.ecsDefinitionQA }")
   }
+
+  // Get Last Task Revision (QA)
+  stage('QA - Load Last Task Revision') {
+    echo 'Check Task Definition and Get Last Revision ...'
+    taskRevision = sh(returnStdout: true, script: "aws ecs describe-task-definition \
+      --task-definition ${ env.ecsFamilyQA } \
+      | egrep 'revision' \
+      | tr ',' ' ' \
+      | awk '{ print \$2 }'").trim()
+  }
+
+  // Deploy to Cluster Service (QA)
+  stage('QA - Deploy to Cluster Service') {
+    echo 'Deploying to Quality Assurance Cluster ...'
+    sh("aws ecs update-service \
+      --cluster ${ env.ecsClusterQA } \
+      --service ${ env.ecsServiceQA } \
+      --task-definition ${ env.ecsFamilyQA }:${ taskRevision } \
+      --desired-count 1")
+  }
 }
