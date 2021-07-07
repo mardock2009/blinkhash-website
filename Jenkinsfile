@@ -1,10 +1,8 @@
 properties([
   parameters([
     booleanParam(name: 'overrideDefaults', defaultValue: false, description: 'Override defaults - if this is false, all of the following options will do nothing'),
-    booleanParam(name: 'uploadDevTaskDescription', defaultValue: false, description: 'Push the current task definition for the Dev environment to AWS'),
-    booleanParam(name: 'uploadQATaskDescription', defaultValue: false, description: 'Push the current task definition for the QA environment to AWS'),
-    booleanParam(name: 'uploadProdTaskDescription', defaultValue: false, description: 'Push the current task definition for the Prod environment to AWS'),
-    choice(name: 'deployEnvironment', choices: "none\ndev\nqa\ndev-qa\nprod\nall", defaultValue: "none", description: "The environment to deploy to - 'all' will deploy to all environments in order"),
+    choice(name: 'uploadEnvironment', choices: "none\ndev\nqa\ndev-qa\nprod\nall", description: "The environment to push task descriptions to - 'all' will deploy to all environments in order"),
+    choice(name: 'deployEnvironment', choices: "none\ndev\nqa\ndev-qa\nprod\nall", description: "The environment to deploy to - 'all' will deploy to all environments in order"),
   ])
 ])
 
@@ -13,11 +11,48 @@ node {
   // Initialize Variables
   def dockerImage = null
   def taskRevision = null
+  def uploadDev = false
+  def uploadQA = false
+  def uploadProd = false
   def deployDev = false
   def deployQA = false
   def deployProd = false
 
+  // Handle Overridden Behavior
   if (params.overrideDefaults) {
+
+    // Manage Upload Parameter
+    if (params.uploadEnvironment == 'none') {
+      uploadDev = false
+      uploadQA = false
+      uploadProd = false
+    } else if (params.uploadEnvironment == 'dev') {
+      uploadDev = true
+      uploadQA = false
+      uploadProd = false
+    } else if (params.uploadEnvironment == 'qa') {
+      uploadDev = false
+      uploadQA = true
+      uploadProd = false
+    } else if (params.uploadEnvironment == 'dev-qa') {
+      uploadDev = true
+      uploadQA = true
+      uploadProd = false
+    } else if (params.uploadEnvironment == 'prod') {
+      uploadDev = false
+      uploadQA = false
+      uploadProd = true
+    } else if (params.uploadEnvironment == 'all') {
+      uploadDev = true
+      uploadQA = true
+      uploadProd = true
+    } else {
+      uploadDev = false
+      uploadQA = false
+      uploadProd = false
+    }
+
+    // Manage Environment Parameter
     if (params.deployEnvironment == 'none') {
       deployDev = false
       deployQA = false
@@ -42,17 +77,31 @@ node {
       deployDev = true
       deployQA = true
       deployProd = true
+    } else {
+      deployDev = false
+      deployQA = false
+      deployProd = false
     }
 
+  // Handle Default Behavior
   } else if (BRANCH_NAME.equals('master')) {
+    uploadDev = false
+    uploadQA = false
+    uploadProd = false
     deployDev = true
     deployQA = true
     deployProd = false
   } else if (BRANCH_NAME.equals('dev')) {
+    uploadDev = false
+    uploadQA = false
+    uploadProd = false
     deployDev = true
     deployQA = false
     deployProd = false
   } else {
+    uploadDev = false
+    uploadQA = false
+    uploadProd = false
     deployDev = false
     deployQA = false
     deployProd = false
@@ -95,65 +144,71 @@ node {
     }
   }
 
-  // Check to Deploy [1]
-  input "Deploy to Dev Environment?"
-
   // Register Task Definition (Dev)
   stage('Dev - Register Task Definition') {
-    echo 'Handling Task Definition Registration ...'
-    sh("aws ecs register-task-definition \
-      --family ${ env.ecsFamilyDev } \
-      --cli-input-json ${ env.ecsDefinitionDev }")
+    if (uploadDev) {
+      echo 'Handling Task Definition Registration ...'
+      sh("aws ecs register-task-definition \
+        --family ${ env.ecsFamilyDev } \
+        --cli-input-json ${ env.ecsDefinitionDev }")
+    }
   }
 
   // Get Last Task Revision (Dev)
   stage('Dev - Load Last Task Revision') {
-    echo 'Check Task Definition and Get Last Revision ...'
-    taskRevision = sh(returnStdout: true, script: "aws ecs describe-task-definition \
-      --task-definition ${ env.ecsFamilyDev } \
-      | egrep 'revision' \
-      | tr ',' ' ' \
-      | awk '{ print \$2 }'").trim()
+    if (deployDev) {
+      echo 'Check Task Definition and Get Last Revision ...'
+      taskRevision = sh(returnStdout: true, script: "aws ecs describe-task-definition \
+        --task-definition ${ env.ecsFamilyDev } \
+        | egrep 'revision' \
+        | tr ',' ' ' \
+        | awk '{ print \$2 }'").trim()
+    }
   }
 
   // Deploy to Cluster Service (Dev)
   stage('Dev - Deploy to Cluster Service') {
-    echo 'Deploying to Development Cluster ...'
-    sh("aws ecs update-service \
-      --cluster ${ env.ecsClusterDev } \
-      --service ${ env.ecsServiceDev } \
-      --task-definition ${ env.ecsFamilyDev }:${ taskRevision } \
-      --desired-count 1")
+    if (deployDev) {
+      echo 'Deploying to Development Cluster ...'
+      sh("aws ecs update-service \
+        --cluster ${ env.ecsClusterDev } \
+        --service ${ env.ecsServiceDev } \
+        --task-definition ${ env.ecsFamilyDev }:${ taskRevision } \
+        --desired-count 1")
+    }
   }
-
-  // Check to Deploy [2]
-  input "Deploy to QA Environment?"
 
   // Register Task Definition (QA)
   stage('QA - Register Task Definition') {
-    echo 'Handling Task Definition Registration ...'
-    sh("aws ecs register-task-definition \
-      --family ${ env.ecsFamilyQA } \
-      --cli-input-json ${ env.ecsDefinitionQA }")
+    if (uploadQA) {
+      echo 'Handling Task Definition Registration ...'
+      sh("aws ecs register-task-definition \
+        --family ${ env.ecsFamilyQA } \
+        --cli-input-json ${ env.ecsDefinitionQA }")
+    }
   }
 
   // Get Last Task Revision (QA)
   stage('QA - Load Last Task Revision') {
-    echo 'Check Task Definition and Get Last Revision ...'
-    taskRevision = sh(returnStdout: true, script: "aws ecs describe-task-definition \
-      --task-definition ${ env.ecsFamilyQA } \
-      | egrep 'revision' \
-      | tr ',' ' ' \
-      | awk '{ print \$2 }'").trim()
+    if (deployQA) {
+      echo 'Check Task Definition and Get Last Revision ...'
+      taskRevision = sh(returnStdout: true, script: "aws ecs describe-task-definition \
+        --task-definition ${ env.ecsFamilyQA } \
+        | egrep 'revision' \
+        | tr ',' ' ' \
+        | awk '{ print \$2 }'").trim()
+    }
   }
 
   // Deploy to Cluster Service (QA)
   stage('QA - Deploy to Cluster Service') {
-    echo 'Deploying to Quality Assurance Cluster ...'
-    sh("aws ecs update-service \
-      --cluster ${ env.ecsClusterQA } \
-      --service ${ env.ecsServiceQA } \
-      --task-definition ${ env.ecsFamilyQA }:${ taskRevision } \
-      --desired-count 1")
+    if (deployQA) {
+      echo 'Deploying to Quality Assurance Cluster ...'
+      sh("aws ecs update-service \
+        --cluster ${ env.ecsClusterQA } \
+        --service ${ env.ecsServiceQA } \
+        --task-definition ${ env.ecsFamilyQA }:${ taskRevision } \
+        --desired-count 1")
+    }
   }
 }
