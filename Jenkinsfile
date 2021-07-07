@@ -8,15 +8,11 @@ node {
   env.ecrRegistry = 'https://348473643547.dkr.ecr.us-east-1.amazonaws.com/blinkhash-documentation'
   env.ecrCredentials = 'ecr:us-east-1:blinkhash-documentation-aws-key'
 
-  // Infrastructure Variables (Family/Cluster)
+  // Infrastructure Variables (Dev)
   env.ecsFamilyDev = 'blinkhash-dev-documentation'
-  env.ecsFamilyQA = 'blinkhash-qa-documentation'
-  env.ecsFamilyProd = 'blinkhash-prod-documentation'
-
-  // Infrastructure Variables (Task Definitions)
+  env.ecsClusterDev = 'blinkhash-dev-documentation'
   env.ecsDefinitionDev = 'file://aws/task-definition.dev.json'
-  env.ecsDefinitionQA = 'file://aws/task-definition.qa.json'
-  env.ecsDefinitionProd = 'file://aws/task-definition.prod.json'
+  env.ecsServiceDev = 'blinkhash-dev-documentation-service'
 
   // Clone Current Repository
   stage('Clone Repository') {
@@ -40,7 +36,7 @@ node {
   }
 
   // Register Task Definition (Dev)
-  stage('Register Task Definition (Dev)') {
+  stage('Dev - Register Task Definition') {
     echo 'Handling Task Definition Registration ...'
     sh("aws ecs register-task-definition \
       --family ${ env.ecsFamilyDev } \
@@ -48,7 +44,7 @@ node {
   }
 
   // Get Last Task Revision (Dev)
-  stage('Load Last Task Revision (Dev)') {
+  stage('Dev - Load Last Task Revision') {
     echo 'Check Task Definition and Get Last Revision ...'
     taskRevision = sh(returnStdout: true, script: "aws ecs describe-task-definition \
       --task-definition ${ env.ecsFamilyDev } \
@@ -58,11 +54,11 @@ node {
   }
 
   // Deploy to Cluster Service (Dev)
-  stage('Deploy to Cluster Service (Dev)') {
+  stage('Dev - Deploy to Cluster Service') {
     echo 'Deploying to Development Cluster ...'
     sh("aws ecs update-service \
-      --cluster ${ env.ecsFamilyDev } \
-      --service ${ env.ecsFamilyDev } \
+      --cluster ${ env.ecsClusterDev } \
+      --service ${ env.ecsServiceDev } \
       --task-definition ${ env.ecsFamilyDev }:${ taskRevision } \
       --desired-count 1")
   }
