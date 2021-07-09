@@ -3,12 +3,17 @@ properties([
     booleanParam(
       name: 'overrideDefaults',
       defaultValue: false,
-      description: 'Override defaults - if this is false, all of the following options will do nothing',
+      description: 'Override defaults - if this is false, all of the following options will do nothing.',
+    ),
+    booleanParam(
+      name: 'deployImage',
+      defaultValue: true,
+      description: 'Deploy Image to ECR - if this is false, the latest image will be used to deploy.',
     ),
     choice(
       name: 'deployEnvironment',
       choices: "none\ndev\nqa\ndev-qa\nprod\nall",
-      description: "The environment to deploy to - 'all' will deploy to all environments in order",
+      description: "The environment to deploy to - 'all' will deploy to all environments in order.",
     ),
   ])
 ])
@@ -18,12 +23,20 @@ node {
   // Initialize Variables
   def dockerImage = null
   def taskRevision = null
+  def deployImage = true
   def deployDev = false
   def deployQA = false
   def deployProd = false
 
   // Handle Overridden Behavior
   if (params.overrideDefaults) {
+
+    // Manage Image Parameter
+    if (params.deployImage) {
+      deployImage = true
+    } else {
+      deployImage = false
+    }
 
     // Manage Environment Parameter
     if (params.deployEnvironment == 'none') {
@@ -58,6 +71,7 @@ node {
 
   // Handle Default Behavior
   } else {
+    deployImage = true
     deployDev = false
     deployQA = false
     deployProd = false
@@ -93,16 +107,20 @@ node {
 
   // Build Docker Image
   stage('Build Docker Image') {
-    echo 'Building Docker Image ...'
-    dockerImage = docker.build('blinkhash-documentation')
+    if (deployImage) {
+      echo 'Building Docker Image ...'
+      dockerImage = docker.build('blinkhash-documentation')
+    }
   }
 
   // Push Image to AWS ECR
   stage('Save Docker Image') {
-    echo 'Pushing Image to Registry ...'
-    docker.withRegistry(env.ecrRegistry, env.ecrCredentials) {
-      dockerImage.push(env.BUILD_NUMBER)
-      dockerImage.push('latest')
+    if (deployImage) {
+      echo 'Pushing Image to Registry ...'
+      docker.withRegistry(env.ecrRegistry, env.ecrCredentials) {
+        dockerImage.push(env.BUILD_NUMBER)
+        dockerImage.push('latest')
+      }
     }
   }
 
