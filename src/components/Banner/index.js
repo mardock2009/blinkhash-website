@@ -33,11 +33,6 @@ export default function Banner() {
               <Global.Header4>{'Endpoints'}</Global.Header4>
             </Local.BannerSelectItem>
           </LinkInternal>
-          <LinkInternal link={'/tutorials'}>
-            <Local.BannerSelectItem active={['/tutorials'].includes(page)}>
-              <Global.Header4>{'Tutorials'}</Global.Header4>
-            </Local.BannerSelectItem>
-          </LinkInternal>
           <LinkInternal link={'/questions'}>
             <Local.BannerSelectItem active={['/questions'].includes(page)}>
               <Global.Header4>{'FAQs'}</Global.Header4>

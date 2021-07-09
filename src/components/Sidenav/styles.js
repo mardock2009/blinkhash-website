@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const SidenavMain = styled.div`
-  width: 280px;
+  min-width: 280px;
   min-height: calc(100vh - 70px);
   padding: 20px 25px;
   display: flex;

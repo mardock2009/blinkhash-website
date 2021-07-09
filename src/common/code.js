@@ -12,8 +12,10 @@ export const componentsDark = {
         customStyle={{
           backgroundColor: '#161b22',
           border: '1px solid #3e4559',
-          boxShadow: '',
+          borderRadius: '5px',
+          boxShadow: 'none',
           padding: '10px',
+          fontSize: '12px',
         }}
         PreTag='div'
         wrapLines={true}
@@ -40,8 +42,10 @@ export const componentsLight = {
         customStyle={{
           backgroundColor: '#f6f8fa',
           border: '1px solid #cccccc',
-          boxShadow: '',
+          borderRadius: '5px',
+          boxShadow: 'none',
           padding: '10px',
+          fontSize: '12px',
         }}
         PreTag='div'
         wrapLines={true}

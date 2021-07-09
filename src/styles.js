@@ -35,13 +35,14 @@ export const GlobalMain = createGlobalStyle`
     line-height: 1.5;
     text-align: left;
   }
+  code {
+    font-family: 'Lato Regular', sans-serif !important;
+    font-size: 14px !important;
+  }
   hr {
     box-sizing: content-box;
     height: 0;
     overflow: visible;
-  }
-  li {
-    margin-left: -5px;
   }
   p {
     margin-top: 0;
@@ -55,6 +56,11 @@ export const GlobalMain = createGlobalStyle`
   a:hover {
     color: #0056b3;
     text-decoration: underline;
+  }
+  .linenumber {
+    width: 2.5em !important;
+    min-width: 2.5em !important;
+    font-size: 13px;
   }
 `;
 

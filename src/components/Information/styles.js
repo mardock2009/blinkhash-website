@@ -8,7 +8,6 @@ export const InformationMain = styled.div`
   background-color: ${(props) => props.theme.backgroundInformation};
   transition: 0.2s ease-in all;
   @media (max-width: 800px) {
-    width: 100%;
     padding: 0px;
   }
 `;
@@ -27,7 +26,7 @@ export const InformationSocial = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 25px;
   border: 1px solid ${(props) => props.theme.backgroundInformationSecondary};
   background-color: ${(props) => props.theme.backgroundInformationSecondary};
   background-position: center;
@@ -86,8 +85,7 @@ export const InformationVersion = styled.div`
 `;
 
 export const InformationTitle = styled.div`
-  width: calc(100%);
-  margin-bottom: 15px;
-  padding-bottom: 15px;
+  width: calc(100% + 50px);
+  padding: 0px 25px 14px;
   border-bottom: 3px solid ${(props) => props.theme.borderInformation};
 `;

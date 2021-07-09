@@ -33,7 +33,7 @@ export default function App({ Component, pageProps }) {
           <meta name='theme-color' content='#000000' />
           <link rel='apple-touch-icon' href='/logo192.png' />
           <link rel='manifest' href='/manifest.json' />
-          <title>Blinkhash | API Reference</title>
+          <title>Blinkhash | Documentation </title>
         </Head>
         <Component theme={theme} toggleTheme={toggleTheme} {...pageProps} />
       </ThemeProvider>
