@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
+import { useRouter } from "next/router";
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from '../themes';
 import { GlobalMain } from '../styles';
 
 export default function App({ Component, pageProps }) {
   const [theme, updateTheme] = useState('light');
+
+  const site = "https://docs.blinkhash.com";
+  const canonical = site + useRouter().asPath;
 
   // Save Theme to Local Storage
   function saveTheme(mode) {
@@ -31,8 +35,10 @@ export default function App({ Component, pageProps }) {
           <link rel='icon' href='/favicon.ico' />
           <meta name='viewport' content='width=device-width, initial-scale=1' />
           <meta name='theme-color' content='#000000' />
+          <meta name="description" content="The official documentation for Blinkhash. Making mining pool ownership accessible for the masses." />
           <link rel='apple-touch-icon' href='/logo192.png' />
           <link rel='manifest' href='/manifest.json' />
+          <link rel="canonical" href={canonical} />
           <title>Blinkhash | Documentation </title>
         </Head>
         <Component theme={theme} toggleTheme={toggleTheme} {...pageProps} />

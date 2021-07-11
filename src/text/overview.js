@@ -180,7 +180,7 @@ than cloning the repository itself.
 sudo apt-get install build-essential unzip
 wget https://github.com/blinkhash/blinkhash-server/archive/refs/tags/v1.0.0.zip
 unzip v1.0.0.zip
-cd blinkhash-server-1.0.0/ && npm install
+cd ~/blinkhash-server-1.0.0/ && npm install
 ~~~
 `
 
@@ -367,8 +367,8 @@ module.exports = config;
 
 const starting = `
 Once everything has been configured, you can now go and start your server process. If your
-daemon has not yet finished downloading, you will see a message stating that the
-'Daemon is still syncing with the network. The server will be started once synced'. It
+daemon has not yet finished downloading the blockchain, you will see a message stating that
+the 'Daemon is still syncing with the network. The server will be started once synced'. It
 will also give periodic updates on the current syncing progress.
 
 ~~~bash
