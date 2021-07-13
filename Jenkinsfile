@@ -12,7 +12,7 @@ properties([
     ),
     choice(
       name: 'deployEnvironment',
-      choices: "none\ndev\nqa\ndev-qa\nprod\nall",
+      choices: "none\ndev\nprod\nall",
       description: "The environment to deploy to - 'all' will deploy to all environments in order.",
     ),
   ])
@@ -25,7 +25,6 @@ node {
   def taskRevision = null
   def deployImage = true
   def deployDev = false
-  def deployQA = false
   def deployProd = false
 
   // Handle Overridden Behavior
@@ -41,31 +40,18 @@ node {
     // Manage Environment Parameter
     if (params.deployEnvironment == 'none') {
       deployDev = false
-      deployQA = false
       deployProd = false
     } else if (params.deployEnvironment == 'dev') {
       deployDev = true
-      deployQA = false
-      deployProd = false
-    } else if (params.deployEnvironment == 'qa') {
-      deployDev = false
-      deployQA = true
-      deployProd = false
-    } else if (params.deployEnvironment == 'dev-qa') {
-      deployDev = true
-      deployQA = true
       deployProd = false
     } else if (params.deployEnvironment == 'prod') {
       deployDev = false
-      deployQA = false
       deployProd = true
     } else if (params.deployEnvironment == 'all') {
       deployDev = true
-      deployQA = true
       deployProd = true
     } else {
       deployDev = false
-      deployQA = false
       deployProd = false
     }
 
@@ -73,7 +59,6 @@ node {
   } else {
     deployImage = true
     deployDev = false
-    deployQA = false
     deployProd = false
   }
 
@@ -86,12 +71,6 @@ node {
   env.ecsClusterDev = 'blinkhash-dev-documentation'
   env.ecsDefinitionDev = 'file://aws/task-definition.dev.json'
   env.ecsServiceDev = 'blinkhash-dev-documentation-service'
-
-  // Infrastructure Variables (QA)
-  env.ecsFamilyQA = 'blinkhash-qa-documentation'
-  env.ecsClusterQA = 'blinkhash-qa-documentation'
-  env.ecsDefinitionQA = 'file://aws/task-definition.qa.json'
-  env.ecsServiceQA = 'blinkhash-qa-documentation-service'
 
   // Infrastructure Variables (Prod)
   env.ecsFamilyProd = 'blinkhash-prod-documentation'
@@ -154,40 +133,6 @@ node {
         --cluster ${ env.ecsClusterDev } \
         --service ${ env.ecsServiceDev } \
         --task-definition ${ env.ecsFamilyDev }:${ taskRevision } \
-        --desired-count 1")
-    }
-  }
-
-  // Register Task Definition (QA)
-  stage('QA - Register Task Definition') {
-    if (deployQA) {
-      echo 'Handling Task Definition Registration ...'
-      sh("aws ecs register-task-definition \
-        --family ${ env.ecsFamilyQA } \
-        --cli-input-json ${ env.ecsDefinitionQA }")
-    }
-  }
-
-  // Get Last Task Revision (QA)
-  stage('QA - Load Last Task Revision') {
-    if (deployQA) {
-      echo 'Check Task Definition and Get Last Revision ...'
-      taskRevision = sh(returnStdout: true, script: "aws ecs describe-task-definition \
-        --task-definition ${ env.ecsFamilyQA } \
-        | egrep 'revision' \
-        | tr ',' ' ' \
-        | awk '{ print \$2 }'").trim()
-    }
-  }
-
-  // Deploy to Cluster Service (QA)
-  stage('QA - Deploy to Cluster Service') {
-    if (deployQA) {
-      echo 'Deploying to Quality Assurance Cluster ...'
-      sh("aws ecs update-service \
-        --cluster ${ env.ecsClusterQA } \
-        --service ${ env.ecsServiceQA } \
-        --task-definition ${ env.ecsFamilyQA }:${ taskRevision } \
         --desired-count 1")
     }
   }
