@@ -6,6 +6,7 @@ import Footer from '../../components/Footer/index';
 import Header from '../../components/Header/index';
 import Information from '../../components/Information/index';
 import License from '../../components/License/index';
+import Resources from '../../components/Resources/index';
 import Sidenav from '../../components/Sidenav/index';
 
 // Main Styles
@@ -77,37 +78,38 @@ export default function Section(props) {
           </Sidenav>
           <Local.SectionInformation>
             <Local.SectionInformationInner>
-              <Information location={props.location}>
-                {(props.sections.map((section, idx1) => {
-                  return (
-                    <Local.SectionBody key={idx1}>
-                      {(Object.keys(section).map((header, idx2) => {
-                        return (
-                          <Local.SectionText id={'header-' + props.headers.indexOf(header)} key={idx2}>
-                            <Local.SectionTitle ref={headerRefs[props.headers.indexOf(header)]}>
-                              <Global.Header2>
+              <Local.SectionInformationMain>
+                <Information>
+                  {(props.sections.map((section, idx1) => {
+                    return (
+                      <Local.SectionBody key={idx1}>
+                        {(Object.keys(section).map((header, idx2) => {
+                          return (
+                            <Local.SectionText id={'header-' + props.headers.indexOf(header)} key={idx2}>
+                              <Local.SectionTitle ref={headerRefs[props.headers.indexOf(header)]}>
                                 {header}
-                              </Global.Header2>
-                            </Local.SectionTitle>
-                            <Global.Body>
-                              {(props.theme === 'light') ? (
-                                <ReactMarkdown components={componentsLight}>
-                                  {section[header]}
-                                </ReactMarkdown>
-                              ) : (
-                                <ReactMarkdown components={componentsDark}>
-                                  {section[header]}
-                                </ReactMarkdown>
-                              )}
-                            </Global.Body>
-                          </Local.SectionText>
-                        );
-                      }))}
-                    </Local.SectionBody>
-                  );
-                }))}
-              </Information>
-              <License />
+                              </Local.SectionTitle>
+                              <Global.Body1>
+                                {(props.theme === 'light') ? (
+                                  <ReactMarkdown components={componentsLight}>
+                                    {section[header]}
+                                  </ReactMarkdown>
+                                ) : (
+                                  <ReactMarkdown components={componentsDark}>
+                                    {section[header]}
+                                  </ReactMarkdown>
+                                )}
+                              </Global.Body1>
+                            </Local.SectionText>
+                          );
+                        }))}
+                      </Local.SectionBody>
+                    );
+                  }))}
+                </Information>
+                <License />
+              </Local.SectionInformationMain>
+              <Resources />
             </Local.SectionInformationInner>
             <Footer />
           </Local.SectionInformation>

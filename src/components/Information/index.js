@@ -15,9 +15,9 @@ export default function Information(props) {
           style={{ backgroundImage: `url(${'/images/banner-background.png'})` }}
         >
           <Local.InformationText>
-            <Global.Body>
+            <Global.Body1>
               {'Have a question? Connect with the community in the Blinkhash Discord'}
-            </Global.Body>
+            </Global.Body1>
           </Local.InformationText>
           <LinkExternal link={'https://discord.gg/8xtHZFKJQY'}>
             <Button text={'Continue'} />
@@ -27,7 +27,7 @@ export default function Information(props) {
           <Local.InformationLocation>
             <Local.InformationDirectory>
               <Global.Body2>
-                {'Blinkhash > Documentation > '}{props.location}
+                {'Blinkhash > Documentation'}
               </Global.Body2>
             </Local.InformationDirectory>
             <Local.InformationVersion>
@@ -36,11 +36,6 @@ export default function Information(props) {
               </Global.Body2>
             </Local.InformationVersion>
           </Local.InformationLocation>
-          <Local.InformationTitle>
-            <Global.Header1>
-              {props.location}
-            </Global.Header1>
-          </Local.InformationTitle>
           {props.children}
         </Local.InformationDocumentation>
       </Local.InformationInner>

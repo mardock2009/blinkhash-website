@@ -7,6 +7,7 @@ export const LinkInternal = styled(Link)`
   &:hover {
     cursor: pointer;
     text-decoration: none;
+    color: ${(props) => props.theme.accessoryHover};
   }
 `;
 
@@ -16,5 +17,6 @@ export const LinkExternal = styled.a`
   &:hover {
     cursor: pointer;
     text-decoration: none;
+    color: ${(props) => props.theme.accessoryHover};
   }
 `;

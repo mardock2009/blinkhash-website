@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const InformationMain = styled.div`
   width: 100%;
-  max-width: 900px;
   padding: 20px 25px;
   color: ${(props) => props.theme.textInformation};
   background-color: ${(props) => props.theme.backgroundInformation};
@@ -69,7 +68,7 @@ export const InformationLocation = styled.div`
   display: flex;
   justify-content: space-between;
   color: ${(props) => props.theme.textInformationTertiary};
-  margin-bottom: 20px;
+  margin-bottom: -5px;
   @media (max-width: 500px) {
     display: none;
   }
@@ -82,10 +81,4 @@ export const InformationDirectory = styled.div`
 export const InformationVersion = styled.div`
   display: flex;
   justify-content: flex-end;
-`;
-
-export const InformationTitle = styled.div`
-  width: calc(100% + 50px);
-  padding: 0px 25px 14px;
-  border-bottom: 3px solid ${(props) => props.theme.borderInformation};
 `;

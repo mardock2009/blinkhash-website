@@ -52,10 +52,11 @@ export const GlobalMain = createGlobalStyle`
     color: #007bff;
     text-decoration: none;
     background-color: transparent;
+    transition: 0.2s ease-in all;
   }
   a:hover {
-    color: #0056b3;
-    text-decoration: underline;
+    color: #2db594;
+    text-decoration: none;
   }
   .linenumber {
     width: 2.5em !important;
@@ -70,6 +71,11 @@ export const Global = createGlobalStyle`
   body {
     background-color: ${(props) => props.theme.backgroundInformation};
     transition: 0.2s ease-in all;
+  }
+  hr {
+    margin: 25px 0px 20px;
+    border: 0px;
+    border-bottom: 2px solid ${(props) => props.theme.borderInformation};
   }
   h1 {
     font-size: 2.5rem;
@@ -93,10 +99,12 @@ export const Global = createGlobalStyle`
     transition: 0.2s ease-in all;
   }
   h4 {
-    font-size: 1.5rem;
+    font-size: 16px !important;
+    margin-top: 0px;
     margin-bottom: 0.5rem;
     font-weight: 500;
     line-height: 1.2;
+    transition: 0.2s ease-in all;
   }
   h5 {
     font-size: 1.25rem;
@@ -112,7 +120,7 @@ export const Global = createGlobalStyle`
   }
 `;
 
-export const Body = styled.div`
+export const Body1 = styled.div`
   font-family: 'Lato Regular', sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -129,24 +137,18 @@ export const Body2 = styled.div`
 `;
 
 export const Header1 = styled.div`
-  font-family: 'Lato Bold', sans-serif;
-  font-weight: 400;
-  font-size: 28px;
-`;
-
-export const Header2 = styled.div`
-  font-family: 'Lato Regular', sans-serif;
-  font-weight: 400;
-  font-size: 20px;
-`;
-
-export const Header3 = styled.div`
   font-family: 'Lato Regular', sans-serif;
   font-weight: 400;
   font-size: 18px;
 `;
 
-export const Header4 = styled.div`
+export const Header2 = styled.div`
+  font-family: 'Lato Bold', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+`;
+
+export const Header3 = styled.div`
   font-family: 'Lato Regular', sans-serif;
   font-weight: 400;
   font-size: 14px;

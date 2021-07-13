@@ -1,6 +1,6 @@
 import React from 'react';
 import Section from '../components/Section/index';
-import { headers, sections } from '../text/overview';
+import { headers, sections } from '../text/index';
 import { Global } from '../styles';
 
 export default function Index(props) {
@@ -8,7 +8,6 @@ export default function Index(props) {
     <React.Fragment>
       <Global />
       <Section
-        location={'Overview'}
         headers={headers}
         sections={sections}
         theme={props.theme}

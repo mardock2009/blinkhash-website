@@ -19,14 +19,14 @@ export default function Header(props) {
             alt=''
           />
           <Local.HeaderTitle>
-            <Global.Header3>{'Blinkhash Mining'}</Global.Header3>
+            <Global.Header1>{'Blinkhash Mining'}</Global.Header1>
           </Local.HeaderTitle>
         </Local.HeaderLogo>
         <Local.HeaderLinks>
           <Local.HeaderPages>
             <LinkInternal link={'/'}>
               <Local.HeaderText>
-                <Global.Body>{'Documentation'}</Global.Body>
+                <Global.Body1>{'Documentation'}</Global.Body1>
               </Local.HeaderText>
             </LinkInternal>
           </Local.HeaderPages>

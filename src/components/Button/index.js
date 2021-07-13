@@ -7,7 +7,7 @@ export default function Button(props) {
   return (
     <Local.ButtonMain>
       <Local.ButtonText>
-        <Global.Body>{props.text}</Global.Body>
+        <Global.Body1>{props.text}</Global.Body1>
       </Local.ButtonText>
     </Local.ButtonMain>
   );

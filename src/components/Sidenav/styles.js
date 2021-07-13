@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
 export const SidenavMain = styled.div`
-  min-width: 280px;
-  min-height: calc(100vh - 70px);
-  padding: 20px 25px;
+  width: 280px;
+  padding: 20px;
   display: flex;
   top: 70px;
   position: sticky;
@@ -13,6 +12,8 @@ export const SidenavMain = styled.div`
   border-right: 1px solid ${(props) => props.theme.borderSidenav};
   background-color: ${(props) => props.theme.backgroundSidenav};
   transition: 0.2s ease-in all;
+  overflow-x: hidden;
+  overflow-y: scroll;
   @media (max-width: 800px) {
     display: none;
   }

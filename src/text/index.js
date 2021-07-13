@@ -184,7 +184,7 @@ cd ~/blinkhash-server-1.0.0/ && npm install
 ~~~
 `
 
-const serverConfig = `
+const configuringServer = `
 To configure the server, first rename the 'configs/main/example.js' file to
 'configs/main/config.js' and make any desired changes. See the 'Configurations' page for
 a breakdown and explanation of each property mentioned in the file. The default configuration
@@ -224,7 +224,7 @@ module.exports = config;
 ~~~
 `;
 
-const coinConfig = `
+const configuringCoin = `
 To configure the coin itself, copy the 'configs/pools/example.js' file to a separate
 one and rename it accordingly before making any desired changes. Unlike the server
 configuration, the default settings will most likely not work for your coin, and you'll
@@ -376,6 +376,171 @@ cd ~/blinkhash-server-1.0.0 && npm run start
 ~~~
 `;
 
+const serverConfig = `
+`;
+
+const loggerOptions = `
+#### config.logger.logColors
+Enables colors for each message returned by the logger.
+
+~~~js
+// Type: Boolean
+config.logger.logColors = true | false;
+~~~
+
+---
+
+#### config.logger.logLevel
+Specifies the level of logger verbosity. Anything more severe than the level specified
+will be logged.
+
+~~~js
+// Type: String
+config.logger.logLevel = 'debug' | 'warning' | 'error';
+~~~
+`;
+
+const clusteringOptions = `
+#### config.clustering.enabled
+Whether to enable/disable clustering. Typically, a single process will run on a single
+thread. To take advantage of multi-core systems, the user will want to fork multiple
+processes in order to handle the load more effectively.
+
+~~~js
+// Type: Boolean
+config.clustering.enabled = true | false;
+~~~
+
+---
+
+#### config.clustering.forks
+The number of workers to spawn if clustering is enabled. If 'auto' is specified, it will
+be handled dynamically and a worker will be forked for each core in your system.
+
+~~~js
+// Type: String | Number
+config.clustering.forks = 'auto' | [number];
+~~~
+`;
+
+const redisOptions = `
+#### config.redis.host
+The host IP for the redis instance running in the background.
+
+~~~js
+// Type: String
+config.redis.host = [string];
+~~~
+
+---
+
+#### config.redis.port
+The port for the redis instance running in the background.
+
+~~~js
+// Type: String
+config.redis.port = [number];
+~~~
+
+---
+
+#### config.redis.password
+The password for the redis instance running in the background. If no password is set,
+this field can be left as an empty string.
+
+~~~js
+// Type: String
+config.redis.password = [string];
+~~~
+`;
+
+const serverOptions = `
+#### config.server.host
+The host IP for the server instance running in the background
+
+~~~js
+// Type: String
+config.server.host = [string];
+~~~
+
+---
+
+#### config.server.port
+The port for the server instance running in the background.
+
+~~~js
+// Type: Number
+config.server.port = [number];
+~~~
+`;
+
+const coinConfig = `
+`;
+
+const mainOptions = `
+#### config.enabled
+Ensures that the pool will be started when the server process is initialized.
+
+~~~js
+// Type: Boolean
+config.enabled = true | false;
+~~~
+
+---
+
+#### config.featured
+Ensures that the pool will be classified as a 'featured' pool for API/client purposes.
+
+~~~js
+// Type: Boolean
+config.featured = true | false;
+~~~
+
+---
+
+#### config.address
+The main custodial coin address for the pool. Any blocks that are mined will have their
+coins sent to this address while miners are awaiting payments. This address must have been
+generated using the daemon configured in the 'Payments' section or else an error will
+be thrown.
+
+~~~js
+// Type: String
+config.address = [string];
+~~~
+
+---
+
+#### config.debug
+Enables 'debug' mode for the purposes of logging more descriptive messages for debugging
+purposes.
+
+~~~js
+// Type: Boolean
+config.debug = true | false;
+~~~
+
+---
+
+#### config.identifier
+The pool 'identifier' added to blocks as a comment/message whenever needed.
+
+~~~js
+// Type: String
+config.identifier = 'https://github.com/blinkhash/blinkhash-server' | [string];
+~~~
+
+---
+
+#### config.logo
+The link to a logo for the pool, for API/client purposes.
+
+~~~js
+// Type: String
+config.logo = [string];
+~~~
+`;
+
 // Text for Module Sections
 export const sections = [
   {
@@ -393,10 +558,32 @@ export const sections = [
     'Requirements': requirements,
     'Setting up Daemon': daemon,
     'Downloading & Installing': downloading,
-    'Server Configuration': serverConfig,
-    'Coin Configuration': coinConfig,
+    'Configuring Server': configuringServer,
+    'Configuring Coin': configuringCoin,
     'Starting Pool Service': starting,
   },
+  {
+    'Server Configuration': serverConfig,
+    'Logger Options': loggerOptions,
+    'Clustering Options': clusteringOptions,
+    'Redis Options': redisOptions,
+    'Server Options': serverOptions,
+  },
+  {
+    'Coin Configuration': coinConfig,
+    'Main Options': mainOptions,
+    'Coin Options': '',
+    'Algorithm Options': '',
+    'Mainnet Options': '',
+    'Testnet Options': '',
+    'Daemon Options': '',
+    'Payment Options': '',
+    'Banning Options': '',
+    'Port Options': '',
+    'Recipient Options': '',
+    'P2P Options': '',
+    'Miscellaneous Options': '',
+}
 ];
 
 // Generate Headers from Sections
