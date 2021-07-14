@@ -39,6 +39,9 @@ export const GlobalMain = createGlobalStyle`
     font-family: 'Lato Regular', sans-serif !important;
     font-size: 14px !important;
   }
+  pre {
+    margin: 20px 0px;
+  }
   hr {
     box-sizing: content-box;
     height: 0;
@@ -46,7 +49,7 @@ export const GlobalMain = createGlobalStyle`
   }
   p {
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 15px;
   }
   a {
     color: #007bff;

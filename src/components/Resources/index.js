@@ -22,9 +22,9 @@ export default function Resources() {
           </Global.Header2>
         </Local.ResourcesTitle>
         <Local.ResourcesSection>
-          {(githubLinks.map((link, idx1) => {
+          {(githubLinks.map((link, idx) => {
             return (
-              <LinkExternal link={link[0]}>
+              <LinkExternal key={idx} link={link[0]}>
                 <Global.Body1>{link[1]}</Global.Body1>
               </LinkExternal>
             )

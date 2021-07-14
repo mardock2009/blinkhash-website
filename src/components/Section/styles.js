@@ -75,9 +75,6 @@ export const SectionBody = styled.div`
   width: calc(100% + 50px);
   padding: 0px 25px;
   border-bottom: 3px solid ${(props) => props.theme.borderInformation};
-  @media (max-width: 800px) {
-    margin-top: -20px;
-  }
   &:last-child {
     margin-bottom: -1rem;
     border-radius: 0px;
@@ -87,7 +84,7 @@ export const SectionBody = styled.div`
 `;
 
 export const SectionText = styled.div`
-  padding-bottom: 8px;
+  padding-bottom: 5px;
   border-bottom: 1px solid ${(props) => props.theme.borderInformation};
   font-family: 'Lato Regular', sans-serif;
   font-weight: 400;
@@ -105,4 +102,5 @@ export const SectionText = styled.div`
 export const SectionTitle = styled.div`
   width: 100%;
   margin: 20px 0px 15px;
+  line-height: 20px;
 `;

@@ -663,7 +663,7 @@ config.coin.algorithms.coinbase = [string]
 
 const mainnetOptions = `
 #### config.coin.mainnet.bech32
-The Bech32 prefix implemented in the mainnet network for the coin that the pool is 
+The Bech32 prefix implemented in the mainnet network for the coin that the pool is
 being used to mine. (Ex: [Bitcoin Implementation](
 https://github.com/bitcoin/bitcoin/blob/master/src/chainparams.cpp#L137))
 

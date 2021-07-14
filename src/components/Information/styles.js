@@ -61,6 +61,9 @@ export const InformationDocumentation = styled.div`
     border: 0px;
     border-radius: 0px;
   }
+  @media (max-width: 500px) {
+    margin-top: -20px;
+  }
 `;
 
 export const InformationLocation = styled.div`
