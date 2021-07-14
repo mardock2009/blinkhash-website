@@ -88,7 +88,7 @@ export const SectionBody = styled.div`
 
 export const SectionText = styled.div`
   padding-bottom: 8px;
-  border-bottom: 2px solid ${(props) => props.theme.borderInformation};
+  border-bottom: 1px solid ${(props) => props.theme.borderInformation};
   font-family: 'Lato Regular', sans-serif;
   font-weight: 400;
   font-size: 20px;

@@ -75,7 +75,7 @@ export const Global = createGlobalStyle`
   hr {
     margin: 25px 0px 20px;
     border: 0px;
-    border-bottom: 2px solid ${(props) => props.theme.borderInformation};
+    border-bottom: 1px solid ${(props) => props.theme.borderInformation};
   }
   h1 {
     font-size: 2.5rem;

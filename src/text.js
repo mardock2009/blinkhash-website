@@ -1,4 +1,4 @@
-import { flatten } from '../common/utils';
+import { flatten } from './common/utils';
 
 const introduction = `
 Blinkhash was born out of a desire to simplify the process of creating, hosting,
@@ -254,7 +254,7 @@ config.coin = {};
 config.coin.name = 'Bitcoin';
 config.coin.symbol = 'BTC';
 config.coin.asicBoost = true;
-config.coin.hasGetInfo = false;
+config.coin.getInfo = false;
 config.coin.segwit = true;
 config.coin.txFee = 0.0004;
 config.coin.rewards = '';
@@ -377,6 +377,13 @@ cd ~/blinkhash-server-1.0.0 && npm run start
 `;
 
 const serverConfig = `
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse aliquet, odio at
+varius tempor, mi mauris ultrices tellus, ac laoreet urna enim aliquet tortor. Etiam
+lacinia pulvinar interdum. In hac habitasse platea dictumst. Aliquam eget ex a mauris
+gravida pretium. Nullam dignissim, felis eget dignissim venenatis, nunc quam pretium
+nulla, id efficitur lorem elit in arcu. Ut vel lorem vestibulum, tristique ligula sed,
+pulvinar sem. Aliquam erat volutpat. Praesent purus tortor, tincidunt vel iaculis eget,
+commodo et tortor.
 `;
 
 const loggerOptions = `
@@ -475,6 +482,13 @@ config.server.port = [number];
 `;
 
 const coinConfig = `
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse aliquet, odio at
+varius tempor, mi mauris ultrices tellus, ac laoreet urna enim aliquet tortor. Etiam
+lacinia pulvinar interdum. In hac habitasse platea dictumst. Aliquam eget ex a mauris
+gravida pretium. Nullam dignissim, felis eget dignissim venenatis, nunc quam pretium
+nulla, id efficitur lorem elit in arcu. Ut vel lorem vestibulum, tristique ligula sed,
+pulvinar sem. Aliquam erat volutpat. Praesent purus tortor, tincidunt vel iaculis eget,
+commodo et tortor.
 `;
 
 const mainOptions = `
@@ -541,6 +555,456 @@ config.logo = [string];
 ~~~
 `;
 
+const coinOptions = `
+#### config.coin.name
+The name of the coin that the pool is being used to mine.
+
+~~~js
+// Type: String
+config.coin.name = [string];
+~~~
+
+---
+
+#### config.coin.symbol
+The symbol of the coin that the pool is being used to mine.
+
+~~~js
+// Type: String
+config.coin.symbol = [string];
+~~~
+
+---
+
+#### config.coin.asicBoost
+Whether the coin being mined supports the AsicBoost protocol. This property still needs
+further testing to ensure that it works properly.
+
+~~~js
+// Type: Boolean
+config.coin.asicBoost = true | false
+~~~
+
+---
+
+#### config.coin.getInfo
+Whether the coin being mined supports the GetInfo daemon command.
+
+~~~js
+// Type: Boolean
+config.coin.getInfo = true | false
+~~~
+
+---
+
+#### config.coin.segwit
+Whether the coin being mined supports the Segwit protocol.
+
+~~~js
+// Type: Boolean
+config.coin.segwit = true | false
+~~~
+
+---
+
+#### config.coin.txFee
+The transaction fee to use when the pool is sending out payments. A higher fee will
+ensure that payments get processed faster.
+
+~~~js
+// Type: Float
+config.coin.txFee = [float]
+~~~
+
+---
+
+#### config.coin.rewards
+The type of secondary rewards implemented by the developers (i.e. treasury, development
+payments, etc.). This property is still being implemented, and as such, Blinkhash won't
+work properly with any coins that make use of this feature.
+
+~~~js
+// Type: String
+config.coin.rewards = '' | [string]
+~~~
+`;
+
+const algorithmOptions = `
+#### config.coin.algorithms.mining
+The algorithm used to generate the block header when mining to check if the share is a
+valid block candidate. This specific property is most often referenced to as the 'actual'
+algorithm when discussing a coin.
+
+~~~js
+// Type: String
+config.coin.algorithms.mining = [string]
+~~~
+
+---
+
+#### config.coin.algorithms.block
+The algorithm used to convert the derived block header to the block hash
+
+~~~js
+// Type: String
+config.coin.algorithms.block = [string]
+~~~
+
+---
+
+#### config.coin.algorithms.coinbase
+The algorithm used to generate the coinbase hash when creating a block candidate
+
+~~~js
+// Type: String
+config.coin.algorithms.coinbase = [string]
+~~~
+`;
+
+const mainnetOptions = `
+#### config.coin.mainnet.bech32
+The Bech32 prefix implemented in the mainnet network for the coin that the pool is 
+being used to mine. (Ex: [Bitcoin Implementation](
+https://github.com/bitcoin/bitcoin/blob/master/src/chainparams.cpp#L137))
+
+~~~js
+// Type: String
+config.coin.mainnet.bech32 = '' | [string]
+~~~
+
+---
+
+#### config.coin.mainnet.bip32.public
+The BIP32 public key prefix implemented in the mainnet network for the coin that the
+pool is being used to mine. (Ex: [Bitcoin Implementation](
+https://github.com/bitcoin/bitcoin/blob/master/src/chainparams.cpp#L134))
+
+~~~js
+// Type: Buffer
+config.coin.mainnet.bip32.public = Buffer.from([string], 'hex').readUInt32LE(0);
+~~~
+
+---
+
+#### config.coin.mainnet.bip32.private
+The BIP32 private key prefix implemented in the mainnet network for the coin that the
+pool is being used to mine. (Ex: [Bitcoin Implementation](
+https://github.com/bitcoin/bitcoin/blob/master/src/chainparams.cpp#L135))
+
+~~~js
+// Type: Buffer
+config.coin.mainnet.bip32.private = Buffer.from([string], 'hex').readUInt32LE(0);
+~~~
+
+---
+
+#### config.coin.mainnet.peerMagic
+The message start string implemented in the mainnet network for the coin that the pool
+is being used to mine. (Ex: [Bitcoin Implementation](
+https://github.com/bitcoin/bitcoin/blob/master/src/chainparams.cpp#L102-L105))
+
+~~~js
+// Type: String
+config.coin.mainnet.peerMagic = [string]
+~~~
+
+---
+
+#### config.coin.mainnet.pubKeyHash
+The public address prefix implemented in the mainnet network for the coin that the pool
+is being used to mine. (Ex: [Bitcoin Implementation](
+https://github.com/bitcoin/bitcoin/blob/master/src/chainparams.cpp#L131))
+
+~~~js
+// Type: Buffer
+config.coin.mainnet.pubKeyHash = Buffer.from([string], 'hex').readUInt8(0);
+~~~
+
+---
+
+#### config.coin.mainnet.scriptHash
+The script address prefix implemented in the mainnet network for the coin that the pool
+is being used to mine. (Ex: [Bitcoin Implementation](
+https://github.com/bitcoin/bitcoin/blob/master/src/chainparams.cpp#L132))
+
+~~~js
+// Type: Buffer
+config.coin.mainnet.scriptHash = Buffer.from([string], 'hex').readUInt8(0);
+~~~
+
+---
+
+#### config.coin.mainnet.wif
+The byte prepended to a mainnet address when converting to WIF for the coin that the
+pool is being used to mine. (Ex: [Bitcoin Implementation](
+https://github.com/bitcoin/bitcoin/blob/master/src/chainparams.cpp#L133))
+
+~~~js
+// Type: String
+config.coin.mainnet.wif = '' | Buffer.from([string], 'hex').readUInt8(0);
+~~~
+
+---
+
+#### config.coin.mainnet.coin
+The lowercase symbol of the coin that the pool is being used to mine.
+
+~~~js
+// Type: String
+config.coin.mainnet.coin = [string]
+~~~
+`;
+
+const testnetOptions = `
+#### config.coin.testnet.bech32
+The Bech32 prefix implemented in the testnet network for the coin that the pool is
+being used to mine. (Ex: [Bitcoin Implementation](
+https://github.com/bitcoin/bitcoin/blob/master/src/chainparams.cpp#L244))
+
+~~~js
+// Type: String
+config.coin.testnet.bech32 = '' | [string]
+~~~
+
+---
+
+#### config.coin.testnet.bip32.public
+The BIP32 public key prefix implemented in the testnet network for the coin that the
+pool is being used to mine. (Ex: [Bitcoin Implementation](
+https://github.com/bitcoin/bitcoin/blob/master/src/chainparams.cpp#L241))
+
+~~~js
+// Type: Buffer
+config.coin.testnet.bip32.public = Buffer.from([string], 'hex').readUInt32LE(0);
+~~~
+
+---
+
+#### config.coin.testnet.bip32.private
+The BIP32 private key prefix implemented in the testnet network for the coin that the
+pool is being used to mine. (Ex: [Bitcoin Implementation](
+https://github.com/bitcoin/bitcoin/blob/master/src/chainparams.cpp#L242))
+
+~~~js
+// Type: Buffer
+config.coin.testnet.bip32.private = Buffer.from([string], 'hex').readUInt32LE(0);
+~~~
+
+---
+
+#### config.coin.testnet.peerMagic
+The message start string implemented in the testnet network for the coin that the pool
+is being used to mine. (Ex: [Bitcoin Implementation](
+https://github.com/bitcoin/bitcoin/blob/master/src/chainparams.cpp#L216-L219))
+
+~~~js
+// Type: String
+config.coin.testnet.peerMagic = [string]
+~~~
+
+---
+
+#### config.coin.testnet.pubKeyHash
+The public address prefix implemented in the testnet network for the coin that the pool
+is being used to mine. (Ex: [Bitcoin Implementation](
+https://github.com/bitcoin/bitcoin/blob/master/src/chainparams.cpp#L238))
+
+~~~js
+// Type: Buffer
+config.coin.testnet.pubKeyHash = Buffer.from([string], 'hex').readUInt8(0);
+~~~
+
+---
+
+#### config.coin.testnet.scriptHash
+The script address prefix implemented in the testnet network for the coin that the pool
+is being used to mine. (Ex: [Bitcoin Implementation](
+https://github.com/bitcoin/bitcoin/blob/master/src/chainparams.cpp#L239))
+
+~~~js
+// Type: Buffer
+config.coin.testnet.scriptHash = Buffer.from([string], 'hex').readUInt8(0);
+~~~
+
+---
+
+#### config.coin.testnet.wif
+The byte prepended to a testnet address when converting to WIF for the coin that the
+pool is being used to mine. (Ex: [Bitcoin Implementation](
+https://github.com/bitcoin/bitcoin/blob/master/src/chainparams.cpp#L240))
+
+~~~js
+// Type: String
+config.coin.testnet.wif = '' | Buffer.from([string], 'hex').readUInt8(0);
+~~~
+
+---
+
+#### config.coin.testnet.coin
+The lowercase symbol of the coin that the pool is being used to mine.
+
+~~~js
+// Type: String
+config.coin.testnet.coin = [string]
+~~~
+`;
+
+const daemonOptions = `
+#### config.daemons.host
+
+---
+
+#### config.daemons.port
+
+---
+
+#### config.daemons.username
+
+---
+
+#### config.daemons.password
+`;
+
+const paymentOptions = `
+#### config.payments.enabled
+
+---
+
+#### config.payments.checkInterval
+
+---
+
+#### config.payments.paymentInterval
+
+---
+
+#### config.payments.minConfirmations
+
+---
+
+#### config.payments.minPayment
+
+---
+
+#### config.payments.daemon.host
+
+---
+
+#### config.payments.daemon.port
+
+---
+
+#### config.payments.daemon.username
+
+---
+
+#### config.payments.daemon.password
+`;
+
+const banningOptions = `
+#### config.banning.time
+
+---
+
+#### config.banning.invalidPercent
+
+---
+
+#### config.banning.checkThreshold
+
+---
+
+#### config.banning.purgeInterval
+`;
+
+const portOptions = `
+#### config.ports.port
+
+---
+
+#### config.ports.enabled
+
+---
+
+#### config.ports.type
+
+---
+
+#### config.ports.difficulty.initial
+
+---
+
+#### config.ports.difficulty.minimum
+
+---
+
+#### config.ports.difficulty.maximum
+
+---
+
+#### config.ports.difficulty.targetTime
+
+---
+
+#### config.ports.difficulty.retargetTime
+
+---
+
+#### config.ports.difficulty.variance
+`;
+
+const recipientOptions = `
+#### config.recipients.address
+
+---
+
+#### config.recipients.percentage
+`;
+
+const p2pOptions = `
+#### config.p2p.enabled
+
+---
+
+#### config.p2p.host
+
+---
+
+#### config.p2p.port
+
+---
+
+#### config.p2p.disableTransactions
+`;
+
+const miscellaneousOptions = `
+#### config.settings.blockRefreshInterval
+
+---
+
+#### config.settings.connectionTimeout
+
+---
+
+#### config.settings.emitInvalidBlockHashes
+
+---
+
+#### config.settings.hashrateWindow
+
+---
+
+#### config.settings.jobRebroadcastTimeout
+
+---
+
+#### config.settings.tcpProxyProtocol
+
+---
+
+#### config.settings.validateWorkerUsername
+`
+
 // Text for Module Sections
 export const sections = [
   {
@@ -572,17 +1036,17 @@ export const sections = [
   {
     'Coin Configuration': coinConfig,
     'Main Options': mainOptions,
-    'Coin Options': '',
-    'Algorithm Options': '',
-    'Mainnet Options': '',
-    'Testnet Options': '',
-    'Daemon Options': '',
-    'Payment Options': '',
-    'Banning Options': '',
-    'Port Options': '',
-    'Recipient Options': '',
-    'P2P Options': '',
-    'Miscellaneous Options': '',
+    'Coin Options': coinOptions,
+    'Algorithm Options': algorithmOptions,
+    'Mainnet Options': mainnetOptions,
+    'Testnet Options': testnetOptions,
+    'Daemon Options': daemonOptions,
+    'Payment Options': paymentOptions,
+    'Banning Options': banningOptions,
+    'Port Options': portOptions,
+    'Recipient Options': recipientOptions,
+    'P2P Options': p2pOptions,
+    'Miscellaneous Options': miscellaneousOptions,
 }
 ];
 

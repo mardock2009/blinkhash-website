@@ -1,6 +1,6 @@
 import React from 'react';
 import Section from '../components/Section/index';
-import { headers, sections } from '../text/index';
+import { headers, sections } from '../text';
 import { Global } from '../styles';
 
 export default function Index(props) {

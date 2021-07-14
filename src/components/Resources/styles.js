@@ -9,7 +9,7 @@ export const ResourcesMain = styled.div`
   position: -webkit-sticky;
   align-self: flex-start;
   color: ${(props) => props.theme.textResources};
-  border-left: 1px solid ${(props) => props.theme.borderResources};
+  border-left: 3px solid ${(props) => props.theme.borderResources};
   background-color: ${(props) => props.theme.backgroundResources};
   transition: 0.2s ease-in all;
   @media (max-width: 1250px) {

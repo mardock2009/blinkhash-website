@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 export const LinkInternal = styled(Link)`
   text-decoration: none;
+  color: ${(props) => props.theme.textLink};
   transition: 0.2s ease-in all;
   &:hover {
     cursor: pointer;
@@ -13,6 +14,7 @@ export const LinkInternal = styled(Link)`
 
 export const LinkExternal = styled.a`
   text-decoration: none;
+  color: ${(props) => props.theme.textLink};
   transition: 0.2s ease-in all;
   &:hover {
     cursor: pointer;

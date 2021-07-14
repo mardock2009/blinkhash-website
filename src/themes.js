@@ -37,6 +37,9 @@ export const lightTheme = {
   borderLicense: '#cccccc',
   textLicense: '#888888',
 
+  /* Link Palette */
+  textLink: '#000000',
+
   /* Resources Palette */
   backgroundResources: '#ffffff',
   borderResources: '#cccccc',
@@ -89,6 +92,9 @@ export const darkTheme = {
   backgroundLicense: '#202632',
   borderLicense: '#3e4559',
   textLicense: '#bbbbbb',
+
+  /* Link Palette */
+  textLink: '#ebecef',
 
   /* Resources Palette */
   backgroundResources: '#202632',
