@@ -30,6 +30,7 @@ FROM nginx:alpine AS deployer
 COPY ./nginx.conf /etc/nginx/nginx.conf
 RUN rm -rf /usr/share/nginx/html/*
 COPY --from=builder /app/out /usr/share/nginx/html
+COPY --from=builder /app/sitemap.xml /usr/share/nginx/html/sitemap.xml
 
 EXPOSE 3000 80
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
