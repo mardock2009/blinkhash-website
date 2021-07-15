@@ -79,7 +79,6 @@ export const SectionBody = styled.div`
     margin-bottom: -1rem;
     border-radius: 0px;
     border-bottom: 0px;
-    box-shadow: none;
   }
 `;
 

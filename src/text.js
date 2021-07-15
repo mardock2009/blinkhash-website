@@ -91,8 +91,8 @@ be addressed. The list of all algorithms that are currently supported is
 const tutorial = `
 This section will offer a tutorial on how to setup a Blinkhash pool for Bitcoin on your
 local machine. This process can be extrapolated to any other coin that uses one of
-the supported algorithms and is built similarly to Bitcoin itself. See the 'Configurations'
-page for an in-depth explanation of the configuration files used in this tutorial.
+the supported algorithms and is built similarly to Bitcoin itself. See the 'Configuration'
+sections for an in-depth explanation of the configuration files used in this tutorial.
 `
 
 const requirements = `
@@ -186,9 +186,9 @@ cd ~/blinkhash-server-1.0.0/ && npm install
 
 const configuringServer = `
 To configure the server, first rename the 'configs/main/example.js' file to
-'configs/main/config.js' and make any desired changes. See the 'Configurations' page for
-a breakdown and explanation of each property mentioned in the file. The default configuration
-will also most likely work for your environment.
+'configs/main/config.js' and make any desired changes. See the 'Server Configuration' section
+for a breakdown and explanation of each property mentioned in the file. The default
+configuration will also most likely work for your environment.
 
 ~~~bash
 cp ~/blinkhash-server-1.0.0/configs/main/example.js ~/blinkhash-server-1.0.0/configs/main/config.js
@@ -229,8 +229,8 @@ To configure the coin itself, copy the 'configs/pools/example.js' file to a sepa
 one and rename it accordingly before making any desired changes. Unlike the server
 configuration, the default settings will most likely not work for your coin, and you'll
 need to look through the coin's code itself to find the proper values. See the
-'Configurations' page for a breakdown and explanation of each property mentioned in the
-file, or check [here](https://github.com/blinkhash/blinkhash-configurations) for a list
+'Coin Configuration' section for a breakdown and explanation of each property mentioned in
+the file, or check [here](https://github.com/blinkhash/blinkhash-configurations) for a list
 of configuration files that have been confirmed to work properly.
 
 ~~~bash
@@ -256,7 +256,6 @@ config.coin.symbol = 'BTC';
 config.coin.asicBoost = true;
 config.coin.getInfo = false;
 config.coin.segwit = true;
-config.coin.txFee = 0.0004;
 config.coin.rewards = '';
 
 // Algorithm Configuration
@@ -306,6 +305,7 @@ config.payments.checkInterval = 20;
 config.payments.paymentInterval = 7200;
 config.payments.minConfirmations = 10;
 config.payments.minPayment = 0.005;
+config.payments.transactionFee = 0.0004;
 config.payments.daemon = {};
 config.payments.daemon.host = '127.0.0.1';
 config.payments.daemon.port = 8332;
@@ -607,17 +607,6 @@ config.coin.segwit = true | false
 
 ---
 
-#### config.coin.txFee
-The transaction fee to use when the pool is sending out payments. A higher fee will
-ensure that payments get processed faster.
-
-~~~js
-// Type: Float
-config.coin.txFee = [float]
-~~~
-
----
-
 #### config.coin.rewards
 The type of secondary rewards implemented by the developers (i.e. treasury, development
 payments, etc.). This property is still being implemented, and as such, Blinkhash won't
@@ -851,54 +840,151 @@ config.coin.testnet.coin = [string]
 
 const daemonOptions = `
 #### config.daemons.host
+The host IP for the daemon instance being configured.
+
+~~~js
+// Type: String
+config.daemons.host = [string]
+~~~
 
 ---
 
 #### config.daemons.port
+The port for the daemon instance being configured.
+
+~~~js
+// Type: Number
+config.daemons.port = [number]
+~~~
 
 ---
 
 #### config.daemons.username
+The username set for the daemon instance being configured
+
+~~~js
+// Type: String
+config.daemons.username = [string]
+~~~
 
 ---
 
 #### config.daemons.password
+The password set for the daemon instance being configured
+
+~~~js
+// Type: String
+config.daemons.password = [string]
+~~~
 `;
 
 const paymentOptions = `
 #### config.payments.enabled
+Ensures that the payment processor will be started when the server process is initialized.
+
+~~~js
+// Type: Boolean
+config.payments.enabled = true | false
+~~~
 
 ---
 
 #### config.payments.checkInterval
+The amount of time in seconds for the server to wait in-between payment check cycles. A
+payment check cycle is a process in which the server runs managerial scripts to update current
+balances and other statistics. Payments will not be sent out when this process runs.
+
+~~~js
+// Type: Number
+config.payments.checkInterval = [number]
+~~~
 
 ---
 
 #### config.payments.paymentInterval
+The amount of time in seconds for the server to wait in-between payment management cycles. A
+payment management cycle is similar to a payment check cycle in that it's a process where the
+server runs managerial scripts, but it also sends out payments to miners and adjusts the
+database accordingly.
+
+~~~js
+// Type: Number
+config.payments.paymentInterval = [number]
+~~~
 
 ---
 
 #### config.payments.minConfirmations
+The minimum number of confirmations for a mined block before it will be considered as
+accepted.
+
+~~~js
+// Type: Number
+config.payments.minConfirmations = [number]
+~~~
 
 ---
 
 #### config.payments.minPayment
+The minimum amount of the coin being mined that will be sent out in payments. Any balances
+less than the minimum will be logged and sent out when the miner reaches a permissible
+balance.
+
+~~~js
+// Type: Float
+config.payments.minPayment = [float]
+~~~
+
+---
+
+#### config.payments.transactionFee
+The transaction fee to use when the pool is sending out payments. A higher fee will
+ensure that payments get processed faster.
+
+~~~js
+// Type: Float
+config.payments.transactionFee = [float]
+~~~
 
 ---
 
 #### config.payments.daemon.host
+The host IP for the daemon instance that the payment processor will use.
+
+~~~js
+// Type: String
+config.payments.daemon.host = [string]
+~~~
 
 ---
 
 #### config.payments.daemon.port
+The port for the daemon instance that the payment processor will use.
+
+~~~js
+// Type: Number
+config.payments.daemon.port = [number]
+~~~
 
 ---
 
 #### config.payments.daemon.username
+The username set for the daemon instance that the payment processor will use.
+
+~~~js
+// Type: String
+config.payments.daemon.username = [string]
+~~~
 
 ---
 
 #### config.payments.daemon.password
+The password set for the daemon instance that the payment processor will use.
+
+~~~js
+// Type: String
+config.payments.daemon.password = [string]
+~~~
 `;
 
 const banningOptions = `

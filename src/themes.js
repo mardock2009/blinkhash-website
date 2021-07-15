@@ -1,5 +1,8 @@
 export const lightTheme = {
 
+  /* Global Type */
+  type: 'light',
+
   /* Banner Palette */
   backgroundBanner: '#f5f6f7',
   borderBanner: '#cccccc',
@@ -11,9 +14,9 @@ export const lightTheme = {
   textButton: '#ebecef',
 
   /* Footer Palette */
-  backgroundFooter: '#ffffff',
+  backgroundFooter: '#021b3d',
   borderFooter: '#cccccc',
-  textFooter: '#000000',
+  textFooter: '#ffffff',
 
   /* Header Palette */
   backgroundHeader: '#021b3d',
@@ -25,15 +28,16 @@ export const lightTheme = {
   textHover: '#2db594',
 
   /* Information Palette */
-  backgroundInformation: '#ffffff',
-  backgroundInformationSecondary: '#425066',
+  backgroundInformation: '#ebebf6',
+  backgroundInformationSecondary: '#ffffff',
+  backgroundInformationTertiary: '#425066',
   borderInformation: '#cccccc',
   textInformation: '#000000',
   textInformationSecondary: '#ebecef',
   textInformationTertiary: '#888888',
 
   /* License Palette */
-  backgroundLicense: '#ffffff',
+  backgroundLicense: '#ebebf6',
   borderLicense: '#cccccc',
   textLicense: '#888888',
 
@@ -41,7 +45,7 @@ export const lightTheme = {
   textLink: '#000000',
 
   /* Resources Palette */
-  backgroundResources: '#ffffff',
+  backgroundResources: '#ebebf6',
   borderResources: '#cccccc',
   textResources: '#000000',
 
@@ -56,9 +60,12 @@ export const lightTheme = {
 // Main Dark Theme
 export const darkTheme = {
 
+  /* Global Type */
+  type: 'dark',
+
   /* Banner Palette */
-  backgroundBanner: '#1b1e24',
-  borderBanner: '#3e4559',
+  backgroundBanner: '#1d212b',
+  borderBanner: '#333947',
   titleBanner: '#ebecef',
   textBanner: '#bbbbbb',
 
@@ -67,13 +74,13 @@ export const darkTheme = {
   textButton: '#ffffff',
 
   /* Footer Palette */
-  backgroundFooter: '#202632',
-  borderFooter: '#3e4559',
+  backgroundFooter: '#0d1524',
+  borderFooter: '#333947',
   textFooter: '#ebecef',
 
   /* Header Palette */
-  backgroundHeader: '#202632',
-  borderHeader: '#3e4559',
+  backgroundHeader: '#0d1524',
+  borderHeader: '#333947',
   textHeader: '#ebecef',
 
   /* Hover Palette */
@@ -81,30 +88,31 @@ export const darkTheme = {
   textHover: '#2db594',
 
   /* Information Palette */
-  backgroundInformation: '#202632',
-  backgroundInformationSecondary: '#2b3141',
-  borderInformation: '#3e4559',
+  backgroundInformation: '#1b1e24',
+  backgroundInformationSecondary: '#202632',
+  backgroundInformationTertiary: '#2b3141',
+  borderInformation: '#333947',
   textInformation: '#ebecef',
   textInformationSecondary: '#ebecef',
   textInformationTertiary: '#bbbbbb',
 
   /* License Palette */
-  backgroundLicense: '#202632',
-  borderLicense: '#3e4559',
+  backgroundLicense: '#1b1e24',
+  borderLicense: '#333947',
   textLicense: '#bbbbbb',
 
   /* Link Palette */
   textLink: '#ebecef',
 
   /* Resources Palette */
-  backgroundResources: '#202632',
-  borderResources: '#3e4559',
+  backgroundResources: '#1b1e24',
+  borderResources: '#333947',
   textResources: '#ebecef',
 
   /* Sidenav Palette */
   backgroundSidenav: '#202632',
   backgroundSidenavSecondary: '#444ca0',
   backgroundSidenavTertiary: '#2db594',
-  borderSidenav: '#3e4559',
+  borderSidenav: '#333947',
   textSidenav: '#ebecef',
 };

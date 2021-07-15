@@ -15,6 +15,11 @@ export const InformationInner = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 10px;
+  background-color: ${(props) => props.theme.backgroundInformationSecondary};
+  transition: 0.2s ease-in all;
+  ${(props) => props.theme.type === 'light' && `
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3),0 2px 6px 2px rgba(60,64,67,0.15);
+  `}
   @media (max-width: 800px) {
     border-radius: 0px;
   }
@@ -26,8 +31,8 @@ export const InformationSocial = styled.div`
   align-items: center;
   justify-content: center;
   padding: 20px 25px;
-  border: 1px solid ${(props) => props.theme.backgroundInformationSecondary};
-  background-color: ${(props) => props.theme.backgroundInformationSecondary};
+  border: 1px solid ${(props) => props.theme.backgroundInformationTertiary};
+  background-color: ${(props) => props.theme.backgroundInformationTertiary};
   background-position: center;
   border-radius: 10px 10px 0px 0px;
   @media (max-width: 1000px) {
