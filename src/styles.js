@@ -99,7 +99,6 @@ export const Global = createGlobalStyle`
     margin-bottom: 0.5rem;
     font-weight: 500;
     line-height: 1.2;
-    transition: 0.2s ease-in all;
   }
   h4 {
     font-size: 16px !important;
@@ -107,7 +106,6 @@ export const Global = createGlobalStyle`
     margin-bottom: 0.5rem;
     font-weight: 500;
     line-height: 1.2;
-    transition: 0.2s ease-in all;
   }
   h5 {
     font-size: 1.25rem;

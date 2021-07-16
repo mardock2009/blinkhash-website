@@ -24,18 +24,6 @@ export default function Information(props) {
           </LinkExternal>
         </Local.InformationSocial>
         <Local.InformationDocumentation>
-          <Local.InformationLocation>
-            <Local.InformationDirectory>
-              <Global.Body2>
-                {'Blinkhash > Documentation'}
-              </Global.Body2>
-            </Local.InformationDirectory>
-            <Local.InformationVersion>
-              <Global.Body2>
-                {'Version > v1.0.0'}
-              </Global.Body2>
-            </Local.InformationVersion>
-          </Local.InformationLocation>
           {props.children}
         </Local.InformationDocumentation>
       </Local.InformationInner>

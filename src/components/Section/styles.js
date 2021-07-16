@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const SectionMain = styled.div`
   width: 100%;
-  transition: 0.2s ease-in all;
 `;
 
 export const SectionInner = styled.div`
@@ -74,11 +73,23 @@ export const SectionInformationMain = styled.div`
 export const SectionBody = styled.div`
   width: calc(100% + 50px);
   padding: 0px 25px;
-  border-bottom: 3px solid ${(props) => props.theme.borderInformation};
-  &:last-child {
-    margin-bottom: -1rem;
+  background-color: ${(props) => props.theme.backgroundInformationSecondary};
+  margin-bottom: 20px;
+  border: 1px solid ${(props) => props.theme.borderInformation};
+  border-radius: 10px;
+  transition: 0.2s ease-in all;
+  ${(props) => props.theme.type === 'light' && `
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3),0 2px 6px 2px rgba(60,64,67,0.15);
+  `}
+  @media (max-width: 800px) {
+    margin-bottom: 0px;
+    border: 0px;
+    border-bottom: 2px solid ${(props) => props.theme.borderInformation};
     border-radius: 0px;
-    border-bottom: 0px;
+    box-shadow: none;
+  }
+  &:last-child {
+    margin-bottom: -20px;
   }
 `;
 
@@ -100,6 +111,6 @@ export const SectionText = styled.div`
 
 export const SectionTitle = styled.div`
   width: 100%;
-  margin: 20px 0px 15px;
+  margin: 25px 0px 20px;
   line-height: 20px;
 `;

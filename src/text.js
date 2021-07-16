@@ -89,7 +89,7 @@ be addressed. The list of all algorithms that are currently supported is
 `
 
 const tutorial = `
-This section will offer a tutorial on how to setup a Blinkhash pool for Bitcoin on your
+This section will offer a tutorial on how to setup Blinkhash to mine Bitcoin on your
 local machine. This process can be extrapolated to any other coin that uses one of
 the supported algorithms and is built similarly to Bitcoin itself. See the 'Configuration'
 sections for an in-depth explanation of the configuration files used in this tutorial.
@@ -157,7 +157,7 @@ a few steps.
 
 ~~~bash
 ~/bitcoin-0.21.1/bin/bitcoind getnewaddress
-# Ex. bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq
+# Ex: bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq
 ~~~
 
 At this point, your daemon should start the process of downloading the blockchain. The
@@ -515,7 +515,7 @@ config.featured = true | false;
 #### config.address
 The main custodial coin address for the pool. Any blocks that are mined will have their
 coins sent to this address while miners are awaiting payments. This address must have been
-generated using the daemon configured in the 'Payments' section or else an error will
+generated using the daemon configured in the 'Payment Options' section or else an error will
 be thrown.
 
 ~~~js
@@ -932,6 +932,7 @@ balance.
 
 ~~~js
 // Type: Float
+// Range: 0 -> inf
 config.payments.minPayment = [float]
 ~~~
 
@@ -943,6 +944,7 @@ ensure that payments get processed faster.
 
 ~~~js
 // Type: Float
+// Range: 0 -> inf
 config.payments.transactionFee = [float]
 ~~~
 
@@ -989,62 +991,168 @@ config.payments.daemon.password = [string]
 
 const banningOptions = `
 #### config.banning.time
+The amount of time in seconds before a banned miner can reconnect to the pool.
+
+~~~js
+// Type: Number
+config.banning.time = [number]
+~~~
 
 ---
 
 #### config.banning.invalidPercent
+The percentage of invalid shares to valid shares submitted by a miner before they're banned
+from the pool.
+
+~~~js
+// Type: Float
+// Range: 0 -> 1
+config.banning.invalidPercent = [float]
+~~~
 
 ---
 
 #### config.banning.checkThreshold
+The minimum number of shares for a miner to submit before they can be automatically banned
+if their invalid share percentage exceeds the threshold. This minimum helps to reduce the
+number of banning false positives.
+
+~~~js
+// Type: Number
+config.banning.checkThreshold = [number]
+~~~
 
 ---
 
 #### config.banning.purgeInterval
+The amount of time in seconds for the server to wait in-between purging old bans if the ban
+has expired.
+
+~~~js
+// Type: Number
+config.banning.purgeInterval = [number]
+~~~
 `;
 
 const portOptions = `
 #### config.ports.port
+The port for the process being configured for miners to connect to.
+
+~~~js
+// Type: Number
+config.ports.port = [number]
+~~~
 
 ---
 
 #### config.ports.enabled
+Ensures that the process will be started when the server process is initialized.
+
+~~~js
+// Type: Number
+config.ports.enabled = [number]
+~~~
 
 ---
 
 #### config.ports.type
+Specifies the type of mining to be conducted on the port for miners that connect.
+Both solo and shared mining is currently supported.
+
+~~~js
+// Type: String
+config.ports.type = 'shared' | 'solo'
+~~~
 
 ---
 
 #### config.ports.difficulty.initial
+The initial difficulty broadcasted to any miners that connect to the port.
+
+~~~js
+// Type: Number | Float
+// Range: 0 -> inf
+config.ports.difficulty.initial = [number] | [float]
+~~~
 
 ---
 
 #### config.ports.difficulty.minimum
+The minimum difficulty allowed for any miners that connect to the port.
+
+~~~js
+// Type: Number | Float
+// Range: 0 -> inf
+config.ports.difficulty.minimum = [number] | [float]
+~~~
 
 ---
 
 #### config.ports.difficulty.maximum
+The maximum difficulty allowed for any miners that connect to the port.
+
+~~~js
+// Type: Number | Float
+// Range: 0 -> inf
+config.ports.difficulty.maximum = [number] | [float]
+~~~
 
 ---
 
 #### config.ports.difficulty.targetTime
+The desired time in seconds that it will take for a miner to find and submit a share. The
+difficulty will be adjusted for each miner individually to optimize share submission and
+adhere to this threshold.
+
+~~~js
+// Type: Number
+config.ports.difficulty.targetTime = [number]
+~~~
 
 ---
 
 #### config.ports.difficulty.retargetTime
+The amount of time in seconds for the server to wait in-between checking to see if a miner
+should update their difficulty.
+
+~~~js
+// Type: Number
+config.ports.difficulty.retargetTime = [number]
+~~~
 
 ---
 
 #### config.ports.difficulty.variance
+The percentage of how much of a 'gap' between the target time and the actual time is permissible.
+
+~~~js
+// Type: Float
+// Range: 0 -> 1
+config.ports.difficulty.variance = [float]
+~~~
 `;
 
 const recipientOptions = `
 #### config.recipients.address
+The main coin address for the recipient being added. Whenever a block is found, a percentage
+of the coins acquired will be sent to this address.
+
+~~~js
+// Type: String
+config.recipients.address = [string]
+~~~
 
 ---
 
 #### config.recipients.percentage
+The percentage of the coins found in a block that will be sent to the recipient being added.
+
+~~~js
+// Type: Float
+// Range: 0 -> 1
+config.recipients.percentage = [float]
+~~~
+
 `;
 
 const p2pOptions = `

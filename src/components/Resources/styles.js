@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ResourcesMain = styled.div`
   width: 220px;
-  padding: 3px 20px 0px;
+  padding: 3px 25px 0px;
   margin: 20px 0px 0px;
   top: 90px;
   position: sticky;

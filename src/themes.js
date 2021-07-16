@@ -34,7 +34,6 @@ export const lightTheme = {
   borderInformation: '#cccccc',
   textInformation: '#000000',
   textInformationSecondary: '#ebecef',
-  textInformationTertiary: '#888888',
 
   /* License Palette */
   backgroundLicense: '#ebebf6',
@@ -94,7 +93,6 @@ export const darkTheme = {
   borderInformation: '#333947',
   textInformation: '#ebecef',
   textInformationSecondary: '#ebecef',
-  textInformationTertiary: '#bbbbbb',
 
   /* License Palette */
   backgroundLicense: '#1b1e24',

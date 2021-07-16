@@ -15,11 +15,6 @@ export const InformationInner = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  background-color: ${(props) => props.theme.backgroundInformationSecondary};
-  transition: 0.2s ease-in all;
-  ${(props) => props.theme.type === 'light' && `
-    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3),0 2px 6px 2px rgba(60,64,67,0.15);
-  `}
   @media (max-width: 800px) {
     border-radius: 0px;
   }
@@ -34,7 +29,10 @@ export const InformationSocial = styled.div`
   border: 1px solid ${(props) => props.theme.backgroundInformationTertiary};
   background-color: ${(props) => props.theme.backgroundInformationTertiary};
   background-position: center;
-  border-radius: 10px 10px 0px 0px;
+  border-radius: 10px;
+  ${(props) => props.theme.type === 'light' && `
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3),0 2px 6px 2px rgba(60,64,67,0.15);
+  `}
   @media (max-width: 1000px) {
     flex-direction: column;
   }
@@ -59,34 +57,10 @@ export const InformationDocumentation = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid ${(props) => props.theme.borderInformation};
   border-radius: 0px 0px 10px 10px;
   border-top: 0px;
   @media (max-width: 800px) {
-    border: 0px;
+    margin-top: -20px;
     border-radius: 0px;
   }
-  @media (max-width: 500px) {
-    margin-top: -20px;
-  }
-`;
-
-export const InformationLocation = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  color: ${(props) => props.theme.textInformationTertiary};
-  margin-bottom: -5px;
-  @media (max-width: 500px) {
-    display: none;
-  }
-`;
-
-export const InformationDirectory = styled.div`
-  display: flex;
-`;
-
-export const InformationVersion = styled.div`
-  display: flex;
-  justify-content: flex-end;
 `;
