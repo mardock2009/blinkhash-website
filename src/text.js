@@ -348,7 +348,6 @@ config.p2p = {};
 config.p2p.enabled = true;
 config.p2p.host = '127.0.0.1';
 config.p2p.port = 8333;
-config.p2p.disableTransactions = true;
 
 // Settings Configuration
 config.settings = {};
@@ -358,7 +357,6 @@ config.settings.emitInvalidBlockHashes = false;
 config.settings.hashrateWindow = 300;
 config.settings.jobRebroadcastTimeout = 60;
 config.settings.tcpProxyProtocol = false;
-config.settings.validateWorkerUsername = true;
 
 // Export Configuration
 module.exports = config;
@@ -1049,8 +1047,8 @@ config.ports.port = [number]
 Ensures that the process will be started when the server process is initialized.
 
 ~~~js
-// Type: Number
-config.ports.enabled = [number]
+// Type: Boolean
+config.ports.enabled = true | false
 ~~~
 
 ---
@@ -1152,52 +1150,104 @@ The percentage of the coins found in a block that will be sent to the recipient 
 // Range: 0 -> 1
 config.recipients.percentage = [float]
 ~~~
-
 `;
 
 const p2pOptions = `
 #### config.p2p.enabled
+Ensures that the pool connects to the daemon as a peer node to receive updates faster.
+It may be the most efficient way to load blocks, but doesn't work for all coins and
+requires the additional field "peerMagic" to be set properly in the configuration.
+
+~~~js
+// Type: Boolean
+config.p2p.enabled = true | false
+~~~
 
 ---
 
 #### config.p2p.host
+The host IP for the p2p node running in the background.
+
+~~~js
+// Type: String
+config.p2p.host = [string]
+~~~
 
 ---
 
 #### config.p2p.port
+The port for the p2p node running in the background.
 
----
-
-#### config.p2p.disableTransactions
+~~~js
+// Type: Number
+config.p2p.port = [number]
+~~~
 `;
 
 const miscellaneousOptions = `
 #### config.settings.blockRefreshInterval
+The amount of time in milliseconds for the server to wait in-between pinging the daemon to
+check for block updates.
+
+~~~js
+// Type: Number
+config.settings.blockRefreshInterval = [number]
+~~~
 
 ---
 
 #### config.settings.connectionTimeout
+The amount of time in seconds for the server to wait before disconnecting workers that haven't
+submitted shares in the timeframe.
+
+~~~js
+// Type: Number
+config.settings.connectionTimeout = [number]
+~~~
 
 ---
 
 #### config.settings.emitInvalidBlockHashes
+Enables recording for block hashes for shares that aren't valid block candidates
+
+~~~js
+// Type: Boolean
+config.settings.emitInvalidBlockHashes = true | false
+~~~
 
 ---
 
 #### config.settings.hashrateWindow
+The amount of time in seconds for the server to look back while collecting old shares to
+calculate the worker and pool hashrate.
+
+~~~js
+// Type: Number
+config.settings.hashrateWindow = [number]
+~~~
 
 ---
 
 #### config.settings.jobRebroadcastTimeout
+The amount of time in seconds for the server to wait before refreshing and rebroadcasting
+the job if no new blocks were found.
+
+~~~js
+// Type: Number
+config.settings.jobRebroadcastTimeout = [number]
+~~~
 
 ---
 
 #### config.settings.tcpProxyProtocol
+Ensures that client IP addresses are able to be detected when using a load balancer with TCP
+proxy protocol enabled
 
----
-
-#### config.settings.validateWorkerUsername
-`
+~~~js
+// Type: Boolean
+config.settings.tcpProxyProtocol = true | false
+~~~
+`;
 
 // Text for Module Sections
 export const sections = [
