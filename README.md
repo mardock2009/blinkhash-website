@@ -5,6 +5,10 @@
 
 This repository is a custom-built website intended to serve the documentation for Blinkhash's various services. It was written using the ReactJS/NextJS framework, and is currently hosted at https://docs.blinkhash.com.
 
+#### Need Support?
+
+If you need help with a code-related matter, the first place to look is our [Discord](https://discord.gg/8xtHZFKJQY), where the developers will be available to answer any questions. However, please do not come to me with issues regarding setup. Use Google and the existing documentation for that.
+
 ---
 
 ### Introduction
@@ -15,7 +19,7 @@ This documentation will outline each of the individual modules that make up Blin
 
 ### Why Blinkhash?
 
-As a mining pool solution, Blinkhash expands upon the framework initially established in Matthew Little's NOMP. It addresses many of the issues brought up by users over the years and implements a number of features left out of the original solution, while simultaneously boasting cleaner source code and an expansive testing suite. Some of the main improvements notwithstanding the rewrite itself and those mentioned above include the following:
+As a mining platform, Blinkhash expands upon the framework initially established in Matthew Little's NOMP. It addresses many of the issues brought up by users over the years and implements a number of features left out of the original solution, while simultaneously boasting cleaner source code and an expansive testing suite. Some of the main improvements notwithstanding the rewrite itself and those mentioned above include the following:
 
 - Segwit/Bech32 compliance
 - Updated stratum methods according to documentation
