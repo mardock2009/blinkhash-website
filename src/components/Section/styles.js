@@ -22,9 +22,7 @@ export const SectionNavigation = styled.div`
   padding-bottom: 15px;
   border-bottom: 1px solid ${(props) => props.theme.borderSidenav};
   &:last-child {
-    border-bottom: 0px;
     margin-bottom: 0px;
-    padding-bottom: 0px;
   }
 `;
 

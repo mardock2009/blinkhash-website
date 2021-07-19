@@ -137,7 +137,6 @@ export const HeaderToggle = styled.div`
   font-size: 18px;
   transition: 0.2s ease-in all;
   &:hover {
-    color: ${(props) => props.theme.textHeader};
     background-color: ${(props) => props.theme.accessoryHover};
     border: 0px;
     cursor: pointer;

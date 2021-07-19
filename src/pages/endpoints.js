@@ -1,9 +1,9 @@
 import React from 'react';
 import Section from '../components/Section/index';
-import { headers, sections } from '../text/overview.js';
+import { headers, sections } from '../text/endpoints.js';
 import { Global } from '../styles';
 
-export default function Index(props) {
+export default function Configuration(props) {
   return (
     <React.Fragment>
       <Global />
