@@ -23,7 +23,8 @@ As a mining pool solution, Blinkhash expands upon the framework initially establ
 Matthew Little's NOMP. It addresses many of the issues brought up by users over the years
 and implements a number of features left out of the original solution, while simultaneously
 boasting cleaner source code and an expansive testing suite. Some of the main improvements
-notwithstanding the rewrite itself and those mentioned above include the following:
+notwithstanding the rewrite itself, bug fixes and those mentioned above include the
+following:
 
 * Segwit/Bech32 compliance
 * Updated stratum methods according to [documentation](https://braiins.com/stratum-v1/docs)

@@ -4,7 +4,7 @@ export const SidenavMain = styled.div`
   width: 280px;
   padding: 20px;
   display: flex;
-  top: 70px;
+  top: 60px;
   position: sticky;
   position: -webkit-sticky;
   align-self: flex-start;

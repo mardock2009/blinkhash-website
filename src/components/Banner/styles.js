@@ -4,7 +4,7 @@ export const BannerMain = styled.div`
   width: 100%;
   padding: 20px 25px;
   display: flex;
-  margin-top: 70px;
+  margin-top: 60px;
   position: relative;
   flex-direction: column;
   align-items: center;

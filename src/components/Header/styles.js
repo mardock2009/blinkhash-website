@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const HeaderMain = styled.div`
   width: 100%;
-  height: 70px;
+  height: 60px;
   padding: 20px 25px;
   top: 0px;
   left: 0px;
@@ -35,13 +35,13 @@ export const HeaderImage = styled.img`
   justify-content: center;
   margin-right: 15px;
   margin-top: 1px;
+  @media (max-width: 700px) {
+    display: none;
+  }
 `;
 
 export const HeaderTitle = styled.div`
   color: ${(props) => props.theme.textHeader};
-  @media (max-width: 450px) {
-    display: none;
-  }
 `;
 
 export const HeaderLinks = styled.div`
@@ -53,7 +53,7 @@ export const HeaderLinks = styled.div`
 
 export const HeaderPages = styled.div`
   display: flex;
-  padding: 10px 20px;
+  padding: 5px 20px;
   border-right: 1px solid ${(props) => props.theme.borderHeader};
   @media (max-width: 700px) {
     display: none;
@@ -62,8 +62,10 @@ export const HeaderPages = styled.div`
 
 export const HeaderText = styled.div `
   color: ${(props) => props.theme.textHeader};
+  transition: 0.2s ease-in all;
   &:hover {
     cursor: pointer;
+    color: ${(props) => props.theme.accessoryHover};
   }
 `;
 
@@ -74,22 +76,20 @@ export const HeaderSocial = styled.div`
 `;
 
 export const HeaderSocialIcon = styled.a`
-  width: 36px;
-  height: 36px;
+  width: 31px;
+  height: 31px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0px 5px 0px 5px;
-  border-radius: 50px;
-  border: 1px solid ${(props) => props.theme.borderHeader};
   color: ${(props) => props.theme.textHeader};
-  font-size: 18px;
+  cursor: pointer;
   transition: 0.2s ease-in all;
+  @media (max-width: 450px) {
+    display: none;
+  }
   &:hover {
-    color: ${(props) => props.theme.textHeader};
-    background-color: ${(props) => props.theme.accessoryHover};
-    border: 0px;
-    cursor: pointer;
+    color: ${(props) => props.theme.accessoryHover};
   }
   &:first-child {
     margin-left: 0px;
@@ -100,22 +100,22 @@ export const HeaderSocialIcon = styled.a`
 `;
 
 export const Discord = styled.div`
-  width: 19px;
-  height: 14px;
-  background-size: contain;
+  width: 15px;
+  height: 11px;
+  background-size: cover;
   background-image: url('/images/discord-logo.png');
 `;
 
 export const Medium = styled.div`
-  width: 19px;
-  height: 14px;
-  background-size: contain;
+  width: 15px;
+  height: 12px;
+  background-size: cover;
   background-image: url('/images/medium-logo.png');
 `;
 
 export const Github = styled.div`
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   background-size: contain;
   background-image: url('/images/github-logo.png');
 `;
@@ -126,18 +126,16 @@ export const HeaderTheme = styled.div`
 `;
 
 export const HeaderToggle = styled.div`
-  width: 36px;
-  height: 36px;
+  width: 31px;
+  height: 31px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50px;
-  border: 1px solid ${(props) => props.theme.borderHeader};
   color: ${(props) => props.theme.textHeader};
   font-size: 18px;
   transition: 0.2s ease-in all;
   &:hover {
-    background-color: ${(props) => props.theme.accessoryHover};
+    color: ${(props) => props.theme.accessoryHover};
     border: 0px;
     cursor: pointer;
   }

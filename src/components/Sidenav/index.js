@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import * as Local from './styles';
 
 export default function Sidenav(props) {
-  const [offset, setOffset] = useState(174);
+  const [offset, setOffset] = useState(164);
   const heightRef = useRef(null);
 
   function calculateOffset() {

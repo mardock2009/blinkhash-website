@@ -89,7 +89,7 @@ export const darkTheme = {
   /* Information Palette */
   backgroundInformation: '#06090f',
   backgroundInformationSecondary: '#11151c',
-  backgroundInformationTertiary: '#11151c',
+  backgroundInformationTertiary: '#1d212b',
   borderInformation: '#20202b',
   textInformation: '#ebecef',
   textInformationSecondary: '#ebecef',

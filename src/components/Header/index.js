@@ -3,6 +3,7 @@ import React from 'react';
 import { LinkInternal } from '../Links';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faTwitter, faDiscord } from '@fortawesome/free-brands-svg-icons';
 
 // Main Styles
 import * as Global from '../../styles';
@@ -36,21 +37,30 @@ export default function Header(props) {
               target='_blank'
               rel='noreferrer noopener'
             >
-              <Local.Discord />
+              <FontAwesomeIcon
+                icon={faDiscord}
+                style={{ width: '18px', marginTop: '3px' }}
+              />
             </Local.HeaderSocialIcon>
             <Local.HeaderSocialIcon
-              href={'https://www.medium.com/@blinkhash'}
+              href={'https://twitter.com/blinkhash1'}
               target='_blank'
               rel='noreferrer noopener'
             >
-              <Local.Medium />
+              <FontAwesomeIcon
+                icon={faTwitter}
+                style={{ width: '20px' }}
+              />
             </Local.HeaderSocialIcon>
             <Local.HeaderSocialIcon
               href={'https://www.github.com/blinkhash'}
               target='_blank'
               rel='noreferrer noopener'
             >
-              <Local.Github />
+              <FontAwesomeIcon
+                icon={faGithub}
+                style={{ width: '20px' }}
+              />
             </Local.HeaderSocialIcon>
           </Local.HeaderSocial>
           <Local.HeaderTheme>

@@ -1,9 +1,12 @@
 import { flatten } from '../common/utils';
 
+const apiRequests = `
+`;
+
 // Text for Module Sections
 export const sections = [
   {
-    'API Requests': '',
+    'API Requests': apiRequests,
     'Error Codes': '',
     'Unknown Requests': '',
     'Response Data': '',
