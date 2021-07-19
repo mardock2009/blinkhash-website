@@ -2,8 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://docs.blinkhash.com/</loc>
+  </url>
+  <url>
     <loc>https://docs.blinkhash.com/overview</loc>
+  </url>
+  <url>
     <loc>https://docs.blinkhash.com/configurations</loc>
+  </url>
+  <url>
     <loc>https://docs.blinkhash.com/endpoints</loc>
   </url>
 </urlset>
