@@ -63,8 +63,8 @@ export const darkTheme = {
   type: 'dark',
 
   /* Banner Palette */
-  backgroundBanner: '#1d212b',
-  borderBanner: '#333947',
+  backgroundBanner: '#11151c',
+  borderBanner: '#20202b',
   titleBanner: '#ebecef',
   textBanner: '#bbbbbb',
 
@@ -73,13 +73,13 @@ export const darkTheme = {
   textButton: '#ffffff',
 
   /* Footer Palette */
-  backgroundFooter: '#0d1524',
-  borderFooter: '#333947',
+  backgroundFooter: '#06090f',
+  borderFooter: '#20202b',
   textFooter: '#ebecef',
 
   /* Header Palette */
-  backgroundHeader: '#0d1524',
-  borderHeader: '#333947',
+  backgroundHeader: '#06090f',
+  borderHeader: '#20202b',
   textHeader: '#ebecef',
 
   /* Hover Palette */
@@ -87,30 +87,30 @@ export const darkTheme = {
   textHover: '#2db594',
 
   /* Information Palette */
-  backgroundInformation: '#1b1e24',
-  backgroundInformationSecondary: '#202632',
-  backgroundInformationTertiary: '#2b3141',
-  borderInformation: '#333947',
+  backgroundInformation: '#06090f',
+  backgroundInformationSecondary: '#11151c',
+  backgroundInformationTertiary: '#11151c',
+  borderInformation: '#20202b',
   textInformation: '#ebecef',
   textInformationSecondary: '#ebecef',
 
   /* License Palette */
-  backgroundLicense: '#1b1e24',
-  borderLicense: '#333947',
+  backgroundLicense: '#06090f',
+  borderLicense: '#20202b',
   textLicense: '#bbbbbb',
 
   /* Link Palette */
   textLink: '#ebecef',
 
   /* Resources Palette */
-  backgroundResources: '#1b1e24',
-  borderResources: '#333947',
+  backgroundResources: '#06090f',
+  borderResources: '#20202b',
   textResources: '#ebecef',
 
   /* Sidenav Palette */
-  backgroundSidenav: '#202632',
+  backgroundSidenav: '#06090f',
   backgroundSidenavSecondary: '#444ca0',
   backgroundSidenavTertiary: '#2db594',
-  borderSidenav: '#333947',
+  borderSidenav: '#20202b',
   textSidenav: '#ebecef',
 };

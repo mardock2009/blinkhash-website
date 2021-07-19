@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const LicenseMain = styled.div`
   width: 100%;
-  max-width: 900px;
   padding: 0px 25px;
   padding-bottom: 20px;
   background-color: ${(props) => props.theme.backgroundLicense};
