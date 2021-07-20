@@ -123,10 +123,10 @@ ${Responses.minersCurrentResponse}
 `;
 
 const paymentsBalances = `
-Returns an object that includes properties for each miner that has an active balance.
-Miners only accumulate balances when they don't earn enough coins to qualify for the next
-payout. When their balance reaches the minimum payment allowed, it'll be sent to them in
-the next payment cycle and their balance will be reset to 0.
+Returns an object that includes properties for each miner that has an unpaid balance.
+Miners only accumulate unpaid balances when they don't earn enough coins to qualify for
+the next payout. When their balance reaches the minimum payment allowed, it'll be sent
+to them in the next payment cycle and their unpaid balance will be reset to 0.
 
 ~~~bash
 # /payments?method=balances
@@ -346,9 +346,9 @@ export const sections = [
   },
   {
     'Payment Endpoints': '',
-    'Miner Balances': paymentsBalances,
-    'Immature Payouts': paymentsImmature,
-    'Validated Payouts': paymentsGenerate,
+    'Unpaid Balances': paymentsBalances,
+    'Immature Balances': paymentsImmature,
+    'Validated Balances': paymentsGenerate,
     'Amounts Paid': paymentsPaid,
     'Payment Records': paymentsRecords,
     'Combined Payments': paymentsCombined,
