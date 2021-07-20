@@ -13,10 +13,21 @@ export const SidenavMain = styled.div`
   background-color: ${(props) => props.theme.backgroundSidenav};
   transition: 0.2s ease-in all;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: overlay;
   ${(props) => props.theme.type === 'light' && `
     box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3),0 2px 6px 2px rgba(60,64,67,0.15);
   `}
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: ${(props) => props.theme.backgroundSidenav};
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: ${(props) => props.theme.scrollSidenav};
+  }
   @media (max-width: 800px) {
     display: none;
   }

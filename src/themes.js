@@ -53,6 +53,7 @@ export const lightTheme = {
   backgroundSidenavSecondary: '#e8f0fd',
   backgroundSidenavTertiary: '#f1f3f4',
   borderSidenav: '#cccccc',
+  scrollSidenav: '#cccccc',
   textSidenav: '#000000',
 };
 
@@ -112,5 +113,6 @@ export const darkTheme = {
   backgroundSidenavSecondary: '#444ca0',
   backgroundSidenavTertiary: '#2db594',
   borderSidenav: '#20202b',
+  scrollSidenav: '#20202b',
   textSidenav: '#ebecef',
 };
