@@ -44,7 +44,7 @@ export default function Section(props) {
     const idx = props.headers.indexOf(header);
     const ref = headerRefs[idx];
     const distance = ref.current.getBoundingClientRect().bottom;
-    window.scrollBy({ left: 0, top: distance - 112, behavior: 'smooth' });
+    window.scrollBy({ left: 0, top: distance - 102, behavior: 'smooth' });
     setActiveIndex(idx);
   }
 

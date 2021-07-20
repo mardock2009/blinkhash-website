@@ -1,5 +1,13 @@
 import { flatten } from '../common/utils';
 
+const configurations = `
+This documentation details the individual configuration files associated with the Blinkhash
+server itself, explaining each property in-depth in an effort to aid mining pool owners with
+their setup. The files themselves are broken down into three separate groups: 'main',
+'partners', and 'pools', each of which have their own sections below for instructions on how
+to work with them effectively.
+`;
+
 const fileStructure = `
 The main file structure for the configuration files is as follows:
 
@@ -943,11 +951,12 @@ config.settings.tcpProxyProtocol = true | false
 // Text for Module Sections
 export const sections = [
   {
+    'Configurations': configurations,
     'File Structure': fileStructure,
     'Creating a New File': creatingFile,
   },
   {
-    'Server Configuration': '',
+    'Main Configuration': '',
     'Logger Options': loggerOptions,
     'Clustering Options': clusteringOptions,
     'Redis Options': redisOptions,
