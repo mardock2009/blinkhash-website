@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const SidenavMain = styled.div`
+export const SidenavContainer = styled.div`
   width: 280px;
   padding: 20px;
   display: flex;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const SectionMain = styled.div`
+export const SectionContainer = styled.div`
   width: 100%;
 `;
 
@@ -58,7 +58,7 @@ export const SectionInformationInner = styled.div`
   justify-content: center;
 `;
 
-export const SectionInformationMain = styled.div`
+export const SectionInformationContainer = styled.div`
   width: calc(100% - 220px);
   max-width: 1024px;
   display: flex;

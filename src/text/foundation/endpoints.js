@@ -1,9 +1,9 @@
-import { flatten } from '../common/utils';
+import { flatten } from '../../common/utils';
 import * as Responses from './responses';
 
 const apiRequests = `
 This documentation details the endpoints associated with the main API initialized alongside
-the Blinkhash pool server. It provides a way to access all publicly available information for
+the Foundation server. It provides a way to access all publicly available information for
 miners as well as insurance that the pool itself is provably "fair". Each response will be
 cached with a max-age of 300 seconds. Rate-limiting by users' IP is also active, and requests
 are limited to 100 per 15 minutes.
@@ -55,7 +55,7 @@ const blocksKicked = `
 Returns an array of all blocks mined by the pool that were orphaned on creation and kicked
 by the coin's network. There are many reasons why a block may be kicked, but the most common
 is that a second miner discovered a block at the same time. There is no reward for any
-blocks that were orphaned, but Blinkhash will transfer all shares in the orphaned round to
+blocks that were orphaned, but Foundation will transfer all shares in the orphaned round to
 the upcoming one, ensuring contributions aren't lost.
 
 ~~~bash
@@ -324,6 +324,15 @@ curl http://localhost:3001/api/v1/partners
 ${Responses.partnersCurrentResponse}
 ~~~
 `;
+
+// Resources for Module Sections
+export const resources = [
+  ['https://github.com/blinkhash/foundation-server', 'foundation-server'],
+  ['https://github.com/blinkhash/foundation-stratum', 'foundation-stratum'],
+  ['https://github.com/blinkhash/foundation-multi-hashing', 'foundation-multi-hashing'],
+  ['https://github.com/blinkhash/foundation-documentation', 'foundation-documentation'],
+  ['https://github.com/blinkhash/foundation-configurations', 'foundation-configurations'],
+  ['https://github.com/blinkhash/foundation-utxo-lib', 'foundation-utxo-lib']]
 
 // Text for Module Sections
 export const sections = [

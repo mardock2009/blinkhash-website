@@ -8,7 +8,7 @@ import { GlobalMain } from '../styles';
 export default function App({ Component, pageProps }) {
   const [theme, updateTheme] = useState('light');
 
-  const site = "https://docs.blinkhash.com";
+  const site = "https://blinkhash.com/docs";
   const canonical = site + useRouter().asPath;
 
   // Save Theme to Local Storage

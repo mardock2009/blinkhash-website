@@ -1,7 +1,7 @@
-import { flatten } from '../common/utils';
+import { flatten } from '../../common/utils';
 
 const introduction = `
-Blinkhash was born out of a desire to simplify the process of creating, hosting,
+Foundation was born out of a desire to simplify the process of creating, hosting,
 and managing a mining pool for the layman. It's no secret that mining pools, and
 the mining process as a whole, has been becoming more and more centralized, especially
 for smaller altcoins, where a single pool is most often responsible for the majority
@@ -10,16 +10,16 @@ help to solve this issue, but it would provide another way for many less-technic
 individuals to supplement their income passively while contributing to a project. Anyone
 should be able to setup and host a mining pool with minimal difficulties.
 
-This documentation will outline each of the individual modules that make up Blinkhash,
+This documentation will outline each of the individual modules that make up Foundation,
 as well as a breakdown of the API and configuration files, tutorials that explain how to
-setup and work with Blinkhash, and a repository of FAQs. If you need help with any code-related
+setup and work with Foundation, and a repository of FAQs. If you need help with any code-related
 matters, the first place to look is our [Discord](https://discord.gg/8xtHZFKJQY), where
 the developers will be available to answer any questions. However, please try not to come
 with issues regarding setup. Use Google and the existing documentation for that.
 `;
 
 const improvements = `
-As a mining pool solution, Blinkhash expands upon the framework initially established in
+As a mining pool solution, Foundation expands upon the framework initially established in
 Matthew Little's NOMP. It addresses many of the issues brought up by users over the years
 and implements a number of features left out of the original solution, while simultaneously
 boasting cleaner source code and an expansive testing suite. Some of the main improvements
@@ -39,16 +39,16 @@ following:
 * Updated Node version from v0.10.x to v15.x+
 * CI/coverage/linting pipelines
 
-With all these changes and improvements upon the initial source, Blinkhash is no doubt
+With all these changes and improvements upon the initial source, Foundation is no doubt
 one of the most sophisticated open-source solutions currently available, and one of the
 few that is still being actively developed.
 `;
 
 const modules = `
-The Blinkhash project specifically consists of three different modules:
-[blinkhash-server](https://github.com/blinkhash/blinkhash-server),
-[blinkhash-stratum](https://github.com/blinkhash/blinkhash-stratum), and
-[blinkhash-multi-hashing](https://github.com/blinkhash/blinkhash-multi-hashing). The
+The Foundation project specifically consists of three different modules:
+[foundation-server](https://github.com/blinkhash/foundation-server),
+[foundation-stratum](https://github.com/blinkhash/foundation-stratum), and
+[foundation-multi-hashing](https://github.com/blinkhash/foundation-multi-hashing). The
 server module controls the main functionality relating to the pool itself, including
 share processing, the API, database management, worker handling, and sending out payments.
 The stratum module is responsible mainly for facilitating communication with the
@@ -60,18 +60,18 @@ offer.
 `;
 
 const server = `
-Blinkhash's server is the main module that controls the mining pool and related
+Foundation's server is the main module that controls the mining pool and related
 functionality. It's an extremely efficient, scalable, easy-to-setup piece of software
 written entirely in Javascript. As mentioned, it builds upon the framework initially
 established in Matthew Little's NOMP. Although some of the accessory features were removed,
 such as the UI, coin-switching, MPOS functionality, the CLI, and the usage of exchange
 APIs for price tracking, many more remain or have been implemented from scratch. As
-Blinkhash's main goal is to promote simplicity, the core features have been prioritized,
+Foundation's main goal is to promote simplicity, the core features have been prioritized,
 including the API, payment processor, and share handler.
 `;
 
 const stratum = `
-Blinkhash's stratum module is a high performance Stratum server written entirely in
+Foundation's stratum module is a high performance Stratum server written entirely in
 Javascript. One instance of this software can startup and manage multiple coins, each
 with their own daemon and ports. This server itself was built to be efficient, transparent,
 and easy to setup, while still maintaining greater scalability than many of the other
@@ -81,16 +81,16 @@ and raw share data, this module will not be of use to you by itself.
 `;
 
 const multiHashing = `
-Blinkhash's multi-hashing module is mainly a collection of hashing algorithms that are
-currently supported by Blinkhash. Each of these algorithms are leveraged by the stratum
+Foundation's multi-hashing module is mainly a collection of hashing algorithms that are
+currently supported by Foundation. Each of these algorithms are leveraged by the stratum
 module, which handles the majority of the mining process. To request for an unsupported
 algorithm to be added, open an issue or pull request in the Github repository and it will
 be addressed. The list of all algorithms that are currently supported is
-[here](https://github.com/blinkhash/blinkhash-stratum/blob/master/scripts/main/algorithms.js).
+[here](https://github.com/blinkhash/foundation-stratum/blob/master/scripts/main/algorithms.js).
 `
 
 const tutorial = `
-This section will offer a tutorial on how to setup Blinkhash to mine Bitcoin on your
+This section will offer a tutorial on how to setup Foundation to mine Bitcoin on your
 local machine. This process can be extrapolated to any other coin that uses one of
 the supported algorithms and is built similarly to Bitcoin itself. See the 'Configurations'
 page for an in-depth explanation of the configuration files used in this tutorial.
@@ -102,7 +102,7 @@ To start off, you'll need to install the following:
 * NodeJS v8.0+
 * Redis Database v2.6+
 
-In our development environment, Blinkhash is currently being built with NodeJS v12.16
+In our development environment, Foundation is currently being built with NodeJS v12.16
 and Redis Database v6.2.1, however each build has been tested with NodeJS v11.x-v15.x.
 As such, most versions of NodeJS should be fine to use. If you find yourself experiencing
 any errors or difficulties with NodeJS, try and upgrade/downgrade to v12.16 and see
@@ -174,14 +174,14 @@ block/transaction updates and can be used for submitting blocks.
 
 const downloading = `
 After configuring the daemon, the next step is to go about downloading and installing
-dependencies for the Blinkhash server itself. Make sure to use the latest release rather
+dependencies for the Foundation server itself. Make sure to use the latest release rather
 than cloning the repository itself.
 
 ~~~bash
 sudo apt-get install build-essential unzip
-wget https://github.com/blinkhash/blinkhash-server/archive/refs/tags/v1.0.0.zip
+wget https://github.com/blinkhash/foundation-server/archive/refs/tags/v1.0.0.zip
 unzip v1.0.0.zip
-cd ~/blinkhash-server-1.0.0/ && npm install
+cd ~/foundation-server-1.0.0/ && npm install
 ~~~
 `
 
@@ -192,8 +192,8 @@ for a breakdown and explanation of each property mentioned in the file. The defa
 configuration will also most likely work for your environment.
 
 ~~~bash
-cp ~/blinkhash-server-1.0.0/configs/main/example.js ~/blinkhash-server-1.0.0/configs/main/config.js
-nano ~/blinkhash-server-1.0.0/configs/main/config.js
+cp ~/foundation-server-1.0.0/configs/main/example.js ~/foundation-server-1.0.0/configs/main/config.js
+nano ~/foundation-server-1.0.0/configs/main/config.js
 ~~~
 
 ~~~js
@@ -232,12 +232,12 @@ one and rename it accordingly before making any desired changes. Unlike the serv
 configuration, the default settings will most likely not work for your coin, and you'll
 need to look through the coin's code itself to find the proper values. See the
 'Configurations' page for a breakdown and explanation of each property mentioned in
-the file, or check [here](https://github.com/blinkhash/blinkhash-configurations) for a list
+the file, or check [here](https://github.com/blinkhash/foundation-configurations) for a list
 of configuration files that have been confirmed to work properly.
 
 ~~~bash
-cp ~/blinkhash-server-1.0.0/configs/pools/example.js ~/blinkhash-server-1.0.0/configs/pools/bitcoin.js
-nano ~/blinkhash-server-1.0.0/configs/pools/bitcoin.js
+cp ~/foundation-server-1.0.0/configs/pools/example.js ~/foundation-server-1.0.0/configs/pools/bitcoin.js
+nano ~/foundation-server-1.0.0/configs/pools/bitcoin.js
 ~~~
 
 ~~~js
@@ -249,7 +249,7 @@ config.enabled = true;
 config.featured = true;
 config.address = 'bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq';
 config.debug = false;
-config.identifier = 'https://github.com/blinkhash/blinkhash-server';
+config.identifier = 'https://github.com/blinkhash/foundation-server';
 config.logo = '';
 
 // Coin Configuration
@@ -373,21 +373,30 @@ the 'Daemon is still syncing with the network. The server will be started once s
 will also give periodic updates on the current syncing progress.
 
 ~~~bash
-cd ~/blinkhash-server-1.0.0 && npm run start
+cd ~/foundation-server-1.0.0 && npm run start
 ~~~
 `;
+
+// Resources for Module Sections
+export const resources = [
+  ['https://github.com/blinkhash/foundation-server', 'foundation-server'],
+  ['https://github.com/blinkhash/foundation-stratum', 'foundation-stratum'],
+  ['https://github.com/blinkhash/foundation-multi-hashing', 'foundation-multi-hashing'],
+  ['https://github.com/blinkhash/foundation-documentation', 'foundation-documentation'],
+  ['https://github.com/blinkhash/foundation-configurations', 'foundation-configurations'],
+  ['https://github.com/blinkhash/foundation-utxo-lib', 'foundation-utxo-lib']]
 
 // Text for Module Sections
 export const sections = [
   {
     'Introduction': introduction,
-    'Why Blinkhash?': improvements,
+    'Why Foundation?': improvements,
   },
   {
     'Modules': modules,
-    'Blinkhash-Server': server,
-    'Blinkhash-Stratum': stratum,
-    'Blinkhash-Multi-Hashing': multiHashing,
+    'Foundation-Server': server,
+    'Foundation-Stratum': stratum,
+    'Foundation-Multi-Hashing': multiHashing,
   },
   {
     'Getting Started': tutorial,

@@ -14,7 +14,7 @@ repository.
 
 export default function License() {
   return (
-    <Local.LicenseMain>
+    <Local.LicenseContainer>
       <Local.LicenseSection>
         <Global.Body2>
           <ReactMarkdown>
@@ -27,6 +27,6 @@ export default function License() {
           {'Last updated 06/20/2021'}
         </Global.Body2>
       </Local.LicenseUpdated>
-    </Local.LicenseMain>
+    </Local.LicenseContainer>
   );
 }

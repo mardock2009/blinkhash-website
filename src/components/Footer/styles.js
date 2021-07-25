@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const FooterMain = styled.div`
+export const FooterContainer = styled.div`
   width: 100%;
   height: 55px;
   border-top: 1px solid ${(props) => props.theme.borderFooter};

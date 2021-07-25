@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const BannerMain = styled.div`
+export const BannerContainer = styled.div`
   width: 100%;
   padding: 20px 25px;
   display: flex;

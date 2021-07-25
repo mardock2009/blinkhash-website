@@ -5,7 +5,7 @@ import * as Local from './styles';
 
 export default function Footer() {
   return (
-    <Local.FooterMain>
+    <Local.FooterContainer>
       <Local.FooterInner>
         <Local.FooterText>
           <Global.Body1>
@@ -18,6 +18,6 @@ export default function Footer() {
           </Global.Body1>
         </Local.FooterText>
       </Local.FooterInner>
-    </Local.FooterMain>
+    </Local.FooterContainer>
   );
 }

@@ -11,7 +11,7 @@ import * as Local from './styles';
 
 export default function Header(props) {
   return (
-    <Local.HeaderMain>
+    <Local.HeaderContainer>
       <Local.HeaderInner>
         <Local.HeaderLogo>
           <Local.HeaderImage
@@ -20,12 +20,12 @@ export default function Header(props) {
             alt=''
           />
           <Local.HeaderTitle>
-            <Global.Header1>{'Blinkhash Mining'}</Global.Header1>
+            <Global.Header2>{'Blinkhash Mining'}</Global.Header2>
           </Local.HeaderTitle>
         </Local.HeaderLogo>
         <Local.HeaderLinks>
           <Local.HeaderPages>
-            <LinkInternal link={'/'}>
+            <LinkInternal link={'/docs/'}>
               <Local.HeaderText>
                 <Global.Body1>{'Documentation'}</Global.Body1>
               </Local.HeaderText>
@@ -73,6 +73,6 @@ export default function Header(props) {
           </Local.HeaderTheme>
         </Local.HeaderLinks>
       </Local.HeaderInner>
-    </Local.HeaderMain>
+    </Local.HeaderContainer>
   );
 }

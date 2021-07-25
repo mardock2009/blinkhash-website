@@ -1,13 +1,13 @@
 /* eslint-disable-next-line no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
-import Banner from '../../components/Banner/index';
-import Footer from '../../components/Footer/index';
-import Header from '../../components/Header/index';
-import Information from '../../components/Information/index';
-import License from '../../components/License/index';
-import Resources from '../../components/Resources/index';
-import Sidenav from '../../components/Sidenav/index';
+import Banner from '../Banner/index';
+import Footer from '../Footer/index';
+import Header from '../Header/index';
+import Information from '../Information/index';
+import License from '../License/index';
+import Resources from '../Resources/index';
+import Sidenav from '../Sidenav/index';
 
 // Main Styles
 import * as Global from '../../styles';
@@ -49,13 +49,12 @@ export default function Section(props) {
   }
 
   return (
-    <Local.SectionMain>
-      <Header
-        theme={props.theme}
-        toggleTheme={props.toggleTheme}
-      />
+    <Local.SectionContainer>
       <Local.SectionInner>
-        <Banner />
+        <Banner
+          component={props.component}
+          pages={props.pages}
+        />
         <Local.SectionDisplay>
           <Sidenav>
             {(props.sections.map((section, idx1) => {
@@ -78,7 +77,7 @@ export default function Section(props) {
           </Sidenav>
           <Local.SectionInformation>
             <Local.SectionInformationInner>
-              <Local.SectionInformationMain>
+              <Local.SectionInformationContainer>
                 <Information>
                   {(props.sections.map((section, idx1) => {
                     return (
@@ -108,13 +107,13 @@ export default function Section(props) {
                   }))}
                 </Information>
                 <License />
-              </Local.SectionInformationMain>
-              <Resources />
+              </Local.SectionInformationContainer>
+              <Resources resources={props.resources} />
             </Local.SectionInformationInner>
             <Footer />
           </Local.SectionInformation>
         </Local.SectionDisplay>
       </Local.SectionInner>
-    </Local.SectionMain>
+    </Local.SectionContainer>
   );
 }

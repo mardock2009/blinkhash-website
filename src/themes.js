@@ -32,7 +32,7 @@ export const lightTheme = {
   backgroundInformationSecondary: '#ffffff',
   backgroundInformationTertiary: '#425066',
   borderInformation: '#cccccc',
-  textInformation: '#000000',
+  textInformation: '#425066',
   textInformationSecondary: '#ebecef',
 
   /* License Palette */
@@ -41,12 +41,16 @@ export const lightTheme = {
   textLicense: '#888888',
 
   /* Link Palette */
-  textLink: '#000000',
+  textLink: '#425066',
+
+  /* Module Palette */
+  borderModule: '#cccccc',
+  textModule: '#425066',
 
   /* Resources Palette */
   backgroundResources: '#ebebf6',
   borderResources: '#cccccc',
-  textResources: '#000000',
+  textResources: '#425066',
 
   /* Sidenav Palette */
   backgroundSidenav: '#ffffff',
@@ -54,7 +58,7 @@ export const lightTheme = {
   backgroundSidenavTertiary: '#f1f3f4',
   borderSidenav: '#cccccc',
   scrollSidenav: '#cccccc',
-  textSidenav: '#000000',
+  textSidenav: '#425066',
 };
 
 // Main Dark Theme
@@ -102,6 +106,10 @@ export const darkTheme = {
 
   /* Link Palette */
   textLink: '#ebecef',
+
+  /* Module Palette */
+  borderModule: '#20202b',
+  textModule: '#ebecef',
 
   /* Resources Palette */
   backgroundResources: '#06090f',

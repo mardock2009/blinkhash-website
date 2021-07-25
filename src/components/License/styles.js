@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const LicenseMain = styled.div`
+export const LicenseContainer = styled.div`
   width: 100%;
   padding: 0px 25px;
   padding-bottom: 20px;

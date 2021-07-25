@@ -1,7 +1,6 @@
 /* eslint-disable-next-line no-unused-vars */
 import React from 'react';
-import Button from '../Button/index';
-import { LinkExternal } from '../Links/index';
+import { ButtonExternal } from '../Button/index';
 
 // Main Styles
 import * as Global from '../../styles';
@@ -9,7 +8,7 @@ import * as Local from './styles';
 
 export default function Information(props) {
   return (
-    <Local.InformationMain>
+    <Local.InformationContainer>
       <Local.InformationInner>
         <Local.InformationSocial
           style={{ backgroundImage: `url(${'/images/banner-background.png'})` }}
@@ -19,14 +18,15 @@ export default function Information(props) {
               {'Have a question? Connect with the community in the Blinkhash Discord'}
             </Global.Body1>
           </Local.InformationText>
-          <LinkExternal link={'https://discord.gg/8xtHZFKJQY'}>
-            <Button text={'Continue'} />
-          </LinkExternal>
+          <ButtonExternal
+            link={'https://discord.gg/8xtHZFKJQY'}
+            text={'Continue'}
+          />
         </Local.InformationSocial>
         <Local.InformationDocumentation>
           {props.children}
         </Local.InformationDocumentation>
       </Local.InformationInner>
-    </Local.InformationMain>
+    </Local.InformationContainer>
   );
 }

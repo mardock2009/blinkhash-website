@@ -1,7 +1,7 @@
-import { flatten } from '../common/utils';
+import { flatten } from '../../common/utils';
 
 const configurations = `
-This documentation details the individual configuration files associated with the Blinkhash
+This documentation details the individual configuration files associated with the Foundation
 server itself, explaining each property in-depth in an effort to aid mining pool owners with
 their setup. The files themselves are broken down into three separate groups: 'main',
 'partners', and 'pools', each of which have their own sections below for instructions on how
@@ -238,7 +238,7 @@ The pool 'identifier' added to blocks as a comment/message whenever needed.
 
 ~~~js
 // Type: String
-config.identifier = 'https://github.com/blinkhash/blinkhash-server' | [string];
+config.identifier = 'https://github.com/blinkhash/foundation-server' | [string];
 ~~~
 
 ---
@@ -306,7 +306,7 @@ config.coin.segwit = true | false
 
 #### config.coin.rewards
 The type of secondary rewards implemented by the developers (i.e. treasury, development
-payments, etc.). This property is still being implemented, and as such, Blinkhash won't
+payments, etc.). This property is still being implemented, and as such, Foundation won't
 work properly with any coins that make use of this feature.
 
 ~~~js
@@ -947,6 +947,15 @@ proxy protocol enabled
 config.settings.tcpProxyProtocol = true | false
 ~~~
 `;
+
+// Resources for Module Sections
+export const resources = [
+  ['https://github.com/blinkhash/foundation-server', 'foundation-server'],
+  ['https://github.com/blinkhash/foundation-stratum', 'foundation-stratum'],
+  ['https://github.com/blinkhash/foundation-multi-hashing', 'foundation-multi-hashing'],
+  ['https://github.com/blinkhash/foundation-documentation', 'foundation-documentation'],
+  ['https://github.com/blinkhash/foundation-configurations', 'foundation-configurations'],
+  ['https://github.com/blinkhash/foundation-utxo-lib', 'foundation-utxo-lib']]
 
 // Text for Module Sections
 export const sections = [

@@ -18,7 +18,7 @@ export default function Sidenav(props) {
   }, [])
 
   return (
-    <Local.SidenavMain
+    <Local.SidenavContainer
       ref={heightRef}
       style={{
         height: `calc(100vh - ${offset}px)`,
@@ -28,6 +28,6 @@ export default function Sidenav(props) {
       <Local.SidenavInner>
         {props.children}
       </Local.SidenavInner>
-    </Local.SidenavMain>
+    </Local.SidenavContainer>
   );
 }

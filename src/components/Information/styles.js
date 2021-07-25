@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const InformationMain = styled.div`
+export const InformationContainer = styled.div`
   width: 100%;
   padding: 20px 25px;
   color: ${(props) => props.theme.textInformation};
@@ -26,7 +26,7 @@ export const InformationSocial = styled.div`
   align-items: center;
   justify-content: center;
   padding: 20px 25px;
-  border: 1px solid ${(props) => props.theme.backgroundInformationTertiary};
+  border: 1px solid ${(props) => props.theme.borderInformation};
   background-color: ${(props) => props.theme.backgroundInformationTertiary};
   background-position: center;
   border-radius: 10px;

@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://docs.blinkhash.com/</loc>
+    <loc>https://blinkhash.com/docs</loc>
   </url>
   <url>
-    <loc>https://docs.blinkhash.com/overview</loc>
+    <loc>https://blinkhash.com/docs/foundation</loc>
   </url>
   <url>
-    <loc>https://docs.blinkhash.com/configurations</loc>
+    <loc>https://blinkhash.com/docs/foundation/overview</loc>
   </url>
   <url>
-    <loc>https://docs.blinkhash.com/endpoints</loc>
+    <loc>https://blinkhash.com/docs/foundation/configurations</loc>
+  </url>
+  <url>
+    <loc>https://blinkhash.com/docs/foundation/endpoints</loc>
   </url>
 </urlset>
