@@ -35,8 +35,8 @@ export default function Landing(props) {
         </Local.LandingEntry>
         <Local.LandingImage
           src={(props.theme === 'light') ? (
-            '/images/blinkhash-isometric-light.png') : (
-            '/images/blinkhash-isometric-dark.png')
+            '/docs/images/blinkhash-isometric-light.png') : (
+            '/docs/images/blinkhash-isometric-dark.png')
           }
           alt=''
         />

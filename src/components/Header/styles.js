@@ -103,21 +103,21 @@ export const Discord = styled.div`
   width: 15px;
   height: 11px;
   background-size: cover;
-  background-image: url('/images/discord-logo.png');
+  background-image: url('/docs/images/discord-logo.png');
 `;
 
 export const Medium = styled.div`
   width: 15px;
   height: 12px;
   background-size: cover;
-  background-image: url('/images/medium-logo.png');
+  background-image: url('/docs/images/medium-logo.png');
 `;
 
 export const Github = styled.div`
   width: 18px;
   height: 18px;
   background-size: contain;
-  background-image: url('/images/github-logo.png');
+  background-image: url('/docs/images/github-logo.png');
 `;
 
 export const HeaderTheme = styled.div`

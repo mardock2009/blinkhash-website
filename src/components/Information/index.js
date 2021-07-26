@@ -11,7 +11,7 @@ export default function Information(props) {
     <Local.InformationContainer>
       <Local.InformationInner>
         <Local.InformationSocial
-          style={{ backgroundImage: `url(${'/images/banner-background.png'})` }}
+          style={{ backgroundImage: `url(${'/docs/images/banner-background.png'})` }}
         >
           <Local.InformationText>
             <Global.Body1>

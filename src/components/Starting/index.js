@@ -11,7 +11,7 @@ import * as Local from './styles';
 export default function Starting(props) {
   return (
     <Local.StartingContainer
-      style={{ backgroundImage: `url(${'/images/footer-background.png'})`}}
+      style={{ backgroundImage: `url(${'/docs/images/footer-background.png'})`}}
     >
       <Local.StartingInner>
         <Local.StartingTitle>

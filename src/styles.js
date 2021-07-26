@@ -12,13 +12,13 @@ export const GlobalMain = createGlobalStyle`
   // Font Styles
   @font-face {
     font-family: 'Lato Bold';
-    src: url('/fonts/Lato-Bold.ttf') format('truetype');
+    src: url('/docs/fonts/Lato-Bold.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
   @font-face {
     font-family: 'Lato Regular';
-    src: url('/fonts/Lato-Regular.ttf') format('truetype');
+    src: url('/docs/fonts/Lato-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }

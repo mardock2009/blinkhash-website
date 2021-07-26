@@ -36,8 +36,8 @@ export default function App({ Component, pageProps }) {
           <meta name='viewport' content='width=device-width, initial-scale=1' />
           <meta name='theme-color' content='#000000' />
           <meta name="description" content="The official documentation for Blinkhash. Making mining pool ownership accessible for the layman." />
-          <link rel='apple-touch-icon' href='/logo192.png' />
-          <link rel='manifest' href='/manifest.json' />
+          <link rel='apple-touch-icon' href='/docs/logo192.png' />
+          <link rel='manifest' href='/docs/manifest.json' />
           <link rel="canonical" href={canonical} />
           <title>Blinkhash | Documentation </title>
         </Head>

@@ -16,7 +16,7 @@ export default function Header(props) {
         <Local.HeaderLogo>
           <Local.HeaderImage
             width='25px'
-            src={'/images/blinkhash-logo.png'}
+            src={'/docs/images/blinkhash-logo.png'}
             alt=''
           />
           <Local.HeaderTitle>
