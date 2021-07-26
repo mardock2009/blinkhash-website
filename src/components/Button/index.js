@@ -16,13 +16,13 @@ export function ButtonDisabled(props) {
 
 export function ButtonInternal(props) {
   return (
-    <LinkInternal link={props.link}>
-      <Local.ButtonContainer>
-        <Local.ButtonText>
+    <Local.ButtonContainer>
+      <Local.ButtonText>
+        <LinkInternal link={props.link}>
           <Global.Body1>{props.text}</Global.Body1>
-        </Local.ButtonText>
-      </Local.ButtonContainer>
-    </LinkInternal>
+        </LinkInternal>
+      </Local.ButtonText>
+    </Local.ButtonContainer>
   );
 }
 
