@@ -4,6 +4,16 @@ import { LinkInternal, LinkExternal } from '../Links/index';
 import * as Global from '../../styles';
 import * as Local from './styles';
 
+export function ButtonDisabled(props) {
+  return (
+    <Local.DisabledContainer>
+      <Local.ButtonText>
+        <Global.Body1>{props.text}</Global.Body1>
+      </Local.ButtonText>
+    </Local.DisabledContainer>
+  );
+}
+
 export function ButtonInternal(props) {
   return (
     <Local.ButtonContainer>

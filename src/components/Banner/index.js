@@ -31,9 +31,9 @@ export default function Banner(props) {
               onClick={updateSlider.bind(this, !slider)}
             />
           </Local.BannerSlider>
-          <Global.Header2>
+          <Global.Header3>
             {`${formatText(props.component)} Core v1`}
-          </Global.Header2>
+          </Global.Header3>
         </Local.BannerTitle>
         <Local.BannerSelect>
           {(props.pages.map((page, idx) => {
@@ -46,7 +46,7 @@ export default function Banner(props) {
                     [`/docs${page}`].includes(path))
                   }
                 >
-                  <Global.Header4>{formatText(page)}</Global.Header4>
+                  <Global.Header5>{formatText(page)}</Global.Header5>
                 </Local.BannerSelectItem>
               </LinkInternal>
             )

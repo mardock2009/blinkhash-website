@@ -3,23 +3,33 @@ export const lightTheme = {
   /* Global Type */
   type: 'light',
 
+  /* Attribute Palette */
+  backgroundAttribute: '#01203f',
+  backgroundAttributeSecondary: '#ffffff',
+  backgroundAttributeTertiary: '#ffffff',
+  borderAttribute: '#cccccc',
+  textAttribute: '#425066',
+  textAttributeSecondary: '#01203f',
+  textAttributeTertiary: '#ffffff',
+
   /* Banner Palette */
   backgroundBanner: '#f5f6f7',
   borderBanner: '#cccccc',
-  titleBanner: '#021b3d',
+  titleBanner: '#01203f',
   textBanner: '#425066',
 
   /* Button Palette */
-  backgroundButton: '#021b3d',
+  backgroundButton: '#01203f',
+  backgroundButtonSecondary: '#555555',
   textButton: '#ebecef',
 
   /* Footer Palette */
-  backgroundFooter: '#021b3d',
+  backgroundFooter: '#01203f',
   borderFooter: '#cccccc',
   textFooter: '#ffffff',
 
   /* Header Palette */
-  backgroundHeader: '#021b3d',
+  backgroundHeader: '#01203f',
   borderHeader: '#555555',
   textHeader: '#ffffff',
 
@@ -67,6 +77,15 @@ export const darkTheme = {
   /* Global Type */
   type: 'dark',
 
+  /* Attribute Palette */
+  backgroundAttribute: '#11151c',
+  backgroundAttributeSecondary: '#11151c',
+  backgroundAttributeTertiary: '#444ca0',
+  borderAttribute: '#20202b',
+  textAttribute: '#ebecef',
+  textAttributeSecondary: '#ebecef',
+  textAttributeTertiary: '#ebecef',
+
   /* Banner Palette */
   backgroundBanner: '#11151c',
   borderBanner: '#20202b',
@@ -75,6 +94,7 @@ export const darkTheme = {
 
   /* Button Palette */
   backgroundButton: '#444ca0',
+  backgroundButtonSecondary: '#555555',
   textButton: '#ffffff',
 
   /* Footer Palette */
@@ -107,7 +127,7 @@ export const darkTheme = {
   /* Link Palette */
   textLink: '#ebecef',
 
-  /* Module Palette */
+  /* Attribute Palette */
   borderModule: '#20202b',
   textModule: '#ebecef',
 

@@ -2,6 +2,8 @@ import React from 'react';
 import Header from '../../../components/Header/index';
 import Section from '../../../components/Section/index';
 import { headers, sections, resources } from '../../../text/foundation/overview.js';
+
+// Main Styles
 import { Global } from '../../../styles';
 
 export default function Index(props) {

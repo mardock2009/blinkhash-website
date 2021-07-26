@@ -137,6 +137,13 @@ export const Body2 = styled.div`
   text-overflow: ellipsis;
 `;
 
+export const Body3 = styled.div`
+  font-family: 'Lato Regular', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`;
 
 export const Header1 = styled.div`
   font-family: 'Lato Bold', sans-serif;
@@ -147,16 +154,22 @@ export const Header1 = styled.div`
 export const Header2 = styled.div`
   font-family: 'Lato Regular', sans-serif;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 20px;
 `;
 
 export const Header3 = styled.div`
+  font-family: 'Lato Regular', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+`;
+
+export const Header4 = styled.div`
   font-family: 'Lato Bold', sans-serif;
   font-weight: 400;
   font-size: 14px;
 `;
 
-export const Header4 = styled.div`
+export const Header5 = styled.div`
   font-family: 'Lato Regular', sans-serif;
   font-weight: 400;
   font-size: 14px;

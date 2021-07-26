@@ -20,7 +20,7 @@ export default function Header(props) {
             alt=''
           />
           <Local.HeaderTitle>
-            <Global.Header2>{'Blinkhash Mining'}</Global.Header2>
+            <Global.Header3>{'Blinkhash Mining'}</Global.Header3>
           </Local.HeaderTitle>
         </Local.HeaderLogo>
         <Local.HeaderLinks>

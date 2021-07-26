@@ -11,6 +11,10 @@ export const LandingInner = styled.div`
   @media (max-width: 1024px) {
     flex-direction: column;
     align-items: center;
+    padding: 60px 40px 40px;
+  }
+  @media (max-width: 800px) {
+    padding: 40px;
   }
 `;
 
@@ -23,7 +27,11 @@ export const LandingEntry = styled.div`
   margin-right: 40px;
   @media (max-width: 1024px) {
     max-width: 600px;
-    margin-bottom: 100px;
+    margin-bottom: 60px;
+    margin-right: 0px;
+  }
+  @media (max-width: 800px) {
+    margin-bottom: 60px;
   }
 `;
 
@@ -53,7 +61,11 @@ export const LandingButtons = styled.div`
 `;
 
 export const LandingImage = styled.img`
+  width: 480px;
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 800px) {
+    width: 400px;
+  }
 `;
