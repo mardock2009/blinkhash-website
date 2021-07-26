@@ -2,11 +2,11 @@ import styled from 'styled-components';
 
 export const CardContainer = styled.div`
   width: calc(100% - 15px);
-  min-width: 150px;
+  min-width: 140px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px 40px;
+  padding: 20px 30px;
   margin-right: 15px;
   margin-bottom: 15px;
   border-radius: 10px;
