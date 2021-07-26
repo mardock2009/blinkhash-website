@@ -8,5 +8,5 @@ export const DividerContainer = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
-  z-index: 999;
+  z-index: 998;
 `;

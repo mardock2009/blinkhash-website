@@ -2,7 +2,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import Attribute from '../Attribute/index';
-import Horizontal from '../Horizontal/index';
 import { ButtonDisabled, ButtonInternal } from '../Button/index';
 import { faDesktop, faHdd } from '@fortawesome/free-solid-svg-icons'
 
@@ -45,7 +44,6 @@ export default function Building(props) {
           />
         </Attribute>
       </Local.BuildingOptions>
-      <Horizontal />
     </Local.BuildingContainer>
   );
 }

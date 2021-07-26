@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 export const BuildingContainer = styled.div`
   width: 100%;
-  margin-top: 100px;
+  margin: 100px 0px 95px;
   @media (max-width: 1024px) {
-    margin-top: 60px;
+    margin: 60px 0px 75px;
   }
   @media (max-width: 800px) {
-    margin-top: 40px;
+    margin: 40px 0px 55px;
   }
 `;
 

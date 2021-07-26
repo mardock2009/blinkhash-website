@@ -33,23 +33,14 @@ export default function Landing(props) {
             />
           </Local.LandingButtons>
         </Local.LandingEntry>
-        {(props.theme === 'light') ? (
-          <Local.LandingImage
-            src={'/images/blinkhash-isometric-light.svg'}
-            alt=''
-          />
-        ) : (
-          <Local.LandingImage
-            src={'/images/blinkhash-isometric-dark.svg'}
-            alt=''
-          />
-        )}
+        <Local.LandingImage
+          src={(props.theme === 'light') ? (
+            '/images/blinkhash-isometric-light.png') : (
+            '/images/blinkhash-isometric-dark.png')
+          }
+          alt=''
+        />
       </Local.LandingInner>
-      <Divider theme={props.theme} />
-      <Divider
-        theme={props.theme}
-        rotation
-      />
     </Local.LandingContainer>
   );
 }

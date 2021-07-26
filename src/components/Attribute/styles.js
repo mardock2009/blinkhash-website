@@ -5,18 +5,21 @@ export const AttributeMain = styled.div`
   max-width: 450px;
   height: 100%;
   margin: 25px;
+  margin-bottom: 0px;
   border-radius: 10px;
   ${(props) => props.theme.type === 'light' && `
     box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3),0 2px 6px 2px rgba(60,64,67,0.15);
   `}
-  &:last-child {
-    margin-left: 0px;
+  &:first-child {
+    margin-right: 0px;
   }
   @media (max-width: 800px) {
     width: calc(100% - 50px);
+    &:first-child {
+      margin-right: 25px;
+    }
     &:last-child {
-      margin-top: 0px;
-      margin-left: 25px;
+      margin-bottom: 10px;
     }
   }
 `;

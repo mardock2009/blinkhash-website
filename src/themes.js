@@ -21,6 +21,7 @@ export const lightTheme = {
   /* Button Palette */
   backgroundButton: '#01203f',
   backgroundButtonSecondary: '#555555',
+  borderButton: '#cccccc',
   textButton: '#ebecef',
 
   /* Footer Palette */
@@ -97,6 +98,7 @@ export const darkTheme = {
   /* Button Palette */
   backgroundButton: '#444ca0',
   backgroundButtonSecondary: '#555555',
+  borderButton: '#20202b',
   textButton: '#ffffff',
 
   /* Footer Palette */

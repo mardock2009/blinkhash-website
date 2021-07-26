@@ -9,10 +9,8 @@ export default function Divider(props) {
         <Local.DividerContainer
           style={{
             backgroundImage: (props.gray) ? (
-              "url('/images/blinkhash-divider-light-gray.svg')"
-            ) : (
-              "url('/images/blinkhash-divider-light.svg')"
-            ),
+              "url('/images/blinkhash-divider-light-gray.png')") : (
+              "url('/images/blinkhash-divider-light.png')"),
             transform: (props.rotation) ? 'rotate(180deg)' : '',
             marginTop: (props.rotation) ? '-4px': '',
           }}
@@ -20,7 +18,7 @@ export default function Divider(props) {
       ) : (
         <Local.DividerContainer
           style={{
-            backgroundImage: "url('/images/blinkhash-divider-dark.svg')",
+            backgroundImage: "url('/images/blinkhash-divider-dark.png')",
             transform: (props.rotation) ? 'rotate(180deg)' : '',
             marginTop: (props.rotation) ? '-4px': '',
           }}

@@ -10,9 +10,12 @@ export const ButtonContainer = styled.div`
   margin-right: 15px;
   background-color: ${(props) => props.theme.backgroundButton};
   border-radius: 5px;
+  cursor: pointer;
   transition: 0.2s ease-in all;
+  ${(props) => props.theme.type === 'dark' && `
+    border: 1px solid ${props.theme.borderButton};
+  `}
   &:hover {
-    cursor: pointer;
     background-color: ${(props) => props.theme.accessoryHover};
   }
   &:last-child {

@@ -8,6 +8,10 @@ export const StartingContainer = styled.div`
   justify-content: center;
   padding-bottom: 80px;
   background-color: ${(props) => props.theme.backgroundModule};
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: -5px;
   @media (max-width: 1024px) {
     padding-bottom: 90px;
   }
