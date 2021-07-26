@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg viewBox="0 0 2000 200" xmlns="http://www.w3.org/2000/svg">
-  <polygon style="fill: rgb(1, 32, 63);" points="0 0 2000 200 0.948 199.926"/>
+<svg viewBox="1 1 9998 798" xmlns="http://www.w3.org/2000/svg">
+  <path d="M 0 0 L 10000 800 L 0 800 L 0 0 Z" style="fill: rgb(1, 32, 63);"/>
 </svg>

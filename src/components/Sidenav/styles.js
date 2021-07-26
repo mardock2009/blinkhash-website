@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const SidenavContainer = styled.div`
   width: 280px;
-  padding: 20px;
+  padding: 20px 25px;
   display: flex;
   top: 60px;
   position: sticky;

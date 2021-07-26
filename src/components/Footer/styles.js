@@ -3,9 +3,11 @@ import styled from 'styled-components';
 export const FooterContainer = styled.div`
   width: 100%;
   height: 55px;
-  border-top: 1px solid ${(props) => props.theme.borderFooter};
   background-color: ${(props) => props.theme.backgroundFooter};
   transition: 0.2s ease-in all;
+  ${(props) => props.theme.type === 'dark' && `
+    border-top: 1px solid ${props.theme.borderFooter};
+  `}
 `;
 
 export const FooterInner = styled.div`

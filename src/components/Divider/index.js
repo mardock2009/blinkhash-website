@@ -4,26 +4,28 @@ import * as Local from './styles';
 
 export default function Divider(props) {
   return (
-    <Local.DividerContainer>
+    <React.Fragment>
       {(props.theme === 'light') ? (
-        <React.Fragment>
-          <Local.DividerPrimary
-            style={{ backgroundImage: "url('/images/blinkhash-divider-light.svg')"}}
-          />
-          <Local.DividerSecondary
-            style={{ backgroundImage: "url('/images/blinkhash-divider-light.svg')"}}
-          />
-        </React.Fragment>
+        <Local.DividerContainer
+          style={{
+            backgroundImage: (props.gray) ? (
+              "url('/images/blinkhash-divider-light-gray.svg')"
+            ) : (
+              "url('/images/blinkhash-divider-light.svg')"
+            ),
+            transform: (props.rotation) ? 'rotate(180deg)' : '',
+            marginTop: (props.rotation) ? '-4px': '',
+          }}
+        />
       ) : (
-        <React.Fragment>
-          <Local.DividerPrimary
-            style={{ backgroundImage: "url('/images/blinkhash-divider-dark.svg')"}}
-          />
-          <Local.DividerSecondary
-            style={{ backgroundImage: "url('/images/blinkhash-divider-dark.svg')"}}
-          />
-        </React.Fragment>
+        <Local.DividerContainer
+          style={{
+            backgroundImage: "url('/images/blinkhash-divider-dark.svg')",
+            transform: (props.rotation) ? 'rotate(180deg)' : '',
+            marginTop: (props.rotation) ? '-4px': '',
+          }}
+        />
       )}
-    </Local.DividerContainer>
+    </React.Fragment>
   );
 }

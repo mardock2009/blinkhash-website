@@ -46,7 +46,7 @@ export default function Banner(props) {
                     [`/docs${page}`].includes(path))
                   }
                 >
-                  <Global.Header5>{formatText(page)}</Global.Header5>
+                  <Global.Header6>{formatText(page)}</Global.Header6>
                 </Local.BannerSelectItem>
               </LinkInternal>
             )

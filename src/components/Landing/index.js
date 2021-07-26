@@ -46,6 +46,10 @@ export default function Landing(props) {
         )}
       </Local.LandingInner>
       <Divider theme={props.theme} />
+      <Divider
+        theme={props.theme}
+        rotation
+      />
     </Local.LandingContainer>
   );
 }

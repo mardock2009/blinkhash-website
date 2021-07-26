@@ -9,9 +9,9 @@ export default function Resources(props) {
     <Local.ResourcesContainer>
       <Local.ResourcesInner>
         <Local.ResourcesTitle>
-          <Global.Header4>
+          <Global.Header5>
             {'Resources'}
-          </Global.Header4>
+          </Global.Header5>
         </Local.ResourcesTitle>
         <Local.ResourcesSection>
           {(props.resources.map((link, idx) => {

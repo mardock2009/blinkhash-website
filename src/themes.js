@@ -54,8 +54,10 @@ export const lightTheme = {
   textLink: '#425066',
 
   /* Module Palette */
+  backgroundModule: '#425066',
   borderModule: '#cccccc',
   textModule: '#425066',
+  textModuleSecondary: '#ebecef',
 
   /* Resources Palette */
   backgroundResources: '#ebebf6',
@@ -128,8 +130,10 @@ export const darkTheme = {
   textLink: '#ebecef',
 
   /* Attribute Palette */
+  backgroundModule: '#11151c',
   borderModule: '#20202b',
   textModule: '#ebecef',
+  textModuleSecondary: '#ebecef',
 
   /* Resources Palette */
   backgroundResources: '#06090f',

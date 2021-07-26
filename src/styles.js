@@ -164,13 +164,19 @@ export const Header3 = styled.div`
 `;
 
 export const Header4 = styled.div`
-  font-family: 'Lato Bold', sans-serif;
+  font-family: 'Lato Regular', sans-serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
 `;
 
 export const Header5 = styled.div`
+  font-family: 'Lato Bold', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+`;
+
+export const Header6 = styled.div`
   font-family: 'Lato Regular', sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 14px;
 `;
