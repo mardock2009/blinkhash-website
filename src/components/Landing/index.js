@@ -24,7 +24,7 @@ export default function Landing(props) {
           </Local.LandingTagline>
           <Local.LandingButtons>
             <ButtonInternal
-              link={'/docs/foundation'}
+              link={'/foundation'}
               text={'Foundation Docs'}
             />
             <ButtonDisabled

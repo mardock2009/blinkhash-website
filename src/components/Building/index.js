@@ -29,7 +29,7 @@ export default function Building(props) {
           text={independent}
         >
           <ButtonInternal
-            link={'/docs/foundation'}
+            link={'/foundation'}
             text={'Foundation Docs'}
           />
         </Attribute>

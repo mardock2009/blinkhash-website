@@ -29,8 +29,9 @@ COPY --from=builder /app/package.json ./package.json
 FROM nginx:alpine AS deployer
 COPY ./nginx.conf /etc/nginx/nginx.conf
 RUN rm -rf /usr/share/nginx/html/*
-COPY --from=builder /app/out /usr/share/nginx/html
-COPY --from=builder /app/sitemap.xml /usr/share/nginx/html/sitemap.xml
+RUN mkdir /usr/share/nginx/html/docs
+COPY --from=builder /app/out /usr/share/nginx/html/docs
+COPY --from=builder /app/out/index.html /usr/share/nginx/html/docs.html
 
 EXPOSE 3000 80
 ENTRYPOINT ["nginx", "-g", "daemon off;"]

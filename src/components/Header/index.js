@@ -25,7 +25,7 @@ export default function Header(props) {
         </Local.HeaderLogo>
         <Local.HeaderLinks>
           <Local.HeaderPages>
-            <LinkInternal link={'/docs/'}>
+            <LinkInternal link={'/'}>
               <Local.HeaderText>
                 <Global.Body1>{'Documentation'}</Global.Body1>
               </Local.HeaderText>

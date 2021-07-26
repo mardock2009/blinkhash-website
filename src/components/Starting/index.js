@@ -20,7 +20,7 @@ export default function Starting(props) {
           </Global.Header1>
         </Local.StartingTitle>
         <ButtonInternal
-          link={'/docs/foundation'}
+          link={'/foundation'}
           text={'Explore Documentation'}
         />
       </Local.StartingInner>

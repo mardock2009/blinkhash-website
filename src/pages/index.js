@@ -1,19 +1,19 @@
 import React from 'react';
-import { CardExternal } from '../../components/Card/index';
+import { CardExternal } from '../components/Card/index';
 
 // Main Components
-import Banner from '../../components/Banner/index';
-import Building from '../../components/Building/index';
-import Divider from '../../components/Divider/index';
-import Footer from '../../components/Footer/index';
-import Header from '../../components/Header/index';
-import Horizontal from '../../components/Horizontal/index';
-import Landing from '../../components/Landing/index';
-import Module from '../../components/Module/index';
-import Starting from '../../components/Starting/index';
+import Banner from '../components/Banner/index';
+import Building from '../components/Building/index';
+import Divider from '../components/Divider/index';
+import Footer from '../components/Footer/index';
+import Header from '../components/Header/index';
+import Horizontal from '../components/Horizontal/index';
+import Landing from '../components/Landing/index';
+import Module from '../components/Module/index';
+import Starting from '../components/Starting/index';
 
 // Main Styles
-import { Global } from '../../styles';
+import { Global } from '../styles';
 
 const news = `
 Check out our Medium and Twitter for the major milestones we've hit recently as well as
@@ -89,7 +89,7 @@ export default function Index(props) {
         toggleTheme={props.toggleTheme}
       />
       <Banner
-        component={"blinkhash"}
+        component={"/blinkhash"}
         pages={['/overview', '/foundation']}
       />
       <MainSection theme={props.theme} />

@@ -6,6 +6,8 @@ module.exports = plugins([
   [fonts, { enableSvg: true }],
   [images],
 ], {
+  assetPrefix: '/docs/',
+  basePath: '/docs',
   eslint: {
     ignoreDuringBuilds: true,
   },

@@ -1,10 +1,10 @@
 import React from 'react';
-import Header from '../../../components/Header/index';
-import Section from '../../../components/Section/index';
-import { headers, sections, resources } from '../../../text/foundation/configuration.js';
+import Header from '../../components/Header/index';
+import Section from '../../components/Section/index';
+import { headers, sections, resources } from '../../text/foundation/endpoints.js';
 
 // Main Styles
-import { Global } from '../../../styles';
+import { Global } from '../../styles';
 
 export default function Configuration(props) {
   return (

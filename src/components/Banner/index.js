@@ -38,12 +38,12 @@ export default function Banner(props) {
         <Local.BannerSelect>
           {(props.pages.map((page, idx) => {
             return (
-              <LinkInternal key={idx} link={`/docs${page}`}>
+              <LinkInternal key={idx} link={page}>
                 <Local.BannerSelectItem
                   slider={slider}
                   active={(idx === 0) ? (
-                    [`/docs`, `/docs${props.component}`, `/docs${page}`].includes(path)) : (
-                    [`/docs${page}`].includes(path))
+                    [`/`, props.component, page].includes(path)) : (
+                    [page].includes(path))
                   }
                 >
                   <Global.Header6>{formatText(page)}</Global.Header6>
