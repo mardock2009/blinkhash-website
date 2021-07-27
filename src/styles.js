@@ -25,15 +25,19 @@ export const GlobalMain = createGlobalStyle`
 
   // Main Styles
   html {
+    width: 100vw;
     font-family: sans-serif;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    overflow-x: hidden;
   }
   body {
     margin: 0;
     font-family: 'Lato Regular', sans-serif;
     line-height: 1.5;
     text-align: left;
+    overflow-x: hidden;
+    position: relative
   }
   code {
     font-family: 'Lato Regular', sans-serif !important;
@@ -149,6 +153,9 @@ export const Header1 = styled.div`
   font-family: 'Lato Bold', sans-serif;
   font-weight: 400;
   font-size: 30px;
+  @media (max-width: 800px) {
+    font-size: 24px;
+  }
 `;
 
 export const Header2 = styled.div`

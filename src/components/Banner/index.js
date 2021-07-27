@@ -11,7 +11,6 @@ import * as Local from './styles';
 
 export default function Banner(props) {
   const router = useRouter();
-  const [slider, updateSlider] = useState(false);
   const [path,] = useState(router.pathname);
 
   function formatText(page) {
@@ -23,14 +22,7 @@ export default function Banner(props) {
   return (
     <Local.BannerContainer>
       <Local.BannerInner>
-        <Local.BannerTitle slider={slider}>
-          <Local.BannerSlider>
-            <FontAwesomeIcon
-              icon={faBars}
-              style={{ width: '16px' }}
-              onClick={updateSlider.bind(this, !slider)}
-            />
-          </Local.BannerSlider>
+        <Local.BannerTitle>
           <Global.Header3>
             {`${formatText(props.component)} Core v1`}
           </Global.Header3>
@@ -40,7 +32,6 @@ export default function Banner(props) {
             return (
               <LinkInternal key={idx} link={page}>
                 <Local.BannerSelectItem
-                  slider={slider}
                   active={(idx === 0) ? (
                     [`/`, props.component, page].includes(path)) : (
                     [page].includes(path))

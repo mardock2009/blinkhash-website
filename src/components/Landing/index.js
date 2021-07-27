@@ -14,7 +14,7 @@ export default function Landing(props) {
         <Local.LandingEntry>
           <Local.LandingTitle>
             <Global.Header1>
-              {"Blinkhash is an expansive, open-source platform for cryptocurrency mining pools"}
+              {"Blinkhash is an expansive, open-source ecosystem for cryptocurrency mining"}
             </Global.Header1>
           </Local.LandingTitle>
           <Local.LandingTagline>

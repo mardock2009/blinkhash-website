@@ -32,9 +32,7 @@ export const BannerTitle = styled.div`
   color: ${(props) => props.theme.titleBanner};
   margin-bottom: 15px;
   @media (max-width: 800px) {
-    ${(props) => !props.slider && `
-      margin-bottom: 0px;
-    `}
+    margin-bottom: 0px;
   }
 `;
 
@@ -75,8 +73,6 @@ export const BannerSelectItem = styled.div`
     border-bottom: 2px solid ${(props) => props.theme.borderBanner};
   }
   @media (max-width: 800px) {
-    ${(props) => !props.slider && `
-      display: none;
-    `}
+    display: none;
   }
 `;

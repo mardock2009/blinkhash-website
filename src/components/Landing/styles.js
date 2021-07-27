@@ -42,6 +42,9 @@ export const LandingTitle = styled.div`
   @media (max-width: 1024px) {
     text-align: center;
   }
+  @media (max-width: 800px) {
+    line-height: 32px;
+  }
 `;
 
 export const LandingTagline = styled.div`
