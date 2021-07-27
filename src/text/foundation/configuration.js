@@ -953,7 +953,6 @@ export const resources = [
   ['https://github.com/blinkhash/foundation-server', 'foundation-server'],
   ['https://github.com/blinkhash/foundation-stratum', 'foundation-stratum'],
   ['https://github.com/blinkhash/foundation-multi-hashing', 'foundation-multi-hashing'],
-  ['https://github.com/blinkhash/foundation-documentation', 'foundation-documentation'],
   ['https://github.com/blinkhash/foundation-configurations', 'foundation-configurations'],
   ['https://github.com/blinkhash/foundation-utxo-lib', 'foundation-utxo-lib']]
 
