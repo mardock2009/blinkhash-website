@@ -32,7 +32,7 @@ export default function App({ Component, pageProps }) {
       <GlobalMain />
       <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
         <Head>
-          <link rel='icon' href='/favicon.ico' />
+          <link rel='icon' href='/docs/favicon.ico' />
           <meta name='viewport' content='width=device-width, initial-scale=1' />
           <meta name='theme-color' content='#000000' />
           <meta name="description" content="The official documentation for Blinkhash. Making mining pool ownership accessible for the layman." />
