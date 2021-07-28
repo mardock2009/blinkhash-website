@@ -29,7 +29,6 @@ export const GlobalMain = createGlobalStyle`
     font-family: sans-serif;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    overflow-x: hidden;
   }
   body {
     margin: 0;
@@ -37,7 +36,7 @@ export const GlobalMain = createGlobalStyle`
     line-height: 1.5;
     text-align: left;
     overflow-x: hidden;
-    position: relative
+    position: relative;
   }
   code {
     font-family: 'Lato Regular', sans-serif !important;
@@ -167,7 +166,10 @@ export const Header2 = styled.div`
 export const Header3 = styled.div`
   font-family: 'Lato Regular', sans-serif;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 16px;
+  @media (max-width: 800px) {
+    font-size: 16px;
+  }
 `;
 
 export const Header4 = styled.div`
@@ -178,12 +180,12 @@ export const Header4 = styled.div`
 
 export const Header5 = styled.div`
   font-family: 'Lato Bold', sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 14px;
 `;
 
 export const Header6 = styled.div`
   font-family: 'Lato Regular', sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 14px;
 `;

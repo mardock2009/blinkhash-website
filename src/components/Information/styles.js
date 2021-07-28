@@ -26,10 +26,10 @@ export const InformationSocial = styled.div`
   align-items: center;
   justify-content: center;
   padding: 20px 25px;
-  border: 1px solid ${(props) => props.theme.borderInformation};
+  border-radius: 10px;
   background-color: ${(props) => props.theme.backgroundInformationTertiary};
   background-position: center;
-  border-radius: 10px;
+  transition: 0.2s ease-in all;
   ${(props) => props.theme.type === 'light' && `
     box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3),0 2px 6px 2px rgba(60,64,67,0.15);
   `}
@@ -38,6 +38,10 @@ export const InformationSocial = styled.div`
   }
   @media (max-width: 800px) {
     border-radius: 0px;
+    ${(props) => props.theme.type === 'dark' && `
+      border-top: 1px solid ${(props) => props.theme.borderInformation};
+      border-bottom: 1px solid ${(props) => props.theme.borderInformation};
+    `}
   }
 `;
 

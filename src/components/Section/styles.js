@@ -82,7 +82,7 @@ export const SectionBody = styled.div`
   @media (max-width: 800px) {
     margin-bottom: 0px;
     border: 0px;
-    border-bottom: 2px solid ${(props) => props.theme.borderInformation};
+    border-bottom: 1px solid ${(props) => props.theme.borderInformation};
     border-radius: 0px;
     box-shadow: none;
   }
