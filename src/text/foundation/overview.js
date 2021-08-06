@@ -32,6 +32,7 @@ following:
 * Reorganized configurations that are more intuitive/cleaner
 * Reorganized database schema that is more intuitive/cleaner
 * Solo-mining functionality for users
+* Merged-mining functionality for users
 * PPLNT made the default payout scheme (removed PROP)
 * 'Partnering' support for usage w/ API to promote advertising
 * Reorganized/reworked API to improve statistics management
@@ -243,77 +244,12 @@ nano ~/foundation-server-1.0.0/configs/pools/bitcoin.js
 ~~~js
 // Coin Configuration
 const config = {};
+config.enabled = false;
 
-// Main Configuration
-config.enabled = true;
-config.featured = true;
-config.address = 'bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq';
-config.debug = false;
-config.identifier = 'https://github.com/blinkhash/foundation-server';
+// Statistics Configuration
+config.name = 'Pool1';
+config.coins = ['Bitcoin'];
 config.logo = '';
-
-// Coin Configuration
-config.coin = {};
-config.coin.name = 'Bitcoin';
-config.coin.symbol = 'BTC';
-config.coin.asicBoost = true;
-config.coin.getInfo = false;
-config.coin.segwit = true;
-config.coin.rewards = '';
-
-// Algorithm Configuration
-config.coin.algorithms = {};
-config.coin.algorithms.mining = 'sha256d';
-config.coin.algorithms.block = 'sha256d';
-config.coin.algorithms.coinbase = 'sha256d';
-
-// Mainnet Configuration
-config.coin.mainnet = {};
-config.coin.mainnet.bech32 = 'bc';
-config.coin.mainnet.bip32 = {};
-config.coin.mainnet.bip32.public = Buffer.from('0488B21E', 'hex').readUInt32LE(0);
-config.coin.mainnet.bip32.private = Buffer.from('0488ADE4', 'hex').readUInt32LE(0);
-config.coin.mainnet.peerMagic = 'f9beb4d9';
-config.coin.mainnet.pubKeyHash = Buffer.from('00', 'hex').readUInt8(0);
-config.coin.mainnet.scriptHash = Buffer.from('05', 'hex').readUInt8(0);
-config.coin.mainnet.wif = Buffer.from('80', 'hex').readUInt8(0);
-config.coin.mainnet.coin = 'btc';
-
-// Mainnet Configuration
-config.coin.testnet = {};
-config.coin.testnet.bech32 = 'tb';
-config.coin.testnet.bip32 = {};
-config.coin.testnet.bip32.public = Buffer.from('043587CF', 'hex').readUInt32LE(0);
-config.coin.testnet.bip32.private = Buffer.from('04358394', 'hex').readUInt32LE(0);
-config.coin.testnet.peerMagic = '0b110907';
-config.coin.testnet.pubKeyHash = Buffer.from('6F', 'hex').readUInt8(0);
-config.coin.testnet.scriptHash = Buffer.from('C4', 'hex').readUInt8(0);
-config.coin.testnet.wif = Buffer.from('EF', 'hex').readUInt8(0);
-config.coin.testnet.coin = 'btc';
-
-// Daemon Configuration
-config.daemons = [];
-
-const daemons1 = {};
-daemons1.host = '127.0.0.1';
-daemons1.port = 8332;
-daemons1.user = 'blinkhash';
-daemons1.password = 'password';
-config.daemons.push(daemons1);
-
-// Payment Configuration
-config.payments = {};
-config.payments.enabled = true;
-config.payments.checkInterval = 20;
-config.payments.paymentInterval = 7200;
-config.payments.minConfirmations = 10;
-config.payments.minPayment = 0.005;
-config.payments.transactionFee = 0.0004;
-config.payments.daemon = {};
-config.payments.daemon.host = '127.0.0.1';
-config.payments.daemon.port = 8332;
-config.payments.daemon.user = 'blinkhash';
-config.payments.daemon.password = 'password';
 
 // Banning Configuration
 config.banning = {};
@@ -338,28 +274,94 @@ ports1.difficulty.retargetTime = 90;
 ports1.difficulty.variance = 30;
 config.ports.push(ports1);
 
-// Recipients Configuration
-config.recipients = [];
-
-const recipient1 = {};
-recipient1.address = 'bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq';
-recipient1.percentage = 0.05;
-config.recipients.push(recipient1);
-
 // P2P Configuration
 config.p2p = {};
 config.p2p.enabled = true;
-config.p2p.host = '127.0.0.1';
-config.p2p.port = 8333;
+config.p2p.host = '18.213.13.51';
+config.p2p.port = 18333;
 
 // Settings Configuration
 config.settings = {};
 config.settings.blockRefreshInterval = 1000;
 config.settings.connectionTimeout = 600;
-config.settings.emitInvalidBlockHashes = false;
 config.settings.hashrateWindow = 300;
 config.settings.jobRebroadcastTimeout = 60;
 config.settings.tcpProxyProtocol = false;
+
+// Primary Configuration
+config.primary = {};
+config.primary.address = 'bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq';
+
+// Coin Configuration
+config.primary.coin = {};
+config.primary.coin.name = 'Bitcoin';
+config.primary.coin.symbol = 'BTC';
+config.primary.coin.asicBoost = true;
+config.primary.coin.getInfo = false;
+config.primary.coin.segwit = true;
+config.primary.coin.rewards = '';
+
+// Algorithm Configuration
+config.primary.coin.algorithms = {};
+config.primary.coin.algorithms.mining = 'sha256d';
+config.primary.coin.algorithms.block = 'sha256d';
+config.primary.coin.algorithms.coinbase = 'sha256d';
+
+// Mainnet Configuration
+config.primary.coin.mainnet = {};
+config.primary.coin.mainnet.bech32 = 'bc';
+config.primary.coin.mainnet.bip32 = {};
+config.primary.coin.mainnet.bip32.public = Buffer.from('0488B21E', 'hex').readUInt32LE(0);
+config.primary.coin.mainnet.bip32.private = Buffer.from('0488ADE4', 'hex').readUInt32LE(0);
+config.primary.coin.mainnet.peerMagic = 'f9beb4d9';
+config.primary.coin.mainnet.pubKeyHash = Buffer.from('00', 'hex').readUInt8(0);
+config.primary.coin.mainnet.scriptHash = Buffer.from('05', 'hex').readUInt8(0);
+config.primary.coin.mainnet.wif = Buffer.from('128', 'hex').readUInt8(0);
+config.primary.coin.mainnet.coin = 'btc';
+
+// Mainnet Configuration
+config.primary.coin.testnet = {};
+config.primary.coin.testnet.bech32 = 'tb';
+config.primary.coin.testnet.bip32 = {};
+config.primary.coin.testnet.bip32.public = Buffer.from('043587CF', 'hex').readUInt32LE(0);
+config.primary.coin.testnet.bip32.private = Buffer.from('04358394', 'hex').readUInt32LE(0);
+config.primary.coin.testnet.peerMagic = '0b110907';
+config.primary.coin.testnet.pubKeyHash = Buffer.from('6F', 'hex').readUInt8(0);
+config.primary.coin.testnet.scriptHash = Buffer.from('C4', 'hex').readUInt8(0);
+config.primary.coin.testnet.wif = Buffer.from('239', 'hex').readUInt8(0);
+config.primary.coin.testnet.coin = 'btc';
+
+// Daemon Configuration
+config.primary.daemons = [];
+
+const daemons1 = {};
+daemons1.host = '127.0.0.1';
+daemons1.port = 8332;
+daemons1.user = 'blinkhash';
+daemons1.password = 'password';
+config.primary.daemons.push(daemons1);
+
+// Payment Configuration
+config.primary.payments = {};
+config.primary.payments.enabled = true;
+config.primary.payments.checkInterval = 20;
+config.primary.payments.paymentInterval = 7200;
+config.primary.payments.minConfirmations = 10;
+config.primary.payments.minPayment = 0.005;
+config.primary.payments.transactionFee = 0.0004;
+config.primary.payments.daemon = {};
+config.primary.payments.daemon.host = '127.0.0.1';
+config.primary.payments.daemon.port = 8332;
+config.primary.payments.daemon.user = 'blinkhash';
+config.primary.payments.daemon.password = 'password';
+
+// Recipients Configuration
+config.primary.recipients = [];
+
+const recipient1 = {};
+recipient1.address = 'bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq';
+recipient1.percentage = 0.05;
+config.primary.recipients.push(recipient1);
 
 // Export Configuration
 module.exports = config;

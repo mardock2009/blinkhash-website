@@ -27,7 +27,7 @@ Each method and endpoint requested will return a similar response structure in J
 An example of a standard request and response framework using a Litecoin pool is shown below:
 
 ~~~bash
-curl http://localhost:3001/api/v1/Litecoin/[endpoint]?method=[method?]
+curl http://localhost:[port]/api/v1/Pool1/[endpoint]?method=[method?]
 ~~~
 
 ~~~json
@@ -43,7 +43,7 @@ source code.
 
 ~~~bash
 # /blocks?method=confirmed
-curl http://localhost:3001/api/v1/Litecoin/blocks?method=confirmed
+curl http://localhost:[port]/api/v1/Pool1/blocks?method=confirmed
 ~~~
 
 ~~~json
@@ -60,7 +60,7 @@ the upcoming one, ensuring contributions aren't lost.
 
 ~~~bash
 # /blocks?method=kicked
-curl http://localhost:3001/api/v1/Litecoin/blocks?method=kicked
+curl http://localhost:[port]/api/v1/Pool1/blocks?method=kicked
 ~~~
 
 ~~~json
@@ -74,7 +74,7 @@ by the coin's network but are still waiting to be confirmed.
 
 ~~~bash
 # /blocks?method=pending
-curl http://localhost:3001/api/v1/Litecoin/blocks?method=pending
+curl http://localhost:[port]/api/v1/Pool1/blocks?method=pending
 ~~~
 
 ~~~json
@@ -88,7 +88,7 @@ no matter if they've been kicked, are pending, or have been confirmed.
 
 ~~~bash
 # /blocks
-curl http://localhost:3001/api/v1/Litecoin/blocks
+curl http://localhost:[port]/api/v1/Pool1/blocks
 ~~~
 
 ~~~json
@@ -101,7 +101,7 @@ Returns an object that includes properties for statistics for a single miner.
 
 ~~~bash
 # /miners?method=[miner]
-curl http://localhost:3001/api/v1/Litecoin/miners?method=QWGi9SmwdGnQq5fVarbnQoY4hJdtCp8vtZ
+curl http://localhost:[port]/api/v1/Pool1/miners?method=QWGi9SmwdGnQq5fVarbnQoY4hJdtCp8vtZ
 ~~~
 
 ~~~json
@@ -114,7 +114,7 @@ Returns an array of all the miners that are currently mining on the pool.
 
 ~~~bash
 # /miners
-curl http://localhost:3001/api/v1/Litecoin/miners
+curl http://localhost:[port]/api/v1/Pool1/miners
 ~~~
 
 ~~~json
@@ -130,7 +130,7 @@ to them in the next payment cycle and their unpaid balance will be reset to 0.
 
 ~~~bash
 # /payments?method=balances
-curl http://localhost:3001/api/v1/Litecoin/payments?method=balances
+curl http://localhost:[port]/api/v1/Pool1/payments?method=balances
 ~~~
 
 ~~~json
@@ -147,7 +147,7 @@ cycle so long as it's greater than the minimum payment allowed.
 
 ~~~bash
 # /payments?method=immature
-curl http://localhost:3001/api/v1/Litecoin/payments?method=immature
+curl http://localhost:[port]/api/v1/Pool1/payments?method=immature
 ~~~
 
 ~~~json
@@ -163,7 +163,7 @@ sent out in the next payment cycle.
 
 ~~~bash
 # /payments?method=generate
-curl http://localhost:3001/api/v1/Litecoin/payments?method=generate
+curl http://localhost:[port]/api/v1/Pool1/payments?method=generate
 ~~~
 
 ~~~json
@@ -177,7 +177,7 @@ from the server.
 
 ~~~bash
 # /payments?method=paid
-curl http://localhost:3001/api/v1/Litecoin/payments?method=paid
+curl http://localhost:[port]/api/v1/Pool1/payments?method=paid
 ~~~
 
 ~~~json
@@ -192,7 +192,7 @@ ensuring that the pool is provably "fair".
 
 ~~~bash
 # /payments?method=records
-curl http://localhost:3001/api/v1/Litecoin/payments?method=records
+curl http://localhost:[port]/api/v1/Pool1/payments?method=records
 ~~~
 
 ~~~json
@@ -206,7 +206,7 @@ main balances, immature balances, generate balances, and amounts paid.
 
 ~~~bash
 # /payments
-curl http://localhost:3001/api/v1/Litecoin/payments
+curl http://localhost:[port]/api/v1/Pool1/payments
 ~~~
 
 ~~~json
@@ -220,7 +220,7 @@ round.
 
 ~~~bash
 # /rounds?method=[round]
-curl http://localhost:3001/api/v1/Litecoin/rounds?method=1974011
+curl http://localhost:[port]/api/v1/Pool1/rounds?method=1974011
 ~~~
 
 ~~~json
@@ -234,7 +234,7 @@ round.
 
 ~~~bash
 # /rounds?method=current
-curl http://localhost:3001/api/v1/Litecoin/rounds?method=current
+curl http://localhost:[port]/api/v1/Pool1/rounds?method=current
 ~~~
 
 ~~~json
@@ -249,7 +249,7 @@ issued, it's deleted, so only the most recent rounds are shown.
 
 ~~~bash
 # /rounds
-curl http://localhost:3001/api/v1/Litecoin/rounds
+curl http://localhost:[port]/api/v1/Pool1/rounds
 ~~~
 
 ~~~json
@@ -263,7 +263,7 @@ the number of shares/blocks submitted, hashrate, and payments.
 
 ~~~bash
 # /statistics
-curl http://localhost:3001/api/v1/Litecoin/statistics
+curl http://localhost:[port]/api/v1/Pool1/statistics
 ~~~
 
 ~~~json
@@ -277,7 +277,7 @@ with a miner.
 
 ~~~bash
 # /workers?method=[worker]
-curl http://localhost:3001/api/v1/Litecoin/workers?method=QWGi9SmwdGnQq5fVarbnQoY4hJdtCp8vtZ.worker1
+curl http://localhost:[port]/api/v1/Pool1/workers?method=QWGi9SmwdGnQq5fVarbnQoY4hJdtCp8vtZ.worker1
 ~~~
 
 ~~~json
@@ -291,7 +291,7 @@ the pool.
 
 ~~~bash
 # /workers
-curl http://localhost:3001/api/v1/Litecoin/workers?method=current
+curl http://localhost:[port]/api/v1/Pool1/workers?method=current
 ~~~
 
 ~~~json
@@ -303,8 +303,8 @@ const poolsCurrent = `
 Returns an array of all the pools that are currently active on the server.
 
 ~~~bash
-# /coins
-curl http://localhost:3001/api/v1/coins
+# /pools
+curl http://localhost:[port]/api/v1/pools
 ~~~
 
 ~~~json
@@ -317,7 +317,7 @@ Returns an array of all the partners that have an active subscription on the ser
 
 ~~~bash
 # /partners
-curl http://localhost:3001/api/v1/partners
+curl http://localhost:[port]/api/v1/partners
 ~~~
 
 ~~~json
