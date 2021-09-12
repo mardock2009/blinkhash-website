@@ -9,9 +9,13 @@ export const CardContainer = styled.div`
   padding: 20px 30px;
   margin-right: 15px;
   margin-bottom: 15px;
-  border-radius: 10px;
   text-align: center;
-  background-color: ${(props) => props.theme.backgroundButton};
+  background: ${(props) => props.theme.backgroundButton}; /* Old browsers */
+  background: -moz-linear-gradient(left, ${(props) => props.theme.backgroundButton} 0%, ${(props) => props.theme.backgroundButtonSecondary} 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, ${(props) => props.theme.backgroundButton} 0%,${(props) => props.theme.backgroundButtonSecondary} 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, ${(props) => props.theme.backgroundButton} 0%,${(props) => props.theme.backgroundButtonSecondary} 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#434b9f', endColorstr='#192171',GradientType=1 ); /* IE6-9 */
+  border-radius: 10px;
   cursor: pointer;
   transition: 0.2s ease-in all;
   ${(props) => props.theme.type === 'light' && `
@@ -21,7 +25,7 @@ export const CardContainer = styled.div`
     border: 1px solid ${props.theme.borderButton};
   `}
   &:hover {
-    background-color: ${(props) => props.theme.accessoryHover};
+    background: ${(props) => props.theme.accessoryHover};
   }
 `;
 

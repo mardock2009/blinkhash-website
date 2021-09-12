@@ -8,7 +8,7 @@ export function ButtonDisabled(props) {
   return (
     <Local.DisabledContainer>
       <Local.ButtonText>
-        <Global.Body1>{props.text}</Global.Body1>
+        <Global.Body2>{props.text}</Global.Body2>
       </Local.ButtonText>
     </Local.DisabledContainer>
   );
@@ -19,7 +19,7 @@ export function ButtonInternal(props) {
     <LinkInternal link={props.link}>
       <Local.ButtonContainer>
         <Local.ButtonText>
-          <Global.Body1>{props.text}</Global.Body1>
+          <Global.Body2>{props.text}</Global.Body2>
         </Local.ButtonText>
       </Local.ButtonContainer>
     </LinkInternal>
@@ -31,7 +31,7 @@ export function ButtonExternal(props) {
     <LinkExternal link={props.link}>
       <Local.ButtonContainer>
         <Local.ButtonText>
-          <Global.Body1>{props.text}</Global.Body1>
+          <Global.Body2>{props.text}</Global.Body2>
         </Local.ButtonText>
       </Local.ButtonContainer>
     </LinkExternal>

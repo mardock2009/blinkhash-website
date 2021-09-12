@@ -2,28 +2,30 @@
 import React from 'react';
 import * as Local from './styles';
 
-export default function Divider(props) {
+export function DividerLight() {
+
   return (
     <React.Fragment>
-      {(props.theme === 'light') ? (
-        <Local.DividerContainer
-          style={{
-            backgroundImage: (props.gray) ? (
-              "url('/docs/images/blinkhash-divider-light-gray.png')") : (
-              "url('/docs/images/blinkhash-divider-light.png')"),
-            transform: (props.rotation) ? 'rotate(180deg)' : '',
-            marginTop: (props.rotation) ? '-4px': '',
-          }}
-        />
-      ) : (
-        <Local.DividerContainer
-          style={{
-            backgroundImage: "url('/docs/images/blinkhash-divider-dark.png')",
-            transform: (props.rotation) ? 'rotate(180deg)' : '',
-            marginTop: (props.rotation) ? '-4px': '',
-          }}
-        />
-      )}
+      <Local.DividerLightPrimary />
+      <Local.DividerLightSecondary />
+    </React.Fragment>
+  );
+}
+
+export function DividerDark() {
+  return (
+    <React.Fragment>
+      <Local.DividerDarkPrimary />
+      <Local.DividerDarkSecondary />
+    </React.Fragment>
+  );
+}
+
+export function DividerGrey() {
+  return (
+    <React.Fragment>
+      <Local.DividerGreyPrimary />
+      <Local.DividerGreySecondary />
     </React.Fragment>
   );
 }

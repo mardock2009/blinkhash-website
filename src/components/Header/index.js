@@ -2,7 +2,7 @@
 import React from 'react';
 import { LinkInternal } from '../Links';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faTwitter, faDiscord } from '@fortawesome/free-brands-svg-icons';
 
 // Main Styles
@@ -20,14 +20,24 @@ export default function Header(props) {
             alt=''
           />
           <Local.HeaderTitle>
-            <Global.Header3>{'Blinkhash Mining'}</Global.Header3>
+            <Global.Header4>{'Blinkhash Mining'}</Global.Header4>
           </Local.HeaderTitle>
         </Local.HeaderLogo>
         <Local.HeaderLinks>
           <Local.HeaderPages>
             <LinkInternal link={'/'}>
               <Local.HeaderText>
-                <Global.Body1>{'Documentation'}</Global.Body1>
+                <Global.Body2>{'Mining'}</Global.Body2>
+              </Local.HeaderText>
+            </LinkInternal>
+            <LinkInternal link={'/'}>
+              <Local.HeaderText>
+                <Global.Body2>{'Partners'}</Global.Body2>
+              </Local.HeaderText>
+            </LinkInternal>
+            <LinkInternal link={'/'}>
+              <Local.HeaderText>
+                <Global.Body2>{'Documentation'}</Global.Body2>
               </Local.HeaderText>
             </LinkInternal>
           </Local.HeaderPages>
@@ -39,7 +49,7 @@ export default function Header(props) {
             >
               <FontAwesomeIcon
                 icon={faDiscord}
-                style={{ width: '18px', marginTop: '3px' }}
+                style={{ width: '20px', marginTop: '4px' }}
               />
             </Local.HeaderSocialIcon>
             <Local.HeaderSocialIcon
@@ -49,7 +59,7 @@ export default function Header(props) {
             >
               <FontAwesomeIcon
                 icon={faTwitter}
-                style={{ width: '20px' }}
+                style={{ width: '22px', marginTop: '2px' }}
               />
             </Local.HeaderSocialIcon>
             <Local.HeaderSocialIcon
@@ -59,18 +69,29 @@ export default function Header(props) {
             >
               <FontAwesomeIcon
                 icon={faGithub}
-                style={{ width: '20px' }}
+                style={{ width: '22px', marginTop: '1px' }}
               />
             </Local.HeaderSocialIcon>
           </Local.HeaderSocial>
-          <Local.HeaderTheme>
+          <Local.HeaderOther>
+            <Local.HeaderPayout>
+              <Local.HeaderText>
+                <Global.Body2>{'Next Payout - Updating ...'}</Global.Body2>
+              </Local.HeaderText>
+            </Local.HeaderPayout>
             <Local.HeaderToggle onClick={props.toggleTheme}>
               <FontAwesomeIcon
                 icon={(props.theme === 'light') ? faSun : faMoon}
-                style={{ width: '20px' }}
+                style={{ width: '22px', marginTop: '1px' }}
               />
             </Local.HeaderToggle>
-          </Local.HeaderTheme>
+            <Local.HeaderDropdown>
+              <FontAwesomeIcon
+                icon={faBars}
+                style={{ width: '18px', marginTop: '2px' }}
+              />
+            </Local.HeaderDropdown>
+          </Local.HeaderOther>
         </Local.HeaderLinks>
       </Local.HeaderInner>
     </Local.HeaderContainer>

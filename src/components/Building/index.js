@@ -1,49 +1,94 @@
 /* eslint-disable-next-line no-unused-vars */
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
-import Attribute from '../Attribute/index';
 import { ButtonDisabled, ButtonInternal } from '../Button/index';
-import { faDesktop, faHdd } from '@fortawesome/free-solid-svg-icons'
 
 // Main Styles
 import * as Global from '../../styles';
 import * as Local from './styles';
 
 const independent = `
-The best place to start is the documentation for Foundation, our open-source mining pool
-solution. It's important to become familiar with the software being utilized in order to
+The documentation for Foundation, our open-source mining pool solution, provides the best
+starting point. It's important to become familiar with the software being utilized in order to
 become a more effective pool operator. Look for the 'Getting Started' section for a tutorial
 on how to build a simple Bitcoin pool.
 `;
 
 const platform = `
+Our proprietary turnkey mining pool platform allows users to create their own mining pools
+with the push of a button. If you're looking to create a mining pool for one of our supported
+coins quickly without having to deal with setting up the infrastructure, just create an account
+and get started.
 `;
 
-export default function Building(props) {
+export default function Building() {
   return (
     <Local.BuildingContainer>
-      <Local.BuildingOptions>
-        <Attribute
-          icon={faHdd}
-          title={'Building Independently'}
-          text={independent}
-        >
-          <ButtonInternal
-            link={'/foundation'}
-            text={'Foundation Docs'}
+      <Local.BuildingInner>
+        <Local.BuildingSection>
+          <Local.BuildingImage
+            style={{ paddingRight: '50px' }}
+            src={'/docs/images/blinkhash-independent.png'}
+            alt=''
           />
-        </Attribute>
-        <Attribute
-          icon={faDesktop}
-          title={'Building on the Platform'}
-          text={platform}
-        >
-          <ButtonDisabled
-            link={''}
-            text={'Coming Soon'}
+          <Local.BuildingInformation>
+            <Local.BuildingTitle>
+              <Local.BuildingTitleMain>
+                <Global.Header2>
+                  {'Building'}
+                </Global.Header2>
+              </Local.BuildingTitleMain>
+              <Local.BuildingTitleBold>
+                <Global.Header2 bold>
+                  {'Independently'}
+                </Global.Header2>
+              </Local.BuildingTitleBold>
+            </Local.BuildingTitle>
+            <Local.BuildingText>
+              <Global.Body1>
+                {independent}
+              </Global.Body1>
+            </Local.BuildingText>
+            <Local.BuildingLink>
+              <ButtonInternal
+                link={'/foundation'}
+                text={'Foundation'}
+              />
+            </Local.BuildingLink>
+          </Local.BuildingInformation>
+        </Local.BuildingSection>
+        <Local.BuildingSection>
+          <Local.BuildingInformation>
+            <Local.BuildingTitle>
+              <Local.BuildingTitleMain>
+                <Global.Header2>
+                  {'Building on the'}
+                </Global.Header2>
+              </Local.BuildingTitleMain>
+              <Local.BuildingTitleBold>
+                <Global.Header2 bold>
+                  {'Platform'}
+                </Global.Header2>
+              </Local.BuildingTitleBold>
+            </Local.BuildingTitle>
+            <Local.BuildingText>
+              <Global.Body1>
+                {platform}
+              </Global.Body1>
+            </Local.BuildingText>
+            <Local.BuildingLink>
+              <ButtonDisabled
+                link={''}
+                text={'Coming Soon'}
+              />
+            </Local.BuildingLink>
+          </Local.BuildingInformation>
+          <Local.BuildingImage
+            style={{ paddingLeft: '50px' }}
+            src={'/docs/images/blinkhash-platform.png'}
+            alt=''
           />
-        </Attribute>
-      </Local.BuildingOptions>
+        </Local.BuildingSection>
+      </Local.BuildingInner>
     </Local.BuildingContainer>
   );
 }

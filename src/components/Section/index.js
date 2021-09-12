@@ -1,10 +1,12 @@
 /* eslint-disable-next-line no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
+
+// Main Components
 import Banner from '../Banner/index';
+import Directory from '../Directory/index';
+import { DividerGrey } from '../Divider/index';
 import Footer from '../Footer/index';
-import Header from '../Header/index';
-import Information from '../Information/index';
 import License from '../License/index';
 import Resources from '../Resources/index';
 import Sidenav from '../Sidenav/index';
@@ -51,10 +53,12 @@ export default function Section(props) {
   return (
     <Local.SectionContainer>
       <Local.SectionInner>
-        <Banner
+        <Directory
           component={props.component}
           pages={props.pages}
+          theme={props.theme}
         />
+        <DividerGrey theme={props.theme} />
         <Local.SectionDisplay>
           <Sidenav>
             {(props.sections.map((section, idx1) => {
@@ -75,43 +79,46 @@ export default function Section(props) {
               );
             }))}
           </Sidenav>
-          <Local.SectionInformation>
-            <Local.SectionInformationInner>
-              <Local.SectionInformationContainer>
-                <Information>
-                  {(props.sections.map((section, idx1) => {
-                    return (
-                      <Local.SectionBody key={idx1}>
-                        {(Object.keys(section).map((header, idx2) => {
-                          return (
-                            <Local.SectionText id={'header-' + props.headers.indexOf(header)} key={idx2}>
-                              <Local.SectionTitle ref={headerRefs[props.headers.indexOf(header)]}>
-                                {header}
-                              </Local.SectionTitle>
-                              <Global.Body1>
-                                {(props.theme === 'light') ? (
-                                  <ReactMarkdown components={componentsLight}>
-                                    {section[header]}
-                                  </ReactMarkdown>
-                                ) : (
-                                  <ReactMarkdown components={componentsDark}>
-                                    {section[header]}
-                                  </ReactMarkdown>
-                                )}
-                              </Global.Body1>
-                            </Local.SectionText>
-                          );
-                        }))}
-                      </Local.SectionBody>
-                    );
-                  }))}
-                </Information>
+          <Local.SectionMain>
+            <Local.SectionMainContainer>
+              <Local.SectionMainInner>
+                <Local.SectionDocumentation>
+                  <Banner />
+                  <Local.SectionDocumentationInner>
+                    {(props.sections.map((section, idx1) => {
+                      return (
+                        <Local.SectionBody key={idx1}>
+                          {(Object.keys(section).map((header, idx2) => {
+                            return (
+                              <Local.SectionText id={'header-' + props.headers.indexOf(header)} key={idx2}>
+                                <Local.SectionTitle ref={headerRefs[props.headers.indexOf(header)]}>
+                                  {header}
+                                </Local.SectionTitle>
+                                <Global.Body2>
+                                  {(props.theme === 'light') ? (
+                                    <ReactMarkdown components={componentsLight}>
+                                      {section[header]}
+                                    </ReactMarkdown>
+                                  ) : (
+                                    <ReactMarkdown components={componentsDark}>
+                                      {section[header]}
+                                    </ReactMarkdown>
+                                  )}
+                                </Global.Body2>
+                              </Local.SectionText>
+                            );
+                          }))}
+                        </Local.SectionBody>
+                      );
+                    }))}
+                  </Local.SectionDocumentationInner>
+                </Local.SectionDocumentation>
                 <License />
-              </Local.SectionInformationContainer>
-              <Resources resources={props.resources} />
-            </Local.SectionInformationInner>
+              </Local.SectionMainInner>
+            </Local.SectionMainContainer>
             <Footer />
-          </Local.SectionInformation>
+          </Local.SectionMain>
+          <Resources resources={props.resources} />
         </Local.SectionDisplay>
       </Local.SectionInner>
     </Local.SectionContainer>

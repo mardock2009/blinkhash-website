@@ -75,13 +75,13 @@ export const Global = createGlobalStyle`
 
   // Main Styles
   body {
-    background-color: ${(props) => props.theme.backgroundInformation};
+    background-color: ${(props) => props.theme.backgroundMain};
     transition: 0.2s ease-in all;
   }
   hr {
     margin: 25px 0px 20px;
     border: 0px;
-    border-bottom: 1px solid ${(props) => props.theme.borderInformation};
+    border-bottom: 1px solid ${(props) => props.theme.borderMain};
   }
   h1 {
     font-size: 2.5rem;
@@ -97,7 +97,7 @@ export const Global = createGlobalStyle`
   }
   h3 {
     font-size: 16px !important;
-    border-bottom: 1px solid ${(props) => props.theme.borderInformation};
+    border-bottom: 1px solid ${(props) => props.theme.borderMain};
     padding-bottom: 12px;
     margin-bottom: 0.5rem;
     font-weight: 500;
@@ -127,31 +127,52 @@ export const Global = createGlobalStyle`
 export const Body1 = styled.div`
   font-family: 'Lato Regular', sans-serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 15px;
   overflow: hidden;
   text-overflow: ellipsis;
+  ${(props) => props.bold && `
+    font-family: 'Lato Bold', sans-serif;
+  `}
+  @media (max-width: 500px) {
+    font-size: 14px;
+  }
 `;
 
 export const Body2 = styled.div`
   font-family: 'Lato Regular', sans-serif;
   font-weight: 400;
-  font-size: 13px;
+  font-size: 14px;
   overflow: hidden;
   text-overflow: ellipsis;
+  ${(props) => props.bold && `
+    font-family: 'Lato Bold', sans-serif;
+  `}
+  @media (max-width: 500px) {
+    font-size: 13px;
+  }
 `;
 
 export const Body3 = styled.div`
   font-family: 'Lato Regular', sans-serif;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 13px;
   overflow: hidden;
   text-overflow: ellipsis;
+  ${(props) => props.bold && `
+    font-family: 'Lato Bold', sans-serif;
+  `}
+  @media (max-width: 500px) {
+    font-size: 12px;
+  }
 `;
 
 export const Header1 = styled.div`
-  font-family: 'Lato Bold', sans-serif;
+  font-family: 'Lato Regular', sans-serif;
   font-weight: 400;
-  font-size: 30px;
+  font-size: 36px;
+  ${(props) => props.bold && `
+    font-family: 'Lato Bold', sans-serif;
+  `}
   @media (max-width: 800px) {
     font-size: 24px;
   }
@@ -160,32 +181,44 @@ export const Header1 = styled.div`
 export const Header2 = styled.div`
   font-family: 'Lato Regular', sans-serif;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 30px;
+  ${(props) => props.bold && `
+    font-family: 'Lato Bold', sans-serif;
+  `}
+  @media (max-width: 800px) {
+    font-size: 24px;
+  }
+  @media (max-width: 500px) {
+    font-size: 20px;
+  }
 `;
 
 export const Header3 = styled.div`
   font-family: 'Lato Regular', sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 18px;
+  ${(props) => props.bold && `
+    font-family: 'Lato Bold', sans-serif;
+  `}
   @media (max-width: 800px) {
-    font-size: 16px;
+    font-size: 15px;
+  }
+  @media (max-width: 500px) {
+    font-size: 14px;
   }
 `;
 
 export const Header4 = styled.div`
   font-family: 'Lato Regular', sans-serif;
   font-weight: 400;
-  font-size: 16px;
-`;
-
-export const Header5 = styled.div`
-  font-family: 'Lato Bold', sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-`;
-
-export const Header6 = styled.div`
-  font-family: 'Lato Regular', sans-serif;
-  font-weight: 400;
-  font-size: 14px;
+  font-size: 20px;
+  ${(props) => props.bold && `
+    font-family: 'Lato Bold', sans-serif;
+  `}
+  @media (max-width: 800px) {
+    font-size: 18px;
+  }
+  @media (max-width: 500px) {
+    font-size: 16px;
+  }
 `;

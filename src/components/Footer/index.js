@@ -8,14 +8,14 @@ export default function Footer() {
     <Local.FooterContainer>
       <Local.FooterInner>
         <Local.FooterText>
-          <Global.Body1>
+          <Global.Body2>
             {'Terms | Privacy'}
-          </Global.Body1>
+          </Global.Body2>
         </Local.FooterText>
         <Local.FooterText>
-          <Global.Body1>
+          <Global.Body2>
             {'© 2021 - Blinkhash Mining'}
-          </Global.Body1>
+          </Global.Body2>
         </Local.FooterText>
       </Local.FooterInner>
     </Local.FooterContainer>

@@ -2,34 +2,61 @@ import styled from 'styled-components';
 
 export const StartingContainer = styled.div`
   width: 100%;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 80px;
-  background-color: ${(props) => props.theme.backgroundModule};
-  background-position: bottom;
+  padding: 100px 40px;
+  background-image: url('/docs/images/blinkhash-background-shapes-main.svg');
   background-size: cover;
   background-repeat: no-repeat;
-  margin-bottom: -5px;
-  @media (max-width: 1024px) {
-    padding-bottom: 90px;
-  }
   @media (max-width: 800px) {
-    padding-bottom: 100px;
+    padding: 50px 40px;
   }
 `;
 
 export const StartingInner = styled.div`
-  width: calc(100% - 50px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0px 25px;
+  justify-content: center;
+`;
+
+export const StartingSection = styled.div`
+  width: 100%;
+  max-width: 500px;
 `;
 
 export const StartingTitle = styled.div`
-  color: ${(props) => props.theme.textModuleSecondary};
-  line-height: 40px;
+  width: 100%;
+  display: flex;
   margin-bottom: 15px;
+  justify-content: center;
+`;
+
+export const StartingTitleMain = styled.div`
+  color: ${(props) => props.theme.textModule};
+`;
+
+export const StartingTitleBold = styled.div`
+  margin-left: 8px;
+  color: ${(props) => props.theme.textModule};
+`;
+
+export const StartingButtons = styled.div`
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
+`;
+
+export const StartingLink = styled.div`
+  margin-right: 15px;
+  @media (max-width: 500px) {
+    margin-right: 0px;
+    margin-bottom: 15px;
+  }
+  &:last-child {
+    margin-right: 0px;
+  }
 `;

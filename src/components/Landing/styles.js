@@ -2,31 +2,39 @@ import styled from 'styled-components';
 
 export const LandingContainer = styled.div`
   width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 150px 40px 200px;
+  margin-bottom: -100px;
+  background-image: url('/docs/images/blinkhash-background-shapes-main.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 1;
+  @media (max-width: 800px) {
+    padding: 100px 25px;
+    margin-bottom: -50px;
+  }
 `;
 
 export const LandingInner = styled.div`
   display: flex;
   justify-content: center;
-  padding: 100px 40px;
   @media (max-width: 1024px) {
+    width: calc(100% - 50px);
     flex-direction: column;
     align-items: center;
-    padding: 60px 40px 40px;
-  }
-  @media (max-width: 800px) {
-    padding: 40px;
   }
 `;
 
 export const LandingEntry = styled.div`
-  max-width: 480px;
+  max-width: 550px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  margin-right: 40px;
+  margin-right: 60px;
   @media (max-width: 1024px) {
-    max-width: 600px;
+    max-width: 500px;
     margin-bottom: 60px;
     margin-right: 0px;
   }
@@ -44,6 +52,9 @@ export const LandingTitle = styled.div`
   }
   @media (max-width: 800px) {
     line-height: 32px;
+  }
+  @media (max-width: 800px) {
+    line-height: 26px;
   }
 `;
 
@@ -64,11 +75,14 @@ export const LandingButtons = styled.div`
 `;
 
 export const LandingImage = styled.img`
-  width: 480px;
+  width: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
   @media (max-width: 800px) {
-    width: 400px;
+    width: 300px;
+  }
+  @media (max-width: 500px) {
+    width: 250px;
   }
 `;

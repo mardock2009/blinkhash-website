@@ -8,18 +8,20 @@ export default function Resources(props) {
   return (
     <Local.ResourcesContainer>
       <Local.ResourcesInner>
-        <Local.ResourcesTitle>
-          <Global.Header5>
-            {'Resources'}
-          </Global.Header5>
-        </Local.ResourcesTitle>
         <Local.ResourcesSection>
+          <Local.ResourcesTitle>
+            <Global.Body2 bold>
+              {'Resources'}
+            </Global.Body2>
+          </Local.ResourcesTitle>
           {(props.resources.map((link, idx) => {
             return (
-              <LinkExternal key={idx} link={link[0]}>
-                <Global.Body1>{link[1]}</Global.Body1>
-              </LinkExternal>
-            )
+              <Local.ResourcesText key={idx}>
+                <LinkExternal link={link[0]}>
+                  <Global.Body2>{link[1]}</Global.Body2>
+                </LinkExternal>
+              </Local.ResourcesText>
+            );
           }))}
         </Local.ResourcesSection>
       </Local.ResourcesInner>

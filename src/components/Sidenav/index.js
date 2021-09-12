@@ -9,13 +9,13 @@ export default function Sidenav(props) {
   function calculateOffset() {
     if (heightRef.current) {
       const sidenavDimensions = heightRef.current.getBoundingClientRect();
-      setOffset(sidenavDimensions.top)
+      setOffset(sidenavDimensions.top);
     }
   }
 
   useEffect(() => {
     window.addEventListener('scroll', calculateOffset);
-  }, [])
+  }, []);
 
   return (
     <Local.SidenavContainer

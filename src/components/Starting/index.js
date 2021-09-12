@@ -1,28 +1,44 @@
 /* eslint-disable-next-line no-unused-vars */
 import React from 'react';
 import { ButtonInternal } from '../Button/index';
-import Divider from '../Divider/index';
 
 // Main Styles
 import * as Global from '../../styles';
 import * as Local from './styles';
 
 
-export default function Starting(props) {
+export default function Starting() {
   return (
-    <Local.StartingContainer
-      style={{ backgroundImage: `url(${'/docs/images/footer-background.png'})`}}
-    >
+    <Local.StartingContainer>
       <Local.StartingInner>
-        <Local.StartingTitle>
-          <Global.Header1>
-            {"Get Started with Blinkhash"}
-          </Global.Header1>
-        </Local.StartingTitle>
-        <ButtonInternal
-          link={'/foundation'}
-          text={'Explore Documentation'}
-        />
+        <Local.StartingSection>
+          <Local.StartingTitle>
+            <Local.StartingTitleMain>
+              <Global.Header2>
+                {'Get Started with'}
+              </Global.Header2>
+            </Local.StartingTitleMain>
+            <Local.StartingTitleBold>
+              <Global.Header2 bold>
+                {'Blinkhash'}
+              </Global.Header2>
+            </Local.StartingTitleBold>
+          </Local.StartingTitle>
+          <Local.StartingButtons>
+            <Local.StartingLink>
+              <ButtonInternal
+                link={'/'}
+                text={'Access the Mining Pool'}
+              />
+            </Local.StartingLink>
+            <Local.StartingLink>
+              <ButtonInternal
+                link={'/foundation'}
+                text={'Explore Documentation'}
+              />
+            </Local.StartingLink>
+          </Local.StartingButtons>
+        </Local.StartingSection>
       </Local.StartingInner>
     </Local.StartingContainer>
   );

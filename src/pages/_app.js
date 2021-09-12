@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from '../themes';
 import { GlobalMain } from '../styles';
@@ -8,7 +8,7 @@ import { GlobalMain } from '../styles';
 export default function App({ Component, pageProps }) {
   const [theme, updateTheme] = useState('light');
 
-  const site = "https://blinkhash.com/docs";
+  const site = 'https://blinkhash.com/docs';
   const canonical = site + useRouter().asPath;
 
   // Save Theme to Local Storage

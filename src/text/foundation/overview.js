@@ -88,14 +88,14 @@ module, which handles the majority of the mining process. To request for an unsu
 algorithm to be added, open an issue or pull request in the Github repository and it will
 be addressed. The list of all algorithms that are currently supported is
 [here](https://github.com/blinkhash/foundation-stratum/blob/master/scripts/main/algorithms.js).
-`
+`;
 
 const tutorial = `
 This section will offer a tutorial on how to setup Foundation to mine Bitcoin on your
 local machine. This process can be extrapolated to any other coin that uses one of
 the supported algorithms and is built similarly to Bitcoin itself. See the 'Configurations'
 page for an in-depth explanation of the configuration files used in this tutorial.
-`
+`;
 
 const requirements = `
 To start off, you'll need to install the following:
@@ -116,7 +116,7 @@ source ~/.profile
 nvm install 12.16.1
 sudo apt-get install redis-server
 ~~~
-`
+`;
 
 const daemon = `
 For the coin daemon, you'll want to refer to the specific build instructions given out
@@ -171,7 +171,7 @@ daemon is syncing, but the pool server will not be able to start until it's fini
 For redundancy, its recommended to have at least two daemon instances running in case
 one drops out-of-sync or your server crashes, as all instances will be polled for
 block/transaction updates and can be used for submitting blocks.
-`
+`;
 
 const downloading = `
 After configuring the daemon, the next step is to go about downloading and installing
@@ -184,7 +184,7 @@ wget https://github.com/blinkhash/foundation-server/archive/refs/tags/v1.0.0.zip
 unzip v1.0.0.zip
 cd ~/foundation-server-1.0.0/ && npm install
 ~~~
-`
+`;
 
 const configuringServer = `
 To configure the server, first rename the 'configs/main/example.js' file to
@@ -383,9 +383,9 @@ cd ~/foundation-server-1.0.0 && npm run start
 export const resources = [
   ['https://github.com/blinkhash/foundation-server', 'foundation-server'],
   ['https://github.com/blinkhash/foundation-stratum', 'foundation-stratum'],
-  ['https://github.com/blinkhash/foundation-multi-hashing', 'foundation-multi-hashing'],
   ['https://github.com/blinkhash/foundation-configurations', 'foundation-configurations'],
-  ['https://github.com/blinkhash/foundation-utxo-lib', 'foundation-utxo-lib']]
+  ['https://github.com/blinkhash/foundation-multi-hashing', 'foundation-multi-hashing'],
+  ['https://github.com/blinkhash/foundation-utxo-lib', 'foundation-utxo-lib']];
 
 // Text for Module Sections
 export const sections = [

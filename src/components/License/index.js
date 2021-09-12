@@ -16,16 +16,16 @@ export default function License() {
   return (
     <Local.LicenseContainer>
       <Local.LicenseSection>
-        <Global.Body2>
+        <Global.Body3>
           <ReactMarkdown>
             {license}
           </ReactMarkdown>
-        </Global.Body2>
+        </Global.Body3>
       </Local.LicenseSection>
       <Local.LicenseUpdated>
-        <Global.Body2>
+        <Global.Body3>
           {'Last updated 06/20/2021'}
-        </Global.Body2>
+        </Global.Body3>
       </Local.LicenseUpdated>
     </Local.LicenseContainer>
   );

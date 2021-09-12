@@ -9,7 +9,7 @@ export function CardInternal(props) {
     <Local.CardContainer>
       <Local.CardText>
         <LinkInternal link={props.link}>
-          <Global.Body3>{props.text}</Global.Body3>
+          <Global.Body1>{props.text}</Global.Body1>
         </LinkInternal>
       </Local.CardText>
     </Local.CardContainer>
@@ -21,7 +21,7 @@ export function CardExternal(props) {
     <LinkExternal link={props.link}>
       <Local.CardContainer>
         <Local.CardText>
-          <Global.Body3>{props.text}</Global.Body3>
+          <Global.Body1>{props.text}</Global.Body1>
         </Local.CardText>
       </Local.CardContainer>
     </LinkExternal>

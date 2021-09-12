@@ -221,7 +221,7 @@ The link to a logo for the pool, for API/client purposes.
 // Type: String
 config.logo = [string];
 ~~~
-`
+`;
 
 const banningOptions = `
 #### config.banning.time
@@ -464,7 +464,7 @@ be thrown.
 // Type: String
 config.address = [string];
 ~~~
-`
+`;
 
 const coinOptionsPrimary = `
 #### config.primary.coin.name
@@ -950,7 +950,7 @@ Ensures that merged-mining will be enabled when the pool is started.
 // Type: String
 config.auxiliary.enabled = true | false;
 ~~~
-`
+`;
 
 const coinOptionsAuxiliary = `
 #### config.auxiliary.coin.name
@@ -1140,7 +1140,7 @@ export const resources = [
   ['https://github.com/blinkhash/foundation-stratum', 'foundation-stratum'],
   ['https://github.com/blinkhash/foundation-multi-hashing', 'foundation-multi-hashing'],
   ['https://github.com/blinkhash/foundation-configurations', 'foundation-configurations'],
-  ['https://github.com/blinkhash/foundation-utxo-lib', 'foundation-utxo-lib']]
+  ['https://github.com/blinkhash/foundation-utxo-lib', 'foundation-utxo-lib']];
 
 // Text for Module Sections
 export const sections = [

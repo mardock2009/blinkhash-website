@@ -13,6 +13,9 @@ export const SectionDisplay = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
+  background-color: ${(props) => props.theme.backgroundSection};
+  padding-top: 20px;
+  transition: 0.2s ease-in all;
 `;
 
 export const SectionNavigation = styled.div`
@@ -33,6 +36,7 @@ export const SectionHeader = styled.div`
   font-family: 'Lato Regular', sans-serif;
   font-weight: 400;
   font-size: 14px;
+  transition: 0.2s ease-in all;
   ${(props) => props.active && `
     background-color: ${props.theme.backgroundSidenavSecondary};
   `}
@@ -45,35 +49,60 @@ export const SectionHeader = styled.div`
   }
 `;
 
-export const SectionInformation = styled.div`
-  width: calc(100% - 280px);
+export const SectionMain = styled.div`
+  width: calc(100% - 560px);
+  @media (max-width: 1250px) {
+    width: calc(100% - 280px);
+  }
   @media (max-width: 800px) {
-    width: 100%;
+    width: 100%
   }
 `;
 
-export const SectionInformationInner = styled.div`
+export const SectionMainContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
 `;
 
-export const SectionInformationContainer = styled.div`
-  width: calc(100% - 220px);
-  max-width: 1024px;
+export const SectionMainInner = styled.div`
+  width: 100%;
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
-  @media (max-width: 1250px) {
-    width: 100%;
+`;
+
+export const SectionDocumentation = styled.div`
+  width: 100%;
+  padding: 0px 25px 20px 25px;
+  color: ${(props) => props.theme.textSection};
+  background-color: ${(props) => props.theme.backgroundSectionTertiary};
+  transition: 0.2s ease-in all;
+  @media (max-width: 800px) {
+    padding: 0px;
+  }
+`;
+
+export const SectionDocumentationInner = styled.div`
+  width: 100%;
+  padding: 20px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0px 0px 10px 10px;
+  border-top: 0px;
+  @media (max-width: 800px) {
+    margin-top: -20px;
+    border-radius: 0px;
   }
 `;
 
 export const SectionBody = styled.div`
   width: calc(100% + 50px);
   padding: 0px 25px;
-  background-color: ${(props) => props.theme.backgroundInformationSecondary};
+  background-color: ${(props) => props.theme.backgroundSectionSecondary};
   margin-bottom: 20px;
-  border: 1px solid ${(props) => props.theme.borderInformation};
+  border: 1px solid ${(props) => props.theme.borderSection};
   border-radius: 10px;
   transition: 0.2s ease-in all;
   ${(props) => props.theme.type === 'light' && `
@@ -82,7 +111,7 @@ export const SectionBody = styled.div`
   @media (max-width: 800px) {
     margin-bottom: 0px;
     border: 0px;
-    border-bottom: 1px solid ${(props) => props.theme.borderInformation};
+    border-bottom: 1px solid ${(props) => props.theme.borderSection};
     border-radius: 0px;
     box-shadow: none;
   }
@@ -91,9 +120,15 @@ export const SectionBody = styled.div`
   }
 `;
 
+export const SectionTitle = styled.div`
+  width: 100%;
+  margin: 25px 0px 20px;
+  line-height: 20px;
+`;
+
 export const SectionText = styled.div`
   padding-bottom: 5px;
-  border-bottom: 1px solid ${(props) => props.theme.borderInformation};
+  border-bottom: 1px solid ${(props) => props.theme.borderSection};
   font-family: 'Lato Regular', sans-serif;
   font-weight: 400;
   font-size: 20px;
@@ -105,10 +140,4 @@ export const SectionText = styled.div`
     margin-bottom: 0px;
     border-bottom: 0px;
   }
-`;
-
-export const SectionTitle = styled.div`
-  width: 100%;
-  margin: 25px 0px 20px;
-  line-height: 20px;
 `;

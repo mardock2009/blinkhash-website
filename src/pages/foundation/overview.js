@@ -15,12 +15,12 @@ export default function Overview(props) {
         toggleTheme={props.toggleTheme}
       />
       <Section
-        component={"/foundation"}
+        component={'/foundation'}
         headers={headers}
         pages={[
-          "/foundation/overview",
-          "/foundation/configurations",
-          "/foundation/endpoints"
+          '/foundation/overview',
+          '/foundation/configurations',
+          '/foundation/endpoints'
         ]}
         resources={resources}
         sections={sections}

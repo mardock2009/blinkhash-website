@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const HeaderContainer = styled.div`
   width: 100%;
-  height: 60px;
+  height: 65px;
   padding: 20px 25px;
   top: 0px;
   left: 0px;
@@ -35,7 +35,7 @@ export const HeaderImage = styled.img`
   justify-content: center;
   margin-right: 15px;
   margin-top: 1px;
-  @media (max-width: 700px) {
+  @media (max-width: 800px) {
     display: none;
   }
 `;
@@ -52,40 +52,52 @@ export const HeaderLinks = styled.div`
 `;
 
 export const HeaderPages = styled.div`
+  height: 35px;
   display: flex;
-  padding: 5px 20px;
-  border-right: 1px solid ${(props) => props.theme.borderHeader};
-  @media (max-width: 700px) {
+  margin-top: 2px;
+  @media (max-width: 600px) {
     display: none;
   }
 `;
 
 export const HeaderText = styled.div `
   color: ${(props) => props.theme.textHeader};
+  margin: 5px 12.5px;
   transition: 0.2s ease-in all;
   &:hover {
     cursor: pointer;
     color: ${(props) => props.theme.accessoryHover};
   }
+  &:last-child {
+    margin-right: 0px;
+  }
 `;
 
 export const HeaderSocial = styled.div`
+  height: 35px;
   display: flex;
-  padding: 0px 20px;
+  padding: 0px 25px;
+  margin: 0px 25px;
+  border-left: 1px solid ${(props) => props.theme.borderHeader};
   border-right: 1px solid ${(props) => props.theme.borderHeader};
+  @media (max-width: 800px) {
+    padding: 0px;
+    border-left: 0px;
+  }
+  @media (max-width: 600px) {
+    border-right: 0px;
+  }
 `;
 
 export const HeaderSocialIcon = styled.a`
-  width: 31px;
-  height: 31px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0px 5px 0px 5px;
+  margin-left: 25px;
   color: ${(props) => props.theme.textHeader};
   cursor: pointer;
   transition: 0.2s ease-in all;
-  @media (max-width: 450px) {
+  @media (max-width: 800px) {
     display: none;
   }
   &:hover {
@@ -120,20 +132,67 @@ export const Github = styled.div`
   background-image: url('/docs/images/github-logo.png');
 `;
 
-export const HeaderTheme = styled.div`
+export const HeaderOther = styled.div`
+  height: 35px;
   display: flex;
-  padding-left: 20px;
+`;
+
+export const HeaderPayout = styled.div`
+  height: 35px;
+  display: flex;
+  align-items: center;
+  padding: 0px 22.5px 0px 10px;
+  border-radius: 5px;
+  background: ${(props) => props.theme.backgroundHeaderSecondary}; /* Old browsers */
+  background: -moz-linear-gradient(left, ${(props) => props.theme.backgroundHeaderSecondary} 0%, ${(props) => props.theme.backgroundHeaderTertiary} 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, ${(props) => props.theme.backgroundHeaderSecondary} 0%,${(props) => props.theme.backgroundHeaderTertiary} 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, ${(props) => props.theme.backgroundHeaderSecondary} 0%,${(props) => props.theme.backgroundHeaderTertiary} 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=${(props) => props.theme.backgroundHeaderSecondary}, endColorstr=${(props) => props.theme.backgroundHeaderTertiary},GradientType=1 ); /* IE6-9 */
+  ${(props) => props.theme.type === 'light' && `
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3),0 2px 6px 2px rgba(60,64,67,0.15);
+  `}
+  @media (max-width: 1024px) {
+    display: none;
+  }
+`;
+
+export const HeaderTextSecondary = styled.div `
+  color: ${(props) => props.theme.textHeader};
+  padding: 5px 15px;
+  transition: 0.2s ease-in all;
+  &:hover {
+    cursor: pointer;
+    color: ${(props) => props.theme.accessoryHover};
+  }
+`;
+
+export const HeaderDropdown = styled.div`
+  display: none;
+  align-items: center;
+  justify-content: center;
+  margin-left: 25px;
+  color: ${(props) => props.theme.textHeader};
+  transition: 0.2s ease-in all;
+  @media (max-width: 600px) {
+    display: flex;
+  }
+  &:hover {
+    color: ${(props) => props.theme.accessoryHover};
+    border: 0px;
+    cursor: pointer;
+  }
 `;
 
 export const HeaderToggle = styled.div`
-  width: 31px;
-  height: 31px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: 25px;
   color: ${(props) => props.theme.textHeader};
-  font-size: 18px;
   transition: 0.2s ease-in all;
+  @media (max-width: 1024px) {
+    margin-left: 0px;
+  }
   &:hover {
     color: ${(props) => props.theme.accessoryHover};
     border: 0px;
