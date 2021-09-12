@@ -116,11 +116,11 @@ export default function Section(props) {
                 <License />
               </Local.SectionMainInner>
             </Local.SectionMainContainer>
-            <Footer />
           </Local.SectionMain>
           <Resources resources={props.resources} />
         </Local.SectionDisplay>
       </Local.SectionInner>
+      <Footer />
     </Local.SectionContainer>
   );
 }
