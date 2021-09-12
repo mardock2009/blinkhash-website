@@ -6,7 +6,7 @@ export const DirectoryContainer = styled.div`
   justify-content: center;
   padding: 0px 40px 100px;
   margin-bottom: -200px;
-  background-image: url('/docs/images/blinkhash-background-shapes-main.svg');
+  background-image: url('/docs/images/blinkhash-background-shapes-main.png');
   background-size: cover;
   background-repeat: no-repeat;
   opacity: 1;

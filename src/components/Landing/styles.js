@@ -6,7 +6,7 @@ export const LandingContainer = styled.div`
   justify-content: center;
   padding: 150px 40px 200px;
   margin-bottom: -100px;
-  background-image: url('/docs/images/blinkhash-background-shapes-main.svg');
+  background-image: url('/docs/images/blinkhash-background-shapes-main.png');
   background-size: cover;
   background-repeat: no-repeat;
   opacity: 1;

@@ -6,7 +6,7 @@ export const NewsContainer = styled.div`
   justify-content: center;
   padding: 100px 40px 200px;
   margin-bottom: -100px;
-  background-image: url('/docs/images/blinkhash-background-shapes-reversed.svg');
+  background-image: url('/docs/images/blinkhash-background-shapes-reversed.png');
   background-size: cover;
   background-repeat: no-repeat;
   @media (max-width: 800px) {
