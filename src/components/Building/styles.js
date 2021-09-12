@@ -83,6 +83,9 @@ export const BuildingTitleMain = styled.div`
 export const BuildingTitleBold = styled.div`
   margin-left: 8px;
   color: ${(props) => props.theme.textModule};
+  @media (max-width: 500px) {
+    margin-left: 6px;
+  }
 `;
 
 export const BuildingText = styled.div`

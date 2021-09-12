@@ -37,6 +37,9 @@ export const StartingTitleMain = styled.div`
 export const StartingTitleBold = styled.div`
   margin-left: 8px;
   color: ${(props) => props.theme.textModule};
+  @media (max-width: 500px) {
+    margin-left: 6px;
+  }
 `;
 
 export const StartingButtons = styled.div`

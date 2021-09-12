@@ -41,6 +41,9 @@ export const NewsTitleMain = styled.div`
 export const NewsTitleBold = styled.div`
   margin-left: 8px;
   color: ${(props) => props.theme.textModule};
+  @media (max-width: 500px) {
+    margin-left: 6px;
+  }
 `;
 
 export const NewsText = styled.div`

@@ -60,6 +60,9 @@ export const CommunityTitleMain = styled.div`
 export const CommunityTitleBold = styled.div`
   margin-left: 8px;
   color: ${(props) => props.theme.textModule};
+  @media (max-width: 500px) {
+    margin-left: 6px;
+  }
 `;
 
 export const CommunityText = styled.div`
