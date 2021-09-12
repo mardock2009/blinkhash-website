@@ -37,6 +37,7 @@ export const ResourcesTitle = styled.div`
   border-radius: 0px 10px 10px 0px;
   margin-left: -25px;
   background-color: ${(props) => props.theme.backgroundResourcesSecondary};
+  transition: 0.2s ease-in all;
 `;
 
 export const ResourcesText = styled.div`
