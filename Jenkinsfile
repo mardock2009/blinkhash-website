@@ -58,7 +58,7 @@ node {
   // Handle Default Behavior
   } else {
     deployImage = true
-    deployDev = false
+    deployDev = true
     deployProd = false
   }
 
