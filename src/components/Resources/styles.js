@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ResourcesContainer = styled.div`
   width: 280px;
-  height: 100vh;
+  height: calc(100vh - 65px);
   display: flex;
   top: 65px;
   position: sticky;
