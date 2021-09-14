@@ -4,14 +4,14 @@ export const NewsContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 100px 40px 220px;
+  padding: 40px 40px 155px;
   margin-bottom: -120px;
   background-color: ${(props) => props.theme.backgroundNews};
   background-image: url('/docs/images/blinkhash-background-shapes-reversed.png');
   background-size: cover;
   background-repeat: no-repeat;
   @media (max-width: 800px) {
-    padding: 60px 25px 120px;
+    padding: 40px 25px 95px;
     margin-bottom: -60px;
   }
 `;

@@ -4,12 +4,12 @@ export const BuildingContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 100px 40px 220px;
+  padding: 40px 40px 170px;
   margin-bottom: -120px;
   background-color: ${(props) => props.theme.backgroundBuilding};
   transition: 0.2s ease-in all;
   @media (max-width: 800px) {
-    padding: 60px 25px 110px;
+    padding: 40px 25px 110px;
     margin-bottom: -60px;
   }
 `;

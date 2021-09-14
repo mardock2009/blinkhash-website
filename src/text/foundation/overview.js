@@ -41,8 +41,8 @@ following:
 * CI/coverage/linting pipelines
 
 With all these changes and improvements upon the initial source, Foundation is no doubt
-one of the most sophisticated open-source solutions currently available, and one of the
-few that is still being actively developed.
+one of the most sophisticated open-source mining pool solutions currently available, and
+one of the few that is still being actively developed.
 `;
 
 const modules = `

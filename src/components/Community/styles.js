@@ -5,13 +5,13 @@ export const CommunityContainer = styled.div`
   max-height: 450px;
   display: flex;
   justify-content: center;
-  padding: 100px 40px 220px;
+  padding: 40px 40px 155px;
   margin-bottom: -120px;
   background-color: ${(props) => props.theme.backgroundCommunity};
   overflow: hidden;
   transition: 0.2s ease-in all;
   @media (max-width: 800px) {
-    padding: 60px 25px 110px;
+    padding: 40px 25px 95px;
     margin-bottom: -60px;
     max-height: none;
   }
@@ -29,7 +29,7 @@ export const CommunityImage = styled.img`
   width: calc(100% - 100px);
   max-width: 800px;
   margin-left: -400px;
-  margin-top: 400px;
+  margin-top: 450px;
   @media (max-width: 800px) {
     display: none;
   }
