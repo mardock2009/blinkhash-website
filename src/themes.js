@@ -100,7 +100,7 @@ export const darkTheme = {
   /* Banner Palette */
   backgroundBanner: '#06090f',
   backgroundBanner2: '#11151c',
-  borderBanner: '#20202b',
+  borderBanner: '#15151c',
 
   /* Building Palette */
   backgroundBuilding: '#11151c',
@@ -109,7 +109,7 @@ export const darkTheme = {
   backgroundButton: '#434b9f',
   backgroundButton2: '#192171',
   backgroundButton3: '#555555',
-  borderButton: '#20202b',
+  borderButton: '#15151c',
   textButton: '#ffffff',
 
   /* Community Palette */
@@ -129,14 +129,14 @@ export const darkTheme = {
 
   /* Footer Palette */
   backgroundFooter: '#06090f',
-  borderFooter: '#20202b',
+  borderFooter: '#15151c',
   textFooter: '#ebecef',
 
   /* Header Palette */
   backgroundHeader: '#06090f',
   backgroundHeader2: '#434b9f',
   backgroundHeader3: '#192171',
-  borderHeader: '#20202b',
+  borderHeader: '#15151c',
   textHeader: '#ebecef',
 
   /* Hover Palette */
@@ -152,7 +152,7 @@ export const darkTheme = {
 
   /* Main Palette */
   backgroundMain: '#06090f',
-  borderMain: '#20202b',
+  borderMain: '#15151c',
 
   /* Module Palette */
   textModule: '#ebecef',
@@ -160,21 +160,21 @@ export const darkTheme = {
   /* Resources Palette */
   backgroundResources: '#06090f',
   backgroundResources2: '#444ca0',
-  borderResources: '#20202b',
+  borderResources: '#15151c',
   textResources: '#ebecef',
 
   /* Section Palette */
   backgroundSection: '#11151c',
   backgroundSection2: '#06090f',
   backgroundSection3: '#11151c',
-  borderSection: '#20202b',
+  borderSection: '#15151c',
   textSection: '#ebecef',
 
   /* Sidenav Palette */
   backgroundSidenav: '#06090f',
   backgroundSidenav2: '#444ca0',
   backgroundSidenav3: '#2db594',
-  borderSidenav: '#20202b',
-  scrollSidenav: '#20202b',
+  borderSidenav: '#15151c',
+  scrollSidenav: '#15151c',
   textSidenav: '#ebecef',
 };
