@@ -4,13 +4,13 @@ export const BuildingContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 100px 40px 200px;
-  margin-bottom: -100px;
+  padding: 100px 40px 220px;
+  margin-bottom: -120px;
   background-color: ${(props) => props.theme.backgroundBuilding};
   transition: 0.2s ease-in all;
   @media (max-width: 800px) {
-    padding: 50px 25px 100px;
-    margin-bottom: -50px;
+    padding: 60px 25px 110px;
+    margin-bottom: -60px;
   }
 `;
 
@@ -22,7 +22,7 @@ export const BuildingInner = styled.div`
 `;
 
 export const BuildingSection = styled.div`
-  max-width: 900px;
+  max-width: 960px;
   margin-bottom: 75px;
   display: flex;
   align-items: center;

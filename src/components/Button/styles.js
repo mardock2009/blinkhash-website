@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ButtonContainer = styled.div`
+export const ButtonActive = styled.div`
   min-width: 120px;
   height: 40px;
   display: flex;
@@ -30,7 +30,7 @@ export const ButtonContainer = styled.div`
   }
 `;
 
-export const DisabledContainer = styled.div`
+export const ButtonDisabled = styled.div`
   min-width: 120px;
   height: 40px;
   display: flex;

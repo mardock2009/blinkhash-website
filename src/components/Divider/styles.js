@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const DividerLightPrimary = styled.div`
   width: 100vw;
-  height: 100px;
+  height: 120px;
   background-image: linear-gradient(to bottom left,
     rgba(255, 255, 255, 0),
     rgba(255, 255, 255, 0) 50%,
@@ -17,19 +17,19 @@ export const DividerLightPrimary = styled.div`
     opacity: 0;
   `}
   @media (max-width: 800px) {
-    height: 50px;
+    height: 60px;
   }
 `;
 
 export const DividerLightSecondary = styled.div`
   width: 100vw;
-  height: 100px;
+  height: 120px;
   background-image: linear-gradient(to bottom left,
     rgba(255, 255, 255, 0),
     rgba(255, 255, 255, 0) 50%,
     ${(props) => props.theme.backgroundDividerLightSecondary} 50%,
     ${(props) => props.theme.backgroundDividerLightSecondary});
-  margin-top: -100px;
+  margin-top: -120px;
   margin-bottom: -1px;
   position: relative;
   z-index: 998;
@@ -39,14 +39,14 @@ export const DividerLightSecondary = styled.div`
     opacity: 1;
   `}
   @media (max-width: 800px) {
-    height: 50px;
-    margin-top: -50px;
+    height: 60px;
+    margin-top: -60px;
   }
 `;
 
 export const DividerDarkPrimary = styled.div`
   width: 100vw;
-  height: 100px;
+  height: 120px;
   background-image: linear-gradient(to bottom left,
     rgba(255, 255, 255, 0),
     rgba(255, 255, 255, 0) 50%,
@@ -61,19 +61,19 @@ export const DividerDarkPrimary = styled.div`
     opacity: 0;
   `}
   @media (max-width: 800px) {
-    height: 50px;
+    height: 60px;
   }
 `;
 
 export const DividerDarkSecondary = styled.div`
   width: 100vw;
-  height: 100px;
+  height: 120px;
   background-image: linear-gradient(to bottom left,
     rgba(255, 255, 255, 0),
     rgba(255, 255, 255, 0) 50%,
     ${(props) => props.theme.backgroundDividerDarkSecondary} 50%,
     ${(props) => props.theme.backgroundDividerDarkSecondary});
-  margin-top: -100px;
+  margin-top: -120px;
   margin-bottom: -1px;
   position: relative;
   z-index: 998;
@@ -83,14 +83,14 @@ export const DividerDarkSecondary = styled.div`
     opacity: 1;
   `}
   @media (max-width: 800px) {
-    height: 50px;
-    margin-top: -50px;
+    height: 60px;
+    margin-top: -60px;
   }
 `;
 
 export const DividerGreyPrimary = styled.div`
   width: 100vw;
-  height: 100px;
+  height: 120px;
   background-image: linear-gradient(to bottom left,
     rgba(255, 255, 255, 0),
     rgba(255, 255, 255, 0) 50%,
@@ -105,19 +105,19 @@ export const DividerGreyPrimary = styled.div`
     opacity: 0;
   `}
   @media (max-width: 800px) {
-    height: 50px;
+    height: 60px;
   }
 `;
 
 export const DividerGreySecondary = styled.div`
   width: 100vw;
-  height: 100px;
+  height: 120px;
   background-image: linear-gradient(to bottom left,
     rgba(255, 255, 255, 0),
     rgba(255, 255, 255, 0) 50%,
     ${(props) => props.theme.backgroundDividerGreySecondary} 50%,
     ${(props) => props.theme.backgroundDividerGreySecondary});
-  margin-top: -100px;
+  margin-top: -120px;
   margin-bottom: -1px;
   position: relative;
   z-index: 998;
@@ -127,7 +127,7 @@ export const DividerGreySecondary = styled.div`
     opacity: 1;
   `}
   @media (max-width: 800px) {
-    height: 50px;
-    margin-top: -50px;
+    height: 60px;
+    margin-top: -60px;
   }
 `;

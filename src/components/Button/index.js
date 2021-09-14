@@ -6,22 +6,22 @@ import * as Local from './styles';
 
 export function ButtonDisabled(props) {
   return (
-    <Local.DisabledContainer>
+    <Local.ButtonDisabled>
       <Local.ButtonText>
         <Global.Body2>{props.text}</Global.Body2>
       </Local.ButtonText>
-    </Local.DisabledContainer>
+    </Local.ButtonDisabled>
   );
 }
 
 export function ButtonInternal(props) {
   return (
     <LinkInternal link={props.link}>
-      <Local.ButtonContainer>
+      <Local.ButtonActive>
         <Local.ButtonText>
           <Global.Body2>{props.text}</Global.Body2>
         </Local.ButtonText>
-      </Local.ButtonContainer>
+      </Local.ButtonActive>
     </LinkInternal>
   );
 }
@@ -29,11 +29,11 @@ export function ButtonInternal(props) {
 export function ButtonExternal(props) {
   return (
     <LinkExternal link={props.link}>
-      <Local.ButtonContainer>
+      <Local.ButtonActive>
         <Local.ButtonText>
           <Global.Body2>{props.text}</Global.Body2>
         </Local.ButtonText>
-      </Local.ButtonContainer>
+      </Local.ButtonActive>
     </LinkExternal>
   );
 }

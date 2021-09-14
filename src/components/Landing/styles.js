@@ -4,15 +4,15 @@ export const LandingContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 150px 40px 200px;
-  margin-bottom: -100px;
+  padding: 150px 40px 220px;
+  margin-bottom: -120px;
   background-image: url('/docs/images/blinkhash-background-shapes-main.png');
   background-size: cover;
   background-repeat: no-repeat;
   opacity: 1;
   @media (max-width: 800px) {
-    padding: 100px 25px;
-    margin-bottom: -50px;
+    padding: 120px 25px;
+    margin-bottom: -60px;
   }
 `;
 

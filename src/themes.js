@@ -148,7 +148,7 @@ export const darkTheme = {
   backgroundMain: '#06090f',
   borderMain: '#20202b',
 
-  /* Attribute Palette */
+  /* Module Palette */
   textModule: '#ebecef',
 
   /* Resources Palette */
