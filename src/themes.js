@@ -5,7 +5,7 @@ export const lightTheme = {
 
   /* Banner Palette */
   backgroundBanner: '#ffffff',
-  backgroundBannerSecondary: '#f5f5f7',
+  backgroundBanner2: '#f5f5f7',
   borderBanner: '#cccccc',
 
   /* Building Palette */
@@ -13,8 +13,8 @@ export const lightTheme = {
 
   /* Button Palette */
   backgroundButton: '#434b9f',
-  backgroundButtonSecondary: '#192171',
-  backgroundButtonTertiary: '#555555',
+  backgroundButton2: '#192171',
+  backgroundButton3: '#555555',
   borderButton: '#cccccc',
   textButton: '#ebecef',
 
@@ -26,12 +26,12 @@ export const lightTheme = {
   textDirectory: '#425066',
 
   /* Divider Palette */
-  backgroundDividerLightPrimary: '#ffffff',
-  backgroundDividerLightSecondary: '#11151c',
-  backgroundDividerDarkPrimary: '#ebebf6',
-  backgroundDividerDarkSecondary: '#06090f',
-  backgroundDividerGreyPrimary: '#f5f5f7',
-  backgroundDividerGreySecondary: '#11151c',
+  backgroundDividerLight: '#ffffff',
+  backgroundDividerLight2: '#11151c',
+  backgroundDividerDark: '#ebebf6',
+  backgroundDividerDark2: '#06090f',
+  backgroundDividerGrey: '#f5f5f7',
+  backgroundDividerGrey2: '#11151c',
 
   /* Footer Palette */
   backgroundFooter: '#01203f',
@@ -40,8 +40,8 @@ export const lightTheme = {
 
   /* Header Palette */
   backgroundHeader: '#01203f',
-  backgroundHeaderSecondary: '#434b9f',
-  backgroundHeaderTertiary: '#192171',
+  backgroundHeader2: '#434b9f',
+  backgroundHeader3: '#192171',
   borderHeader: '#555555',
   textHeader: '#ffffff',
 
@@ -65,21 +65,21 @@ export const lightTheme = {
 
   /* Resources Palette */
   backgroundResources: '#ffffff',
-  backgroundResourcesSecondary: '#e8f0fd',
+  backgroundResources2: '#e8f0fd',
   borderResources: '#cccccc',
   textResources: '#425066',
 
   /* Section Palette */
   backgroundSection: '#f5f5f7',
-  backgroundSectionSecondary: '#ffffff',
-  backgroundSectionTertiary: '#f5f5f7',
+  backgroundSection2: '#ffffff',
+  backgroundSection3: '#f5f5f7',
   borderSection: '#cccccc',
   textSection: '#425066',
 
   /* Sidenav Palette */
   backgroundSidenav: '#ffffff',
-  backgroundSidenavSecondary: '#e8f0fd',
-  backgroundSidenavTertiary: '#f5f5f7',
+  backgroundSidenav2: '#e8f0fd',
+  backgroundSidenav3: '#f5f5f7',
   borderSidenav: '#cccccc',
   scrollSidenav: '#cccccc',
   textSidenav: '#425066',
@@ -93,7 +93,7 @@ export const darkTheme = {
 
   /* Banner Palette */
   backgroundBanner: '#06090f',
-  backgroundBannerSecondary: '#11151c',
+  backgroundBanner2: '#11151c',
   borderBanner: '#20202b',
 
   /* Building Palette */
@@ -101,8 +101,8 @@ export const darkTheme = {
 
   /* Button Palette */
   backgroundButton: '#434b9f',
-  backgroundButtonSecondary: '#192171',
-  backgroundButtonTertiary: '#555555',
+  backgroundButton2: '#192171',
+  backgroundButton3: '#555555',
   borderButton: '#20202b',
   textButton: '#ffffff',
 
@@ -114,12 +114,12 @@ export const darkTheme = {
   textDirectory: '#ffffff',
 
   /* Divider Palette */
-  backgroundDividerLightPrimary: '#ffffff',
-  backgroundDividerLightSecondary: '#11151c',
-  backgroundDividerDarkPrimary: '#ebebf6',
-  backgroundDividerDarkSecondary: '#06090f',
-  backgroundDividerGreyPrimary: '#f5f5f7',
-  backgroundDividerGreySecondary: '#11151c',
+  backgroundDividerLight: '#ffffff',
+  backgroundDividerLight2: '#11151c',
+  backgroundDividerDark: '#ebebf6',
+  backgroundDividerDark2: '#06090f',
+  backgroundDividerGrey: '#f5f5f7',
+  backgroundDividerGrey2: '#11151c',
 
   /* Footer Palette */
   backgroundFooter: '#06090f',
@@ -128,8 +128,8 @@ export const darkTheme = {
 
   /* Header Palette */
   backgroundHeader: '#06090f',
-  backgroundHeaderSecondary: '#434b9f',
-  backgroundHeaderTertiary: '#192171',
+  backgroundHeader2: '#434b9f',
+  backgroundHeader3: '#192171',
   borderHeader: '#20202b',
   textHeader: '#ebecef',
 
@@ -153,21 +153,21 @@ export const darkTheme = {
 
   /* Resources Palette */
   backgroundResources: '#06090f',
-  backgroundResourcesSecondary: '#444ca0',
+  backgroundResources2: '#444ca0',
   borderResources: '#20202b',
   textResources: '#ebecef',
 
   /* Section Palette */
   backgroundSection: '#11151c',
-  backgroundSectionSecondary: '#06090f',
-  backgroundSectionTertiary: '#11151c',
+  backgroundSection2: '#06090f',
+  backgroundSection3: '#11151c',
   borderSection: '#20202b',
   textSection: '#ebecef',
 
   /* Sidenav Palette */
   backgroundSidenav: '#06090f',
-  backgroundSidenavSecondary: '#444ca0',
-  backgroundSidenavTertiary: '#2db594',
+  backgroundSidenav2: '#444ca0',
+  backgroundSidenav3: '#2db594',
   borderSidenav: '#20202b',
   scrollSidenav: '#20202b',
   textSidenav: '#ebecef',

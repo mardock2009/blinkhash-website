@@ -6,8 +6,8 @@ export const DividerLightPrimary = styled.div`
   background-image: linear-gradient(to bottom left,
     rgba(255, 255, 255, 0),
     rgba(255, 255, 255, 0) 50%,
-    ${(props) => props.theme.backgroundDividerLightPrimary} 50%,
-    ${(props) => props.theme.backgroundDividerLightPrimary});
+    ${(props) => props.theme.backgroundDividerLight} 50%,
+    ${(props) => props.theme.backgroundDividerLight});
   margin-bottom: -1px;
   position: relative;
   z-index: 998;
@@ -27,8 +27,8 @@ export const DividerLightSecondary = styled.div`
   background-image: linear-gradient(to bottom left,
     rgba(255, 255, 255, 0),
     rgba(255, 255, 255, 0) 50%,
-    ${(props) => props.theme.backgroundDividerLightSecondary} 50%,
-    ${(props) => props.theme.backgroundDividerLightSecondary});
+    ${(props) => props.theme.backgroundDividerLight2} 50%,
+    ${(props) => props.theme.backgroundDividerLight2});
   margin-top: -120px;
   margin-bottom: -1px;
   position: relative;
@@ -50,8 +50,8 @@ export const DividerDarkPrimary = styled.div`
   background-image: linear-gradient(to bottom left,
     rgba(255, 255, 255, 0),
     rgba(255, 255, 255, 0) 50%,
-    ${(props) => props.theme.backgroundDividerDarkPrimary} 50%,
-    ${(props) => props.theme.backgroundDividerDarkPrimary});
+    ${(props) => props.theme.backgroundDividerDark} 50%,
+    ${(props) => props.theme.backgroundDividerDark});
   margin-bottom: -1px;
   position: relative;
   z-index: 998;
@@ -71,8 +71,8 @@ export const DividerDarkSecondary = styled.div`
   background-image: linear-gradient(to bottom left,
     rgba(255, 255, 255, 0),
     rgba(255, 255, 255, 0) 50%,
-    ${(props) => props.theme.backgroundDividerDarkSecondary} 50%,
-    ${(props) => props.theme.backgroundDividerDarkSecondary});
+    ${(props) => props.theme.backgroundDividerDark2} 50%,
+    ${(props) => props.theme.backgroundDividerDark2});
   margin-top: -120px;
   margin-bottom: -1px;
   position: relative;
@@ -94,8 +94,8 @@ export const DividerGreyPrimary = styled.div`
   background-image: linear-gradient(to bottom left,
     rgba(255, 255, 255, 0),
     rgba(255, 255, 255, 0) 50%,
-    ${(props) => props.theme.backgroundDividerGreyPrimary} 50%,
-    ${(props) => props.theme.backgroundDividerGreyPrimary});
+    ${(props) => props.theme.backgroundDividerGrey} 50%,
+    ${(props) => props.theme.backgroundDividerGrey});
   margin-bottom: -1px;
   position: relative;
   z-index: 998;
@@ -115,8 +115,8 @@ export const DividerGreySecondary = styled.div`
   background-image: linear-gradient(to bottom left,
     rgba(255, 255, 255, 0),
     rgba(255, 255, 255, 0) 50%,
-    ${(props) => props.theme.backgroundDividerGreySecondary} 50%,
-    ${(props) => props.theme.backgroundDividerGreySecondary});
+    ${(props) => props.theme.backgroundDividerGrey2} 50%,
+    ${(props) => props.theme.backgroundDividerGrey2});
   margin-top: -120px;
   margin-bottom: -1px;
   position: relative;

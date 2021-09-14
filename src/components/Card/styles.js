@@ -11,9 +11,9 @@ export const CardContainer = styled.div`
   margin-bottom: 15px;
   text-align: center;
   background: ${(props) => props.theme.backgroundButton}; /* Old browsers */
-  background: -moz-linear-gradient(left, ${(props) => props.theme.backgroundButton} 0%, ${(props) => props.theme.backgroundButtonSecondary} 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, ${(props) => props.theme.backgroundButton} 0%,${(props) => props.theme.backgroundButtonSecondary} 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, ${(props) => props.theme.backgroundButton} 0%,${(props) => props.theme.backgroundButtonSecondary} 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -moz-linear-gradient(left, ${(props) => props.theme.backgroundButton} 0%, ${(props) => props.theme.backgroundButton2} 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, ${(props) => props.theme.backgroundButton} 0%,${(props) => props.theme.backgroundButton2} 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, ${(props) => props.theme.backgroundButton} 0%,${(props) => props.theme.backgroundButton2} 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#434b9f', endColorstr='#192171',GradientType=1 ); /* IE6-9 */
   border-radius: 10px;
   cursor: pointer;

@@ -9,9 +9,9 @@ export const ButtonActive = styled.div`
   padding: 0px 20px;
   margin-right: 15px;
   background: ${(props) => props.theme.backgroundButton}; /* Old browsers */
-  background: -moz-linear-gradient(left, ${(props) => props.theme.backgroundButton} 0%, ${(props) => props.theme.backgroundButtonSecondary} 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, ${(props) => props.theme.backgroundButton} 0%,${(props) => props.theme.backgroundButtonSecondary} 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, ${(props) => props.theme.backgroundButton} 0%,${(props) => props.theme.backgroundButtonSecondary} 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -moz-linear-gradient(left, ${(props) => props.theme.backgroundButton} 0%, ${(props) => props.theme.backgroundButton2} 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, ${(props) => props.theme.backgroundButton} 0%,${(props) => props.theme.backgroundButton2} 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, ${(props) => props.theme.backgroundButton} 0%,${(props) => props.theme.backgroundButton2} 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#434b9f', endColorstr='#192171',GradientType=1 ); /* IE6-9 */
   border-radius: 5px;
   cursor: pointer;
@@ -38,7 +38,7 @@ export const ButtonDisabled = styled.div`
   justify-content: center;
   padding: 0px 20px;
   margin-right: 15px;
-  background-color: ${(props) => props.theme.backgroundButtonTertiary};
+  background-color: ${(props) => props.theme.backgroundButton3};
   border-radius: 5px;
   &:last-child {
     margin-right: 0px;

@@ -38,11 +38,11 @@ export const SectionHeader = styled.div`
   font-size: 14px;
   transition: 0.2s ease-in all;
   ${(props) => props.active && `
-    background-color: ${props.theme.backgroundSidenavSecondary};
+    background-color: ${props.theme.backgroundSidenav2};
   `}
   &:hover {
     cursor: pointer;
-    background-color: ${(props) => props.theme.backgroundSidenavTertiary};
+    background-color: ${(props) => props.theme.backgroundSidenav3};
   }
   &:first-child {
     font-family: 'Lato Bold', sans-serif !important;
@@ -76,7 +76,7 @@ export const SectionDocumentation = styled.div`
   width: 100%;
   padding: 0px 25px 20px 25px;
   color: ${(props) => props.theme.textSection};
-  background-color: ${(props) => props.theme.backgroundSectionTertiary};
+  background-color: ${(props) => props.theme.backgroundSection3};
   transition: 0.2s ease-in all;
   @media (max-width: 800px) {
     padding: 0px;
@@ -100,7 +100,7 @@ export const SectionDocumentationInner = styled.div`
 export const SectionBody = styled.div`
   width: calc(100% + 50px);
   padding: 0px 25px;
-  background-color: ${(props) => props.theme.backgroundSectionSecondary};
+  background-color: ${(props) => props.theme.backgroundSection2};
   margin-bottom: 20px;
   border: 1px solid ${(props) => props.theme.borderSection};
   border-radius: 10px;

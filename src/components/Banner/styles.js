@@ -15,7 +15,7 @@ export const BannerContainer = styled.div`
     border-left: 0px;
     border-right: 0px;
     border-radius: 0px;
-    background-color: ${(props) => props.theme.backgroundBannerSecondary};
+    background-color: ${(props) => props.theme.backgroundBanner2};
     box-shadow: none;
   }
 `;

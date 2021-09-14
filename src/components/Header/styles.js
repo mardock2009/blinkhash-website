@@ -143,11 +143,11 @@ export const HeaderPayout = styled.div`
   align-items: center;
   padding: 0px 22.5px 0px 10px;
   border-radius: 5px;
-  background: ${(props) => props.theme.backgroundHeaderSecondary}; /* Old browsers */
-  background: -moz-linear-gradient(left, ${(props) => props.theme.backgroundHeaderSecondary} 0%, ${(props) => props.theme.backgroundHeaderTertiary} 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, ${(props) => props.theme.backgroundHeaderSecondary} 0%,${(props) => props.theme.backgroundHeaderTertiary} 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, ${(props) => props.theme.backgroundHeaderSecondary} 0%,${(props) => props.theme.backgroundHeaderTertiary} 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=${(props) => props.theme.backgroundHeaderSecondary}, endColorstr=${(props) => props.theme.backgroundHeaderTertiary},GradientType=1 ); /* IE6-9 */
+  background: ${(props) => props.theme.backgroundHeader2}; /* Old browsers */
+  background: -moz-linear-gradient(left, ${(props) => props.theme.backgroundHeader2} 0%, ${(props) => props.theme.backgroundHeader3} 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, ${(props) => props.theme.backgroundHeader2} 0%,${(props) => props.theme.backgroundHeader3} 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, ${(props) => props.theme.backgroundHeader2} 0%,${(props) => props.theme.backgroundHeader3} 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=${(props) => props.theme.backgroundHeader2}, endColorstr=${(props) => props.theme.backgroundHeader3},GradientType=1 ); /* IE6-9 */
   ${(props) => props.theme.type === 'light' && `
     box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3),0 2px 6px 2px rgba(60,64,67,0.15);
   `}
