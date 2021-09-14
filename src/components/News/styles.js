@@ -6,6 +6,7 @@ export const NewsContainer = styled.div`
   justify-content: center;
   padding: 100px 40px 220px;
   margin-bottom: -120px;
+  background-color: ${(props) => props.theme.backgroundNews};
   background-image: url('/docs/images/blinkhash-background-shapes-reversed.png');
   background-size: cover;
   background-repeat: no-repeat;

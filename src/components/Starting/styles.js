@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const StartingContainer = styled.div`
   width: 100%;
   padding: 100px 40px;
+  background-color: ${(props) => props.theme.backgroundStarting};
   background-image: url('/docs/images/blinkhash-background-shapes-main.png');
   background-size: cover;
   background-repeat: no-repeat;

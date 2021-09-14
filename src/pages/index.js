@@ -12,6 +12,7 @@ import Starting from '../components/Starting/index';
 import {
   DividerLight,
   DividerDark,
+  DividerGrey,
 } from '../components/Divider/index';
 
 // Main Styles

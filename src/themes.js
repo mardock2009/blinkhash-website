@@ -28,7 +28,7 @@ export const lightTheme = {
   /* Divider Palette */
   backgroundDividerLight: '#ffffff',
   backgroundDividerLight2: '#11151c',
-  backgroundDividerDark: '#ebebf6',
+  backgroundDividerDark: '#f5f5f7',
   backgroundDividerDark2: '#06090f',
   backgroundDividerGrey: '#f5f5f7',
   backgroundDividerGrey2: '#11151c',
@@ -63,6 +63,9 @@ export const lightTheme = {
   /* Module Palette */
   textModule: '#425066',
 
+  /* News Palette */
+  backgroundNews: '#f5f5f7',
+
   /* Resources Palette */
   backgroundResources: '#ffffff',
   backgroundResources2: '#e8f0fd',
@@ -83,6 +86,9 @@ export const lightTheme = {
   borderSidenav: '#cccccc',
   scrollSidenav: '#cccccc',
   textSidenav: '#425066',
+
+  /* News Palette */
+  backgroundStarting: '#f5f5f7',
 };
 
 // Main Dark Theme
@@ -116,7 +122,7 @@ export const darkTheme = {
   /* Divider Palette */
   backgroundDividerLight: '#ffffff',
   backgroundDividerLight2: '#11151c',
-  backgroundDividerDark: '#ebebf6',
+  backgroundDividerDark: '#f5f5f7',
   backgroundDividerDark2: '#06090f',
   backgroundDividerGrey: '#f5f5f7',
   backgroundDividerGrey2: '#11151c',
