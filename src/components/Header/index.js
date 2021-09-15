@@ -1,6 +1,6 @@
 /* eslint-disable-next-line no-unused-vars */
 import React from 'react';
-import { LinkInternal } from '../Links';
+import { LinkInternal } from '../Link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faTwitter, faDiscord } from '@fortawesome/free-brands-svg-icons';

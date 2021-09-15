@@ -1,7 +1,7 @@
 /* eslint-disable-next-line no-unused-vars */
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
-import { LinkInternal } from '../Links';
+import { LinkInternal } from '../Link';
 
 // Main Styles
 import * as Global from '../../styles';

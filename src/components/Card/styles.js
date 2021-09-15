@@ -15,7 +15,7 @@ export const CardContainer = styled.div`
   background: -webkit-linear-gradient(left, ${(props) => props.theme.backgroundButton} 0%,${(props) => props.theme.backgroundButton2} 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to right, ${(props) => props.theme.backgroundButton} 0%,${(props) => props.theme.backgroundButton2} 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#434b9f', endColorstr='#192171',GradientType=1 ); /* IE6-9 */
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
   transition: 0.2s ease-in all;
   ${(props) => props.theme.type === 'light' && `

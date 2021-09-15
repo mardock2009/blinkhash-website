@@ -1,6 +1,6 @@
 /* eslint-disable-next-line no-unused-vars */
 import React from 'react';
-import { LinkExternal } from '../Links/index';
+import { LinkExternal } from '../Link/index';
 import * as Global from '../../styles';
 import * as Local from './styles';
 

@@ -31,7 +31,7 @@ export const BuildingSection = styled.div`
     max-width: 650px;
     flex-direction: column;
     &:first-child {
-      margin-bottom: 100px;
+      margin-bottom: 50px;
     }
   }
   &:last-child {
