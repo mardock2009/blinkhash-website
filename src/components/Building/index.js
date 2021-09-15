@@ -1,24 +1,11 @@
 /* eslint-disable-next-line no-unused-vars */
 import React from 'react';
 import { ButtonDisabled, ButtonInternal } from '../Button/index';
+import { independent, platform } from '../../text/index';
 
 // Main Styles
 import * as Global from '../../styles';
 import * as Local from './styles';
-
-const independent = `
-The documentation for Foundation, our open-source mining pool solution, provides the best
-starting point. It's important to become familiar with the software being utilized in order to
-become a more effective pool operator. Look for the 'Getting Started' section for a tutorial
-on how to build a simple Bitcoin pool.
-`;
-
-const platform = `
-Our proprietary turnkey mining pool platform allows users to create their own mining pools
-with the push of a button. If you're looking to create a mining pool for one of our supported
-coins quickly without having to deal with setting up the infrastructure, just create an account
-and get started.
-`;
 
 export default function Building() {
   return (
@@ -51,7 +38,7 @@ export default function Building() {
             <Local.BuildingLink>
               <ButtonInternal
                 link={'/foundation'}
-                text={'Foundation'}
+                text={'Continue'}
               />
             </Local.BuildingLink>
           </Local.BuildingInformation>
@@ -77,7 +64,6 @@ export default function Building() {
             </Local.BuildingText>
             <Local.BuildingLink>
               <ButtonDisabled
-                link={''}
                 text={'Coming Soon'}
               />
             </Local.BuildingLink>

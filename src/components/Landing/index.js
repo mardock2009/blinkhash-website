@@ -27,8 +27,7 @@ export default function Landing() {
               text={'Foundation'}
             />
             <ButtonDisabled
-              link={''}
-              text={'Coming Soon'}
+              text={'Platform'}
             />
           </Local.LandingButtons>
         </Local.LandingEntry>

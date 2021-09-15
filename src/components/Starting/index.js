@@ -1,6 +1,6 @@
 /* eslint-disable-next-line no-unused-vars */
 import React from 'react';
-import { ButtonInternal } from '../Button/index';
+import { ButtonDisabled, ButtonInternal } from '../Button/index';
 
 // Main Styles
 import * as Global from '../../styles';
@@ -26,9 +26,8 @@ export default function Starting() {
           </Local.StartingTitle>
           <Local.StartingButtons>
             <Local.StartingLink>
-              <ButtonInternal
-                link={'/'}
-                text={'Access the Mining Pool'}
+              <ButtonDisabled
+                text={'Browse Mining Pools'}
               />
             </Local.StartingLink>
             <Local.StartingLink>
