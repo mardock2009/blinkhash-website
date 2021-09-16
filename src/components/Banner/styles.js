@@ -18,6 +18,9 @@ export const BannerContainer = styled.div`
     background-color: ${(props) => props.theme.backgroundBanner2};
     box-shadow: none;
   }
+  @media (max-width: 600px) {
+    padding-top: 0px;
+  }
 `;
 
 export const BannerInner = styled.div`

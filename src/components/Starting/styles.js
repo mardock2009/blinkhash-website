@@ -7,6 +7,7 @@ export const StartingContainer = styled.div`
   background-image: url('/docs/images/blinkhash-background-shapes-main.png');
   background-size: cover;
   background-repeat: no-repeat;
+  transition: 0.2s ease-in all;
   @media (max-width: 800px) {
     padding: 40px 25px 50px;
   }
