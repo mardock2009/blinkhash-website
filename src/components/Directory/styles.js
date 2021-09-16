@@ -26,7 +26,7 @@ export const DirectoryInner = styled.div`
 
 export const DirectoryLinks = styled.div`
   width: calc(100% - 420px);
-  color: ${(props) => props.theme.textModule};
+  color: ${(props) => props.theme.textDirectory};
   @media (max-width: 1024px) {
     width: 100%;
     justify-content: center;

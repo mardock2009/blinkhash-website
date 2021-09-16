@@ -44,7 +44,7 @@ export const LandingEntry = styled.div`
 `;
 
 export const LandingTitle = styled.div`
-  color: ${(props) => props.theme.textModule};
+  color: ${(props) => props.theme.textLanding};
   line-height: 40px;
   margin-bottom: 15px;
   @media (max-width: 1024px) {
@@ -59,7 +59,7 @@ export const LandingTitle = styled.div`
 `;
 
 export const LandingTagline = styled.div`
-  color: ${(props) => props.theme.textModule};
+  color: ${(props) => props.theme.textLanding};
   margin-bottom: 20px;
   @media (max-width: 1024px) {
     text-align: center;

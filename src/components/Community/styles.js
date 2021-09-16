@@ -54,12 +54,12 @@ export const CommunityTitle = styled.div`
 `;
 
 export const CommunityTitleMain = styled.div`
-  color: ${(props) => props.theme.textModule};
+  color: ${(props) => props.theme.textCommunity};
 `;
 
 export const CommunityTitleBold = styled.div`
   margin-left: 8px;
-  color: ${(props) => props.theme.textModule};
+  color: ${(props) => props.theme.textCommunity};
   @media (max-width: 500px) {
     margin-left: 6px;
   }
@@ -70,7 +70,7 @@ export const CommunityText = styled.div`
   display: flex;
   margin-bottom: 20px;
   justify-content: center;
-  color: ${(props) => props.theme.textModule};
+  color: ${(props) => props.theme.textCommunity};
   justify-content: flex-start;
   @media (max-width: 800px) {
     text-align: center;

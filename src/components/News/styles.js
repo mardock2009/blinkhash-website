@@ -37,12 +37,12 @@ export const NewsTitle = styled.div`
 `;
 
 export const NewsTitleMain = styled.div`
-  color: ${(props) => props.theme.textModule};
+  color: ${(props) => props.theme.textNews};
 `;
 
 export const NewsTitleBold = styled.div`
   margin-left: 8px;
-  color: ${(props) => props.theme.textModule};
+  color: ${(props) => props.theme.textNews};
   @media (max-width: 500px) {
     margin-left: 6px;
   }
@@ -54,7 +54,7 @@ export const NewsText = styled.div`
   margin-bottom: 20px;
   justify-content: center;
   text-align: center;
-  color: ${(props) => props.theme.textModule};
+  color: ${(props) => props.theme.textNews};
 `;
 
 export const NewsCards = styled.div`

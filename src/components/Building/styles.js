@@ -77,12 +77,12 @@ export const BuildingTitle = styled.div`
 `;
 
 export const BuildingTitleMain = styled.div`
-  color: ${(props) => props.theme.textModule};
+  color: ${(props) => props.theme.textBuilding};
 `;
 
 export const BuildingTitleBold = styled.div`
   margin-left: 8px;
-  color: ${(props) => props.theme.textModule};
+  color: ${(props) => props.theme.textBuilding};
   @media (max-width: 500px) {
     margin-left: 6px;
   }
@@ -91,7 +91,7 @@ export const BuildingTitleBold = styled.div`
 export const BuildingText = styled.div`
   width: 100%;
   margin-bottom: 20px;
-  color: ${(props) => props.theme.textModule};
+  color: ${(props) => props.theme.textBuilding};
   @media (max-width: 1024px) {
     text-align: center;
   }

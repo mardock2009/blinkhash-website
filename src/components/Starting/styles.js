@@ -32,12 +32,12 @@ export const StartingTitle = styled.div`
 `;
 
 export const StartingTitleMain = styled.div`
-  color: ${(props) => props.theme.textModule};
+  color: ${(props) => props.theme.textStarting};
 `;
 
 export const StartingTitleBold = styled.div`
   margin-left: 8px;
-  color: ${(props) => props.theme.textModule};
+  color: ${(props) => props.theme.textStarting};
   @media (max-width: 500px) {
     margin-left: 6px;
   }

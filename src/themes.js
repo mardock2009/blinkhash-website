@@ -10,6 +10,7 @@ export const lightTheme = {
 
   /* Building Palette */
   backgroundBuilding: '#ffffff',
+  textBuilding: '#425066',
 
   /* Button Palette */
   backgroundButton: '#434b9f',
@@ -20,6 +21,7 @@ export const lightTheme = {
 
   /* Community Palette */
   backgroundCommunity: '#ffffff',
+  textCommunity: '#425066',
 
   /* Directory Palette */
   borderDirectory: '#cccccc',
@@ -53,6 +55,9 @@ export const lightTheme = {
   backgroundLicense: '#f5f5f7',
   textLicense: '#888888',
 
+  /* Landing Palette */
+  textLanding: '#425066',
+
   /* Link Palette */
   textLink: '#425066',
 
@@ -60,11 +65,9 @@ export const lightTheme = {
   backgroundMain: '#ebebf6',
   borderMain: '#cccccc',
 
-  /* Module Palette */
-  textModule: '#425066',
-
   /* News Palette */
   backgroundNews: '#f5f5f7',
+  textNews: '#425066',
 
   /* Resources Palette */
   backgroundResources: '#ffffff',
@@ -87,8 +90,9 @@ export const lightTheme = {
   scrollSidenav: '#cccccc',
   textSidenav: '#425066',
 
-  /* News Palette */
+  /* Starting Palette */
   backgroundStarting: '#f5f5f7',
+  textStarting: '#425066',
 };
 
 // Main Dark Theme
@@ -104,20 +108,22 @@ export const darkTheme = {
 
   /* Building Palette */
   backgroundBuilding: '#11151c',
+  textBuilding: '#ebecef',
 
   /* Button Palette */
   backgroundButton: '#434b9f',
   backgroundButton2: '#192171',
   backgroundButton3: '#555555',
   borderButton: '#15151c',
-  textButton: '#ffffff',
+  textButton: '#ebecef',
 
   /* Community Palette */
   backgroundCommunity: '#11151c',
+  textCommunity: '#ebecef',
 
   /* Directory Palette */
-  borderDirectory: '#ffffff',
-  textDirectory: '#ffffff',
+  borderDirectory: '#ebecef',
+  textDirectory: '#ebecef',
 
   /* Divider Palette */
   backgroundDividerLight: '#ffffff',
@@ -147,6 +153,9 @@ export const darkTheme = {
   backgroundLicense: '#11151c',
   textLicense: '#bbbbbb',
 
+  /* Landing Palette */
+  textLanding: '#ebecef',
+
   /* Link Palette */
   textLink: '#ebecef',
 
@@ -154,8 +163,9 @@ export const darkTheme = {
   backgroundMain: '#06090f',
   borderMain: '#15151c',
 
-  /* Module Palette */
-  textModule: '#ebecef',
+  /* News Palette */
+  backgroundNews: '#06090f',
+  textNews: '#ebecef',
 
   /* Resources Palette */
   backgroundResources: '#06090f',
@@ -177,4 +187,8 @@ export const darkTheme = {
   borderSidenav: '#15151c',
   scrollSidenav: '#15151c',
   textSidenav: '#ebecef',
+
+  /* Starting Palette */
+  backgroundStarting: '#06090f',
+  textStarting: '#ebecef',
 };
