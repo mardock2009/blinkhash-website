@@ -1,9 +1,9 @@
-# Blinkhash Documentation
+# Blinkhash Website
 
 [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
 [![Discord](https://img.shields.io/discord/738590795384356904)](https://discord.gg/8xtHZFKJQY)
 
-This repository is a custom-built website intended to serve the documentation for Blinkhash's various services. It was written using the ReactJS/NextJS framework, and is currently hosted at https://blinkhash.com/docs.
+This repository is a custom-built website intended to serve Blinkhash's various services. It was written using the ReactJS/NextJS framework, and is currently hosted at https://blinkhash.com/.
 
 #### Need Support?
 

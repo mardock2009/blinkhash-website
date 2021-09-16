@@ -1,5 +1,5 @@
 FROM node:14-alpine3.12 AS deps
-ENV SERVICE_NAME documentation
+ENV SERVICE_NAME website
 LABEL maintainer="blinkhashpool@gmail.com"
 WORKDIR /app
 
@@ -29,9 +29,8 @@ COPY --from=builder /app/package.json ./package.json
 FROM nginx:alpine AS deployer
 COPY ./nginx.conf /etc/nginx/nginx.conf
 RUN rm -rf /usr/share/nginx/html/*
-RUN mkdir /usr/share/nginx/html/docs
-COPY --from=builder /app/out /usr/share/nginx/html/docs
-COPY --from=builder /app/out/index.html /usr/share/nginx/html/docs.html
+COPY --from=builder /app/out /usr/share/nginx/html/
+COPY --from=builder /app/out/index.html /usr/share/nginx/html/index.html
 
 EXPOSE 3000 80
 ENTRYPOINT ["nginx", "-g", "daemon off;"]

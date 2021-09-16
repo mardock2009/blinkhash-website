@@ -1,10 +1,10 @@
 {
-  "family": "blinkhash-prod-documentation",
+  "family": "blinkhash-prod-website",
   "executionRoleArn": "arn:aws:iam::348473643547:role/Blinkhash-ECS",
   "containerDefinitions": [
     {
-      "name": "blinkhash-prod-documentation",
-      "image": "348473643547.dkr.ecr.us-east-1.amazonaws.com/blinkhash-documentation:latest",
+      "name": "blinkhash-prod-website",
+      "image": "348473643547.dkr.ecr.us-east-1.amazonaws.com/blinkhash-website:latest",
       "portMappings": [
         {
           "hostPort": 80,
@@ -16,7 +16,7 @@
         "retries": 3,
         "command": [
           "CMD-SHELL",
-          "curl -f http://localhost/docs/health || exit 1"
+          "curl -f http://localhost/health || exit 1"
         ],
         "timeout": 5,
         "interval": 30,
@@ -28,7 +28,7 @@
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "blinkhash-prod-documentation",
+          "awslogs-group": "blinkhash-prod-website",
           "awslogs-region": "us-east-1",
           "awslogs-stream-prefix": "ecs-prod"
         }

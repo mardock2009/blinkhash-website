@@ -1,19 +1,22 @@
 import React from 'react';
 
 // Main Components
-import Building from '../components/Building/index';
-import Community from '../components/Community/index';
-import Footer from '../components/Footer/index';
-import Header from '../components/Header/index';
-import Landing from '../components/Landing/index';
-import News from '../components/News/index';
-import Starting from '../components/Starting/index';
+import Attributes from '../components/landing/Attributes/index';
+import Building from '../components/landing/Building/index';
+import Community from '../components/common/Community/index';
+import Footer from '../components/common/Footer/index';
+import Header from '../components/common/Header/index';
+import Landing from '../components/landing/Landing/index';
+import Mining from '../components/landing/Mining/index';
+import Mission from '../components/landing/Mission/index';
+import News from '../components/common/News/index';
+import Partners from '../components/landing/Partners/index';
+import Starting from '../components/common/Starting/index';
 
 import {
   DividerLight,
   DividerDark,
-  DividerGrey,
-} from '../components/Divider/index';
+} from '../components/common/Divider/index';
 
 // Main Styles
 import { Global } from '../styles';
@@ -28,7 +31,15 @@ export default function Index(props) {
       />
       <Landing />
       <DividerLight theme={props.theme} />
+      <Mining />
+      <DividerDark theme={props.theme} />
+      <Mission />
+      <DividerLight theme={props.theme} />
+      <Attributes theme={props.theme} />
+      <DividerDark theme={props.theme} />
       <Building />
+      <DividerLight theme={props.theme} />
+      <Partners />
       <DividerDark theme={props.theme} />
       <News />
       <DividerLight theme={props.theme} />

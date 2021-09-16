@@ -12,13 +12,13 @@ export const GlobalMain = createGlobalStyle`
   // Font Styles
   @font-face {
     font-family: 'Lato Bold';
-    src: url('/docs/fonts/Lato-Bold.ttf') format('truetype');
+    src: url('/fonts/Lato-Bold.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
   @font-face {
     font-family: 'Lato Regular';
-    src: url('/docs/fonts/Lato-Regular.ttf') format('truetype');
+    src: url('/fonts/Lato-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
@@ -169,6 +169,18 @@ export const Body3 = styled.div`
 export const Header1 = styled.div`
   font-family: 'Lato Regular', sans-serif;
   font-weight: 400;
+  font-size: 54px;
+  ${(props) => props.bold && `
+    font-family: 'Lato Bold', sans-serif;
+  `}
+  @media (max-width: 800px) {
+    font-size: 36px;
+  }
+`;
+
+export const Header2 = styled.div`
+  font-family: 'Lato Regular', sans-serif;
+  font-weight: 400;
   font-size: 36px;
   ${(props) => props.bold && `
     font-family: 'Lato Bold', sans-serif;
@@ -178,7 +190,7 @@ export const Header1 = styled.div`
   }
 `;
 
-export const Header2 = styled.div`
+export const Header3 = styled.div`
   font-family: 'Lato Regular', sans-serif;
   font-weight: 400;
   font-size: 30px;
@@ -190,21 +202,6 @@ export const Header2 = styled.div`
   }
   @media (max-width: 500px) {
     font-size: 20px;
-  }
-`;
-
-export const Header3 = styled.div`
-  font-family: 'Lato Regular', sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  ${(props) => props.bold && `
-    font-family: 'Lato Bold', sans-serif;
-  `}
-  @media (max-width: 800px) {
-    font-size: 15px;
-  }
-  @media (max-width: 500px) {
-    font-size: 14px;
   }
 `;
 
@@ -220,5 +217,20 @@ export const Header4 = styled.div`
   }
   @media (max-width: 500px) {
     font-size: 16px;
+  }
+`;
+
+export const Header5 = styled.div`
+  font-family: 'Lato Regular', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  ${(props) => props.bold && `
+    font-family: 'Lato Bold', sans-serif;
+  `}
+  @media (max-width: 800px) {
+    font-size: 15px;
+  }
+  @media (max-width: 500px) {
+    font-size: 14px;
   }
 `;

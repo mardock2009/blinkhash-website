@@ -3,13 +3,20 @@ export const lightTheme = {
   /* Global Type */
   type: 'light',
 
+  /* Attributes Palette */
+  backgroundAttributes: '#ffffff',
+  backgroundAttributes2: '#ffffff',
+  borderAttributes: '#cccccc',
+  textAttributes: '#425066',
+
   /* Banner Palette */
   backgroundBanner: '#ffffff',
   backgroundBanner2: '#f5f5f7',
   borderBanner: '#cccccc',
 
   /* Building Palette */
-  backgroundBuilding: '#ffffff',
+  backgroundBuilding: '#f5f5f7',
+  backgroundBuilding2: '#ffffff',
   textBuilding: '#425066',
 
   /* Button Palette */
@@ -17,7 +24,9 @@ export const lightTheme = {
   backgroundButton2: '#192171',
   backgroundButton3: '#555555',
   borderButton: '#cccccc',
+  borderButton2: '#cccccc',
   textButton: '#ebecef',
+  textButtonSecondary: '#425066',
 
   /* Community Palette */
   backgroundCommunity: '#ffffff',
@@ -65,9 +74,26 @@ export const lightTheme = {
   backgroundMain: '#ebebf6',
   borderMain: '#cccccc',
 
+  /* Mining Palette */
+  backgroundMining: '#ffffff',
+  backgroundMining2: '#ffffff',
+  backgroundMining3: '#ffffff',
+  backgroundMining4: '#f5f5f7',
+  textMining: '#425066',
+  textMining2: '#555555',
+  borderMining: '#cccccc',
+
+  /* Mission Palette */
+  backgroundMission: '#f5f5f7',
+  textMission: '#425066',
+
   /* News Palette */
   backgroundNews: '#f5f5f7',
   textNews: '#425066',
+
+  /* Partners Palette */
+  backgroundPartners: '#ffffff',
+  textPartners: '#425066',
 
   /* Resources Palette */
   backgroundResources: '#ffffff',
@@ -101,13 +127,20 @@ export const darkTheme = {
   /* Global Type */
   type: 'dark',
 
+  /* Attributes Palette */
+  backgroundAttributes: '#11151c',
+  backgroundAttributes2: '#11151c',
+  borderAttributes: '#20202b',
+  textAttributes: '#ebecef',
+
   /* Banner Palette */
   backgroundBanner: '#06090f',
   backgroundBanner2: '#11151c',
   borderBanner: '#15151c',
 
   /* Building Palette */
-  backgroundBuilding: '#11151c',
+  backgroundBuilding: '#06090f',
+  backgroundBuilding2: '#11151c',
   textBuilding: '#ebecef',
 
   /* Button Palette */
@@ -115,7 +148,9 @@ export const darkTheme = {
   backgroundButton2: '#192171',
   backgroundButton3: '#555555',
   borderButton: '#15151c',
-  textButton: '#ebecef',
+  borderButton2: '#20202b',
+  textButton: '#ffffff',
+  textButtonSecondary: '#ebecef',
 
   /* Community Palette */
   backgroundCommunity: '#11151c',
@@ -163,9 +198,26 @@ export const darkTheme = {
   backgroundMain: '#06090f',
   borderMain: '#15151c',
 
+  /* Mining Palette */
+  backgroundMining: '#11151c',
+  backgroundMining2: '#292d33',
+  backgroundMining3: '#06090f',
+  backgroundMining4: '#06090f',
+  textMining: '#ebecef',
+  textMining2: '#555555',
+  borderMining: '#15151c',
+
+  /* Mission Palette */
+  backgroundMission: '#06090f',
+  textMission: '#ebecef',
+
   /* News Palette */
   backgroundNews: '#06090f',
   textNews: '#ebecef',
+
+  /* Partners Palette */
+  backgroundPartners: '#11151c',
+  textPartners: '#ebecef',
 
   /* Resources Palette */
   backgroundResources: '#06090f',

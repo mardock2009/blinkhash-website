@@ -63,20 +63,20 @@ node {
   }
 
   // Environment Variables (Main)
-  env.ecrRegistry = 'https://348473643547.dkr.ecr.us-east-1.amazonaws.com/blinkhash-documentation'
-  env.ecrCredentials = 'ecr:us-east-1:blinkhash-documentation-aws-key'
+  env.ecrRegistry = 'https://348473643547.dkr.ecr.us-east-1.amazonaws.com/blinkhash-website'
+  env.ecrCredentials = 'ecr:us-east-1:blinkhash-aws-key'
 
   // Infrastructure Variables (Dev)
-  env.ecsFamilyDev = 'blinkhash-dev-documentation'
-  env.ecsClusterDev = 'blinkhash-dev-documentation'
+  env.ecsFamilyDev = 'blinkhash-dev-website'
+  env.ecsClusterDev = 'blinkhash-dev-website'
   env.ecsDefinitionDev = 'file://aws/task-definition.dev.json'
-  env.ecsServiceDev = 'blinkhash-dev-documentation-service'
+  env.ecsServiceDev = 'blinkhash-dev-website-service'
 
   // Infrastructure Variables (Prod)
-  env.ecsFamilyProd = 'blinkhash-prod-documentation'
-  env.ecsClusterProd = 'blinkhash-prod-documentation'
+  env.ecsFamilyProd = 'blinkhash-prod-website'
+  env.ecsClusterProd = 'blinkhash-prod-website'
   env.ecsDefinitionProd = 'file://aws/task-definition.prod.json'
-  env.ecsServiceProd = 'blinkhash-prod-documentation-service'
+  env.ecsServiceProd = 'blinkhash-prod-website-service'
 
   // Clone Current Repository
   stage('Clone Repository') {
@@ -88,7 +88,7 @@ node {
   stage('Build Docker Image') {
     if (deployImage) {
       echo 'Building Docker Image ...'
-      dockerImage = docker.build('blinkhash-documentation')
+      dockerImage = docker.build('blinkhash-website')
     }
   }
 
