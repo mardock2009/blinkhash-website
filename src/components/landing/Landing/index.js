@@ -18,12 +18,13 @@ export default function Landing() {
           </Local.LandingTitle>
           <Local.LandingTagline>
             <Global.Header3>
-              {'The Mining Experience, Streamlined'}
+              {'The Mining Process, Streamlined'}
             </Global.Header3>
           </Local.LandingTagline>
           <Local.LandingButtons>
             <Local.LandingButtonsInner>
-              <ButtonDisabled
+              <ButtonInternal
+                link={'/mining'}
                 text={'Browse Mining Pools'}
               />
             </Local.LandingButtonsInner>

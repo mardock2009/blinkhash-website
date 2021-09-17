@@ -36,8 +36,9 @@ export default function Building() {
               </Global.Body1>
             </Local.BuildingText>
             <Local.BuildingLink>
-              <ButtonDisabled
-                text={'Coming Soon'}
+              <ButtonInternal
+                link={'/mining'}
+                text={'Continue'}
               />
             </Local.BuildingLink>
           </Local.BuildingInformation>

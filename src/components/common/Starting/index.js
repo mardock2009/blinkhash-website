@@ -27,7 +27,8 @@ export default function Starting() {
           <Local.StartingButtons>
             <Local.StartingButtonsInner>
               <Local.StartingLink>
-                <ButtonDisabled
+                <ButtonInternal
+                  link={'/mining'}
                   text={'Browse Mining Pools'}
                 />
               </Local.StartingLink>
