@@ -33,7 +33,7 @@ export default function Starting() {
               </Local.StartingLink>
               <Local.StartingLink>
                 <ButtonInternal
-                  link={'/'}
+                  link={'/docs'}
                   text={'Explore Documentation'}
                 />
               </Local.StartingLink>
