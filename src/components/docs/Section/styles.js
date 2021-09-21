@@ -14,8 +14,11 @@ export const SectionDisplay = styled.div`
   height: 100%;
   display: flex;
   background-color: ${(props) => props.theme.backgroundSection};
-  padding-top: 20px;
+  padding-top: 50px;
   transition: 0.2s ease-in all;
+  @media (max-width: 800px) {
+    padding-top: 25px;
+  }
 `;
 
 export const SectionNavigation = styled.div`
@@ -55,7 +58,7 @@ export const SectionMain = styled.div`
     width: calc(100% - 280px);
   }
   @media (max-width: 800px) {
-    width: 100%
+    width: 100%;
   }
 `;
 

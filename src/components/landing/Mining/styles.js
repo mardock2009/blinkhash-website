@@ -90,7 +90,7 @@ export const MiningTableSearchIcon = styled.div`
   height: 15px;
   position: absolute;
   top: 10px;
-  right: 10px;
+  right: 15px;
   color: ${(props) => props.theme.textMining2};
 `
 

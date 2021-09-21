@@ -3,6 +3,7 @@ import { headers, sections, resources } from '../../../text/docs/foundation/endp
 
 // Main Components
 import Directory from '../../../components/docs/Directory/index';
+import { DividerGrey } from '../../../components/common/Divider/index';
 import Header from '../../../components/common/Header/index';
 import Section from '../../../components/docs/Section/index';
 
@@ -26,6 +27,7 @@ export default function Configuration(props) {
         ]}
         theme={props.theme}
       />
+      <DividerGrey theme={props.theme} />
       <Section
         component={'/docs/foundation'}
         headers={headers}

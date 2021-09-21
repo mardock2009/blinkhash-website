@@ -15,7 +15,6 @@ COPY --from=deps /app/node_modules ./node_modules
 RUN npm run build
 
 FROM node:14-alpine3.12 AS runner
-ENV NODE_ENV production
 RUN addgroup -g 1001 -S nodejs
 RUN adduser -S nextjs -u 1001
 WORKDIR /app

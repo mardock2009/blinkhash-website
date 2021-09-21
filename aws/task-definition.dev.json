@@ -22,8 +22,8 @@
         "interval": 30,
         "startPeriod": 60
       },
-      "cpu": 512,
-      "memory": 1024,
+      "cpu": 256,
+      "memory": 512,
       "essential": true,
       "logConfiguration": {
         "logDriver": "awslogs",
@@ -37,6 +37,6 @@
   ],
   "networkMode": "awsvpc",
   "requiresCompatibilities": ["FARGATE"],
-  "cpu": "1024",
-  "memory": "2048"
+  "cpu": "256",
+  "memory": "512"
 }

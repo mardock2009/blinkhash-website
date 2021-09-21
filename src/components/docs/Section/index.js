@@ -4,7 +4,6 @@ import ReactMarkdown from 'react-markdown';
 
 // Main Components
 import Banner from '../../docs/Banner/index';
-import { DividerGrey } from '../../common/Divider/index';
 import Footer from '../../common/Footer/index';
 import License from '../../docs/License/index';
 import Resources from '../../docs/Resources/index';
@@ -52,7 +51,6 @@ export default function Section(props) {
   return (
     <Local.SectionContainer>
       <Local.SectionInner>
-        <DividerGrey theme={props.theme} />
         <Local.SectionDisplay>
           <Sidenav>
             {(props.sections.map((section, idx1) => {
